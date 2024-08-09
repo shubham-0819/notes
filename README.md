@@ -5,3 +5,4 @@
 * [apache](./docs/apache.md)
 * [overview of storage in an operating system](./docs/overview-of-storage-in-an-operating-system.md)
 * [PostgreSQL Installation and Basic Usage](./docs/postgreSQL-installation-and-basic-usage.md)
+* [How to use copilot](./docs/how-to-use-copilot.md)
