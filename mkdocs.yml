@@ -62,7 +62,7 @@ theme:
 plugins:
   - blog
   - search:
-      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      separator: '- \s\u200b\-_,:!=\- \]()"`/]+|\.(?!\d)|&- lg]t;|(?!\b)(?=- A-Z]- a-z])'
 
 # Additional configuration
 extra:
@@ -112,6 +112,12 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: docs/index.md
+  - Home: index.md
   - Docs:
-    - how to use copilot: docs/how-to-use-copilot.md
+    - how to use copilot: how-to-use-copilot.md
+    - essential shell tools: ide/essential-shell-tools.md
+    - vscode extensions: ide/vscode-extensions.md
+    - apache: apache.md
+    - overview of storage in an operating system: overview-of-storage-in-an-operating-system.md
+    - PostgreSQL Installation and Basic Usage: postgreSQL-installation-and-basic-usage.md
+
