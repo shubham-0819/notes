@@ -113,3 +113,5 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: docs/index.md
+  - Docs:
+    - how to use copilot: docs/how-to-use-copilot.md
