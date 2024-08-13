@@ -112,4 +112,4 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: docs/ index.md
+  - Home: docs/index.md
