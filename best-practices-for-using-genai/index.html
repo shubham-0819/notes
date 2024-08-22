@@ -12,13 +12,11 @@
         <meta name="author" content="Shubham">
       
       
-        <link rel="canonical" href="https://shubham-0819.github.io/notes/how-to-use-copilot/">
+        <link rel="canonical" href="https://shubham-0819.github.io/notes/best-practices-for-using-genai/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../genai-models-by-openai/">
       
-      
-        <link rel="next" href="../ide/essential-shell-tools/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>how to use copilot - Notes</title>
+        <title>Best practices for building apps using GenAI APIs. - Notes</title>
       
     
     
@@ -77,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-use-the-right-model-for-the-right-task" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              how to use copilot
+              Best practices for building apps using GenAI APIs.
             
           </span>
         </div>
@@ -243,7 +246,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../how-to-use-copilot/" class="md-tabs__link">
           
   
     
@@ -403,17 +406,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how-to-use-copilot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -422,7 +418,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -558,10 +553,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../best-practices-for-using-genai/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Best Practices For Using GenAi
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -570,6 +583,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-use-the-right-model-for-the-right-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Use the Right Model for the Right Task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-implement-caching-and-reuse-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Implement Caching and Reuse Responses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-minimize-token-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Minimize Token Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-use-prompt-engineering-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Use Prompt Engineering Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-fine-tune-for-specialized-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Fine-tune for Specialized Tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rate-limiting-and-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Rate Limiting and Throttling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-use-lower-priced-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Use Lower-Priced Deployment Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitor-and-track-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Monitor and Track Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-hybrid-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Hybrid Approaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-periodic-audits-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Periodic Audits and Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Strategy:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -597,7 +727,7 @@
                   
 
   
-    <a href="https://github.com/shubham-0819/notes/edit/master/docs/how-to-use-copilot.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/shubham-0819/notes/edit/master/docs/best-practices-for-using-genai.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -606,22 +736,70 @@
     
       
     
-    <a href="https://github.com/shubham-0819/notes/raw/master/docs/how-to-use-copilot.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/shubham-0819/notes/raw/master/docs/best-practices-for-using-genai.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>how to use copilot</h1>
+  <h1>Best Practices For Using GenAi</h1>
 
+<h3 id="1-use-the-right-model-for-the-right-task">1. Use the Right Model for the Right Task<a class="headerlink" href="#1-use-the-right-model-for-the-right-task" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Only Open your relevant files for while running code suggestion.</li>
-<li>Provide a top-level comment at top of each file</li>
-<li>Set Includes and references provide details of whhich dependencies you want to go with, name fof library or version</li>
-<li>Meaningful names matter, prvide a meaningfule name will help you to get better code suggestion.</li>
-<li>Provide specific and well- scoped function comments</li>
-<li>Provide sample code</li>
+<li>Select Lightweight Models for Simple Tasks: Use smaller, cheaper models like GPT-3.5 Turbo for simpler tasks (e.g., text completion or sentiment analysis), reserving more powerful models (like GPT-4) for complex tasks (e.g., multi-step reasoning).</li>
+<li>Optimize Based on Use Cases: Categorize tasks based on complexity and frequency, and assign different models accordingly. For example, Codex for code generation and DALL-E for image generation, using lower-cost models where possible.</li>
+</ul>
+<h3 id="2-implement-caching-and-reuse-responses">2. Implement Caching and Reuse Responses<a class="headerlink" href="#2-implement-caching-and-reuse-responses" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cache Repeated Queries: If your app is making similar queries frequently, cache responses and reuse them. This avoids redundant API calls and reduces costs.</li>
+<li>Store Results Locally: For static or repetitive data generation, store responses in a local database instead of calling the API repeatedly.</li>
+</ul>
+<h3 id="3-minimize-token-usage">3. Minimize Token Usage<a class="headerlink" href="#3-minimize-token-usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Shorter Prompts: LLMs like GPT models charge based on tokens used (both input and output). Keep prompts concise and to the point to reduce token consumption.</li>
+<li>Limit Output Length: Use the <code>max_tokens</code> parameter to control the length of responses and avoid unnecessarily long completions.</li>
+</ul>
+<h3 id="4-use-prompt-engineering-techniques">4. Use Prompt Engineering Techniques<a class="headerlink" href="#4-use-prompt-engineering-techniques" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prompt Optimization: Carefully craft prompts to get the most precise and accurate responses in fewer tokens. By reducing ambiguity, you can avoid making follow-up calls or re-tries.</li>
+<li>Chain-of-Thought: For complex tasks, break down the queries into smaller, simpler steps that can be handled by cheaper models or processes, and avoid unnecessarily complex operations.</li>
+</ul>
+<h3 id="5-fine-tune-for-specialized-tasks">5. Fine-tune for Specialized Tasks<a class="headerlink" href="#5-fine-tune-for-specialized-tasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fine-tuning: If your application relies on repeated, domain-specific queries, consider fine-tuning a smaller model (if available) on your specific dataset. This allows the model to become more efficient at your tasks, reducing the need for complex prompts.</li>
+<li>Preprocess and Post-process Locally: Offload pre-processing (e.g., data cleaning, summarizing) and post-processing tasks (e.g., formatting) to local servers to reduce API calls.</li>
+</ul>
+<h3 id="6-rate-limiting-and-throttling">6. Rate Limiting and Throttling<a class="headerlink" href="#6-rate-limiting-and-throttling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Rate Limits: Set rate limits on API calls to avoid accidental overuse, especially when scaling up. Many APIs charge based on the number of requests, so throttling can help control costs.</li>
+<li>Batch Requests: Where possible, batch requests or combine multiple tasks into a single API call (if the API supports it).</li>
+</ul>
+<h3 id="7-use-lower-priced-deployment-options">7. Use Lower-Priced Deployment Options<a class="headerlink" href="#7-use-lower-priced-deployment-options" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Model Pricing Tiers: Leverage different pricing tiers, and use free trial periods or credits offered by the API providers for initial development and testing.</li>
+<li>Regional API Endpoints: If the provider offers regional pricing differences, you can select endpoints that may offer lower costs depending on geographic regions.</li>
+</ul>
+<h3 id="8-monitor-and-track-usage">8. Monitor and Track Usage<a class="headerlink" href="#8-monitor-and-track-usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Usage Metrics: Implement logging and tracking of all API usage so you can identify high-cost areas, optimize them, and avoid unnecessary calls.</li>
+<li>Budget Alerts: Set up budget alerts or limits via the API provider’s platform to ensure you don’t exceed your desired spending.</li>
+</ul>
+<h3 id="9-hybrid-approaches">9. Hybrid Approaches<a class="headerlink" href="#9-hybrid-approaches" title="Permanent link">&para;</a></h3>
+<ul>
+<li>On-Premise or Open Source: For tasks that require constant, high-volume processing, consider using open-source models like GPT-Neo or running LLMs locally (though they may be less powerful). This can supplement your API-based usage and reduce costs.</li>
+<li>Manual Overrides: Provide human overrides for extremely complex or high-cost processes to avoid relying on the LLM for all decision-making.</li>
+</ul>
+<h3 id="10-periodic-audits-and-optimization">10. Periodic Audits and Optimization<a class="headerlink" href="#10-periodic-audits-and-optimization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Review API Usage Regularly: Periodically audit your API calls and results. Review patterns to identify where your app might be over-relying on the AI and optimize accordingly.</li>
+<li>A/B Testing for Cost Efficiency: Test different versions of your prompt structures, models, and batching strategies to find the most cost-efficient solution without sacrificing performance.</li>
+</ul>
+<h3 id="example-strategy">Example Strategy:<a class="headerlink" href="#example-strategy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Chat and Text Generation: Use GPT-3.5, GPT-4o-mini, Turbo for conversational interfaces or text generation where high precision is not critical. Implement caching for repeated answers.</li>
+<li>Summarization and Question Answering: Use a lower-token limit and carefully engineered prompts to get concise summaries. If questions are repetitive, cache them.</li>
+<li>Complex Reasoning or High-Stakes Output: Delegate to GPT-4, GPT-4o, GPT-4o-mini or fine-tuned models only when necessary.</li>
 </ul>
 
 
@@ -629,6 +807,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -658,7 +839,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../genai-models-by-openai/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GneAI models by OpenAI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -668,27 +849,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                GneAI models by OpenAI
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../ide/essential-shell-tools/" class="md-footer__link md-footer__link--next" aria-label="Next: essential shell tools">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                essential shell tools
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
