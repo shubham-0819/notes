@@ -12,13 +12,11 @@
         <meta name="author" content="Shubham">
       
       
-        <link rel="canonical" href="https://shubham-0819.github.io/notes/postgreSQL-installation-and-basic-usage/">
+        <link rel="canonical" href="https://shubham-0819.github.io/notes/workflow-automation-n8n/">
       
       
-        <link rel="prev" href="../overview-of-storage-in-an-operating-system/">
+        <link rel="prev" href="../vector-embedding/">
       
-      
-        <link rel="next" href="../genai-models-by-openai/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>PostgreSQL Installation and Basic Usage - Notes</title>
+        <title>workflow automation - Notes</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#postgresql-installation-and-basic-usage" class="md-skip">
+        <a href="#worflow-automation-using-n8n" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PostgreSQL Installation and Basic Usage
+              workflow automation
             
           </span>
         </div>
@@ -517,30 +515,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    PostgreSQL Installation and Basic Usage
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../postgreSQL-installation-and-basic-usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,236 +527,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accessing-postgresql" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accessing PostgreSQL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-database" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating a Database
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating a User
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-sql-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic SQL Commands
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exiting-psql" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exiting psql
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#essential-tools-and-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Essential tools and utilities
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Essential tools and utilities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pgadmin" class="md-nav__link">
-    <span class="md-ellipsis">
-      pgAdmin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psql" class="md-nav__link">
-    <span class="md-ellipsis">
-      psql
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_dump" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_dump
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_restore" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_restore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pgbouncer" class="md-nav__link">
-    <span class="md-ellipsis">
-      pgBouncer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postgis" class="md-nav__link">
-    <span class="md-ellipsis">
-      PostGIS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pgadmin4" class="md-nav__link">
-    <span class="md-ellipsis">
-      pgAdmin4
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      DBeaver
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_activity" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_activity
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timescaledb" class="md-nav__link">
-    <span class="md-ellipsis">
-      TimescaleDB
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_repack" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_repack
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pgbadger" class="md-nav__link">
-    <span class="md-ellipsis">
-      pgBadger
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schemaspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      SchemaSpy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Additional Resources
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -851,10 +599,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../workflow-automation-n8n/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    workflow automation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -863,6 +631,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#n8n-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      n8n introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -890,7 +696,7 @@
                   
 
   
-    <a href="https://github.com/shubham-0819/notes/edit/master/docs/postgreSQL-installation-and-basic-usage.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/shubham-0819/notes/edit/master/docs/workflow-automation-n8n.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -899,207 +705,54 @@
     
       
     
-    <a href="https://github.com/shubham-0819/notes/raw/master/docs/postgreSQL-installation-and-basic-usage.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/shubham-0819/notes/raw/master/docs/workflow-automation-n8n.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="postgresql-installation-and-basic-usage">PostgreSQL Installation and Basic Usage<a class="headerlink" href="#postgresql-installation-and-basic-usage" title="Permanent link">&para;</a></h1>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h1 id="worflow-automation-using-n8n">Worflow automation using n8n<a class="headerlink" href="#worflow-automation-using-n8n" title="Permanent link">&para;</a></h1>
+<h2 id="n8n-introduction">n8n introduction<a class="headerlink" href="#n8n-introduction" title="Permanent link">&para;</a></h2>
+<p>n8n (pronounced "node-n") is an open-source workflow automation tool. It's designed to help users connect different services and automate workflows without requiring extensive coding knowledge.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Update Package List:</li>
+<li><strong>Key Features</strong>:</li>
+<li>Visual workflow editor</li>
+<li>200+ pre-built nodes for various services</li>
+<li>Self-hosted option for data privacy</li>
+<li>
+<p>Ability to create custom nodes</p>
+</li>
+<li>
+<p><strong>How to Use n8n</strong>:</p>
+</li>
 </ol>
-<p><code>sh
-   sudo apt update</code></p>
+<p>a. <strong>Installation</strong>: 
+      You can install n8n using npm:
+      <code>npm install n8n -g</code></p>
+<p>b. <strong>Starting n8n</strong>:
+      Run the following command:
+      <code>n8n start</code></p>
+<p>c. <strong>Creating Workflows</strong>:
+      - Access the n8n editor through your web browser
+      - Drag and drop nodes to create your workflow
+      - Connect nodes to define the flow of data and actions</p>
+<p>d. <strong>Configuring Nodes</strong>:
+      - Set up API credentials for third-party services
+      - Define input and output parameters for each node</p>
+<p>e. <strong>Testing and Deployment</strong>:
+      - Use the built-in testing features to verify your workflow
+      - Deploy your workflow to run automatically or on-demand</p>
 <ol>
-<li>Install PostgreSQL:</li>
+<li><strong>Common Use Cases</strong>:</li>
+<li>Data synchronization between apps</li>
+<li>Automated social media posting</li>
+<li>Lead generation and CRM updates</li>
+<li>File management and processing</li>
+<li>Custom API integrations</li>
 </ol>
-<p><code>sh
-   sudo apt install postgresql postgresql-contrib</code></p>
-<ol>
-<li>Start PostgreSQL Service:
-   <code>sh
-   sudo systemctl start postgresql</code></li>
-</ol>
-<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
-<h3 id="accessing-postgresql">Accessing PostgreSQL<a class="headerlink" href="#accessing-postgresql" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Command Line:
-  <code>sh
-  psql -U postgres</code>
-  Enter the password you set during installation.</li>
-</ul>
-<h3 id="creating-a-database">Creating a Database<a class="headerlink" href="#creating-a-database" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open psql: Access the PostgreSQL command line interface.</li>
-<li>Create Database:
-   <code>sql
-   CREATE DATABASE mydb;</code></li>
-</ol>
-<h3 id="creating-a-user">Creating a User<a class="headerlink" href="#creating-a-user" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open psql: Access the PostgreSQL command line interface.</li>
-<li>Create User:
-   <code>sql
-   CREATE USER myuser WITH PASSWORD 'mypassword';</code></li>
-<li>Grant Privileges:
-   <code>sql
-   GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;</code></li>
-</ol>
-<h3 id="basic-sql-commands">Basic SQL Commands<a class="headerlink" href="#basic-sql-commands" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Create a Table:</li>
-</ul>
-<p><code>sql
-  CREATE TABLE employees (
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(100),
-      position VARCHAR(50),
-      salary DECIMAL
-  );</code></p>
-<ul>
-<li>Insert Data:</li>
-</ul>
-<p><code>sql
-  INSERT INTO employees (name, position, salary) VALUES ('Alice', 'Developer', 70000);</code></p>
-<ul>
-<li>Select Data:</li>
-</ul>
-<p><code>sql
-  SELECT * FROM employees;</code></p>
-<ul>
-<li>Update Data:</li>
-</ul>
-<p><code>sql
-  UPDATE employees SET salary = 75000 WHERE name = 'Alice';</code></p>
-<ul>
-<li>Delete Data:
-  <code>sql
-  DELETE FROM employees WHERE name = 'Alice';</code></li>
-</ul>
-<h3 id="exiting-psql">Exiting psql<a class="headerlink" href="#exiting-psql" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Type <code>\q</code> and press Enter.</li>
-</ul>
-<h2 id="essential-tools-and-utilities">Essential tools and utilities<a class="headerlink" href="#essential-tools-and-utilities" title="Permanent link">&para;</a></h2>
-<h3 id="pgadmin">pgAdmin<a class="headerlink" href="#pgadmin" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: pgAdmin is a popular, open-source graphical management tool for PostgreSQL.</li>
-<li>Features:</li>
-<li>Visual query builder.</li>
-<li>Data visualization and analysis.</li>
-<li>Backup and restore capabilities.</li>
-<li>Server and database monitoring.</li>
-<li>Usage: Ideal for database administration and management.</li>
-</ul>
-<h3 id="psql">psql<a class="headerlink" href="#psql" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: psql is the PostgreSQL interactive terminal.</li>
-<li>Features:</li>
-<li>Execute SQL commands and scripts.</li>
-<li>Database navigation and administration.</li>
-<li>Scripting capabilities.</li>
-<li>Usage: Powerful command-line tool for developers and DBAs.</li>
-</ul>
-<h3 id="pg_dump">pg_dump<a class="headerlink" href="#pg_dump" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Utility for backing up a PostgreSQL database.</li>
-<li>Features:</li>
-<li>Dumps database content into a script or archive file.</li>
-<li>Supports various formats (plain, custom, directory, tar).</li>
-<li>Usage:
-  <code>sh
-  pg_dump mydb &gt; mydb_backup.sql</code></li>
-</ul>
-<h3 id="pg_restore">pg_restore<a class="headerlink" href="#pg_restore" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Utility to restore a PostgreSQL database from an archive created by pg_dump.</li>
-<li>Features:</li>
-<li>Supports restoring from custom, directory, and tar formats.</li>
-<li>Selective restoration of database objects.</li>
-<li>Usage:
-  <code>sh
-  pg_restore -d mydb mydb_backup.tar</code></li>
-</ul>
-<h3 id="pgbouncer">pgBouncer<a class="headerlink" href="#pgbouncer" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Lightweight connection pooler for PostgreSQL.</li>
-<li>Features:</li>
-<li>Reduces database connection overhead.</li>
-<li>Improves performance by reusing connections.</li>
-<li>Usage: Suitable for high-concurrency environments.</li>
-</ul>
-<h3 id="postgis">PostGIS<a class="headerlink" href="#postgis" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Spatial database extender for PostgreSQL.</li>
-<li>Features:</li>
-<li>Adds support for geographic objects.</li>
-<li>Spatial queries and analysis.</li>
-<li>Usage: Essential for GIS (Geographic Information Systems) applications.</li>
-</ul>
-<h3 id="pgadmin4">pgAdmin4<a class="headerlink" href="#pgadmin4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Web-based version of pgAdmin.</li>
-<li>Features:</li>
-<li>Modern UI with extensive management capabilities.</li>
-<li>Multi-user support.</li>
-<li>Usage: Web-based administration and monitoring tool.</li>
-</ul>
-<h3 id="dbeaver">DBeaver<a class="headerlink" href="#dbeaver" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Universal database tool that supports various databases, including PostgreSQL.</li>
-<li>Features:</li>
-<li>Advanced SQL editor.</li>
-<li>ERD generation.</li>
-<li>Data import/export.</li>
-<li>Usage: Cross-platform database management.</li>
-</ul>
-<h3 id="pg_activity">pg_activity<a class="headerlink" href="#pg_activity" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Command-line tool for PostgreSQL server activity monitoring.</li>
-<li>Features:</li>
-<li>Live view of running queries.</li>
-<li>Performance statistics.</li>
-<li>Usage: Monitoring and troubleshooting database performance.</li>
-</ul>
-<h3 id="timescaledb">TimescaleDB<a class="headerlink" href="#timescaledb" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Time-series database built on PostgreSQL.</li>
-<li>Features:</li>
-<li>Native PostgreSQL compatibility.</li>
-<li>Optimized for time-series data.</li>
-<li>Usage: Suitable for applications dealing with time-series data like monitoring, IoT, and analytics.</li>
-</ul>
-<h3 id="pg_repack">pg_repack<a class="headerlink" href="#pg_repack" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Tool to remove bloat from tables and indexes.</li>
-<li>Features:</li>
-<li>Online, non-blocking table repacking.</li>
-<li>Index rebuilding.</li>
-<li>Usage: Maintenance tool to optimize database performance.</li>
-</ul>
-<h3 id="pgbadger">pgBadger<a class="headerlink" href="#pgbadger" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Fast PostgreSQL log analyzer.</li>
-<li>Features:</li>
-<li>Generates detailed reports from log files.</li>
-<li>Performance statistics and insights.</li>
-<li>Usage: Performance tuning and auditing.</li>
-</ul>
-<h3 id="schemaspy">SchemaSpy<a class="headerlink" href="#schemaspy" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Description: Java-based tool for analyzing database metadata.</li>
-<li>Features:</li>
-<li>Generates visual diagrams of database schema.</li>
-<li>Detailed documentation of database structures.</li>
-<li>Usage: Database documentation and schema analysis.</li>
-</ul>
-<h3 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Documentation: <a href="https://www.postgresql.org/docs/">PostgreSQL Official Documentation</a></li>
-</ul>
+<p>n8n is particularly useful for developers and tech-savvy users who want to create complex automations without being limited to a specific ecosystem of apps.</p>
 
 
 
@@ -1135,7 +788,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../overview-of-storage-in-an-operating-system/" class="md-footer__link md-footer__link--prev" aria-label="Previous: overview of storage in an operating system">
+          <a href="../vector-embedding/" class="md-footer__link md-footer__link--prev" aria-label="Previous: embeddings">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1145,27 +798,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                overview of storage in an operating system
+                embeddings
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../genai-models-by-openai/" class="md-footer__link md-footer__link--next" aria-label="Next: GneAI models by OpenAI">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                GneAI models by OpenAI
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
