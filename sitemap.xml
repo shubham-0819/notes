@@ -2,57 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://shubham-0819.github.io/notes/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/apache/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/best-practices-for-using-genai/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/data-structure/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/genai-models-by-openai/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/how-to-use-copilot/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/overview-of-storage-in-an-operating-system/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/postgreSQL-installation-and-basic-usage/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
+    </url>
+    <url>
+         <loc>https://shubham-0819.github.io/notes/vector-embedding/</loc>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/blog/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ide/essential-shell-tools/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ide/vscode-extensions/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-07</lastmod>
     </url>
 </urlset>
