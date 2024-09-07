@@ -122,5 +122,6 @@ nav:
     - PostgreSQL Installation and Basic Usage: postgreSQL-installation-and-basic-usage.md
     - GneAI models by OpenAI: genai-models-by-openai.md
     - Best Practices For Using GenAi : best-practices-for-using-genai.md
-    - embeddings: vector-embeddings.md
+    - embeddings: vector-embedding.md
+    - workflow automation: workflow-automation-n8n.md
 
