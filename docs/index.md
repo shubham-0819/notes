@@ -6,3 +6,4 @@
 - [overview of storage in an operating system](./overview-of-storage-in-an-operating-system.md)
 - [PostgreSQL Installation and Basic Usage](./postgreSQL-installation-and-basic-usage.md)
 - [How to use copilot](./how-to-use-copilot.md)
+- [Javascript notes](./javascript-notes.md)
