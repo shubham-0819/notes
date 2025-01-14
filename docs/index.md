@@ -7,3 +7,4 @@
 - [PostgreSQL Installation and Basic Usage](./postgreSQL-installation-and-basic-usage.md)
 - [How to use copilot](./how-to-use-copilot.md)
 - [Javascript notes](./javascript-notes.md)
+- [Angular notes](./angular.md)
