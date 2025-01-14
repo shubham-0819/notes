@@ -1,7 +1,3 @@
----
-title: Javascript topics
----
-
 ### Notes on Core JavaScript Topics
 
 ---
