@@ -39,20 +39,20 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: indigo
+      accent: white
       toggle:
         icon: material/toggle-switch-off
         name: Switch to system preference
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: white
+      accent: white
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
 
   font:
-    text: Roboto
+    text: Nunito
     code: Roboto Mono
   favicon: assets/favicon.png
   icon:

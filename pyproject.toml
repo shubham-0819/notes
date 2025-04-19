@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "notes"
+version = "0.1.0"
+description = "Notes"
+authors = ['shubham <shubhamsingh0819@gmail.com>']
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+# Core dependencies
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.12"
+colorama = "^0.4.6"
+paginate = "^0.5.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
