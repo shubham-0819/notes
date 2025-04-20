@@ -109,19 +109,74 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # Page tree
 nav:
   - Home: index.md
-  - Docs:
-    - how to use copilot: how-to-use-copilot.md
-    - essential shell tools: ide/essential-shell-tools.md
-    - vscode extensions: ide/vscode-extensions.md
-    - apache: apache.md
-    - overview of storage in an operating system: overview-of-storage-in-an-operating-system.md
-    - PostgreSQL Installation and Basic Usage: postgreSQL-installation-and-basic-usage.md
-    - GneAI models by OpenAI: genai-models-by-openai.md
-    - Best Practices For Using GenAi : best-practices-for-using-genai.md
-    - embeddings: vector-embedding.md
-    - workflow automation: workflow-automation-n8n.md
+  - Projects: projects/index.md
+  - Concepts:
+    - Overview: concepts/index.md
+    - Operating Systems:
+      - Overview: concepts/operating-systems/index.md
+      - Storage in OS: concepts/operating-systems/overview-of-storage-in-an-operating-system.md
+    - Data Structures: concepts/data-structure.md
+    - Design Patterns: concepts/design-patterns.md
+    - Programming:
+      - Overview: concepts/programming/index.md
+      - JavaScript: concepts/programming/javascript-notes.md
+      - Python: concepts/programming/python.md
+      - Java: concepts/programming/java.md
+  # - AI & ML:
+  #   - Overview: ai/index.md
+  #   - GenAI Models: ai/genai-models-by-openai.md
+  #   - Best Practices: ai/best-practices-for-using-genai.md
+  #   - Vector Embeddings: ai/vector-embedding.md
+  - System Design:
+    - Overview: system-design/index.md
+    - Cloud & Infrastructure:
+      - AWS Services: system-design/aws.md
+    - Containers & Orchestration:
+      - Docker: system-design/docker.md
+      - Kubernetes: system-design/kubernetes.md
+    - Message Queues:
+      - RabbitMQ: system-design/rabbitmq.md
+      - Kafka: system-design/kafka.md
+    - Distributed Systems:
+      - Overview: system-design/distributed/index.md
+  - Databases:
+    - Overview: databases/index.md
+    - PostgreSQL: databases/postgreSQL-installation-and-basic-usage.md
+    - NoSQL:
+      - MongoDB: databases/mongodb.md
+      - Redis: databases/redis.md
+  - Development:
+    - IDE & Tools:
+      - Overview: ide/index.md
+      - Essential Shell Tools: ide/essential-shell-tools.md
+      - VSCode Extensions: ide/vscode-extensions.md
+    - Frameworks:
+      - Overview: frameworks/index.md
+      - Frontend:
+        - Angular: frameworks/angular.md
+        - React: frameworks/frontend/react.md
+      - Backend:
+        - Node.js: frameworks/backend/nodejs.md
+        - Spring Boot: frameworks/backend/spring-boot.md
+      - Web Servers:
+        - Apache: frameworks/apache.md
+        - Nginx: frameworks/servers/nginx.md
+  - Interview Prep:
+    - Overview: interview/index.md
+    - System Design: interview/system-design.md
+    - JavaScript: interview/javascript-notes.md
+    - Angular: interview/angular.md
+    - Java: interview/java.md
+  - About Me: about.md
+  
+
+  # - Blog:
+  #   - Overview: blog/index.md
 
