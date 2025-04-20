@@ -12,22 +12,28 @@
         <meta name="author" content="Shubham">
       
       
+        <link rel="canonical" href="https://shubham-0819.github.io/notes/concepts/operating-systems/">
       
       
+        <link rel="prev" href="../">
       
-      <link rel="icon" href="/notes/assets/favicon.png">
+      
+        <link rel="next" href="overview-of-storage-in-an-operating-system/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Notes</title>
+        <title>Overview - Notes</title>
       
     
     
-      <link rel="stylesheet" href="/notes/assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="/notes/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/notes/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#operating-system-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/notes/." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+    <a href="../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -108,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Overview
             
           </span>
         </div>
@@ -220,7 +231,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/notes/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -239,7 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/notes/projects/" class="md-tabs__link">
+      <a href="../../projects/" class="md-tabs__link">
         
   
   
@@ -256,11 +267,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/notes/concepts/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -282,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/notes/system-design/" class="md-tabs__link">
+        <a href="../../system-design/" class="md-tabs__link">
           
   
   
@@ -304,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/notes/databases/" class="md-tabs__link">
+        <a href="../../databases/" class="md-tabs__link">
           
   
   
@@ -333,7 +346,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/notes/ide/" class="md-tabs__link">
+        <a href="../../ide/" class="md-tabs__link">
           
   
   
@@ -358,7 +371,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/notes/interview/" class="md-tabs__link">
+        <a href="../../interview/" class="md-tabs__link">
           
   
   
@@ -378,7 +391,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/notes/about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -421,7 +434,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/notes/." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -456,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notes/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -478,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notes/projects/" class="md-nav__link">
+      <a href="../../projects/" class="md-nav__link">
         
   
   
@@ -497,6 +510,8 @@
       
   
   
+    
+  
   
   
     
@@ -518,24 +533,26 @@
     
     
       
+        
+        
+      
       
         
       
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
-  
-  
-  
-    <a href="/notes/concepts/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -544,12 +561,318 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
       
-        <span class="md-nav__icon md-icon"></span>
+        
+          
+        
       
-    </a>
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    Operating Systems
+    
+  </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operating Systems
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview-of-storage-in-an-operating-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage in OS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../programming/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/javascript-notes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/python.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/java.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -596,7 +919,7 @@
   
   
   
-    <a href="/notes/system-design/" class="md-nav__link">
+    <a href="../../system-design/" class="md-nav__link">
       
   
   
@@ -654,7 +977,7 @@
   
   
   
-    <a href="/notes/databases/" class="md-nav__link">
+    <a href="../../databases/" class="md-nav__link">
       
   
   
@@ -712,7 +1035,7 @@
   
   
   
-    <a href="/notes/ide/" class="md-nav__link">
+    <a href="../../ide/" class="md-nav__link">
       
   
   
@@ -776,7 +1099,7 @@
   
   
   
-    <a href="/notes/interview/" class="md-nav__link">
+    <a href="../../interview/" class="md-nav__link">
       
   
   
@@ -804,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notes/about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -831,8 +1154,207 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+    <a href="https://github.com/shubham-0819/notes/edit/master/docs/concepts/operating-systems/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/shubham-0819/notes/raw/master/docs/concepts/operating-systems/index.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="operating-system-concepts">Operating System Concepts<a class="headerlink" href="#operating-system-concepts" title="Permanent link">&para;</a></h1>
+<p>Operating system concepts</p>
+<h2 id="process-management-threading">Process Management &amp; Threading<a class="headerlink" href="#process-management-threading" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Process vs Thread</strong></p>
+<ul>
+<li>Processes: Independent execution units with isolated memory space</li>
+<li>Threads: Lightweight units sharing process memory space</li>
+<li>Impact on concurrent programming and application architecture</li>
+</ul>
+</li>
+<li>
+<p><strong>Scheduling</strong></p>
+<ul>
+<li>How OS schedules processes/threads</li>
+<li>Priority levels and their programmatic control</li>
+<li>Real-time scheduling considerations</li>
+<li>Impact on application performance</li>
+</ul>
+</li>
+</ul>
+<h2 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Virtual Memory</strong></p>
+<ul>
+<li>Address space layout</li>
+<li>Page tables and translation</li>
+<li>Impact on large-scale applications</li>
+<li>Memory-mapped files and their uses</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory Allocation</strong></p>
+<ul>
+<li>Stack vs Heap allocation</li>
+<li>Memory fragmentation</li>
+<li>Memory leaks and debugging</li>
+<li>Garbage collection mechanisms</li>
+</ul>
+</li>
+</ul>
+<h2 id="io-storage">I/O &amp; Storage<a class="headerlink" href="#io-storage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>File Systems</strong></p>
+<ul>
+<li>File descriptors and handles</li>
+<li>Buffering and caching</li>
+<li>Asynchronous I/O operations</li>
+<li>Memory-mapped I/O</li>
+</ul>
+</li>
+<li>
+<p><strong>Storage Hierarchy</strong></p>
+<ul>
+<li>Cache levels and their impact</li>
+<li>SSD vs HDD considerations</li>
+<li>RAID configurations</li>
+<li>Impact on database design</li>
+</ul>
+</li>
+</ul>
+<h2 id="inter-process-communication-ipc">Inter-Process Communication (IPC)<a class="headerlink" href="#inter-process-communication-ipc" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>IPC Mechanisms</strong></p>
+<ul>
+<li>Pipes and named pipes</li>
+<li>Shared memory</li>
+<li>Message queues</li>
+<li>Sockets and network programming</li>
+</ul>
+</li>
+<li>
+<p><strong>Synchronization</strong></p>
+<ul>
+<li>Mutexes and semaphores</li>
+<li>Condition variables</li>
+<li>Deadlock prevention</li>
+<li>Race conditions and their mitigation</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-calls-api">System Calls &amp; API<a class="headerlink" href="#system-calls-api" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>System Call Interface</strong></p>
+<ul>
+<li>Key system calls for programmers</li>
+<li>Error handling patterns</li>
+<li>Performance implications</li>
+<li>Security considerations</li>
+</ul>
+</li>
+<li>
+<p><strong>OS-Specific APIs</strong></p>
+<ul>
+<li>POSIX compliance</li>
+<li>Windows API (Win32)</li>
+<li>Platform-specific optimizations</li>
+</ul>
+</li>
+</ul>
+<h2 id="security-permissions">Security &amp; Permissions<a class="headerlink" href="#security-permissions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Process Isolation</strong></p>
+<ul>
+<li>Privilege levels</li>
+<li>Sandboxing</li>
+<li>Container technologies</li>
+<li>Security boundaries</li>
+</ul>
+</li>
+<li>
+<p><strong>Access Control</strong></p>
+<ul>
+<li>File permissions</li>
+<li>Capability-based security</li>
+<li>SELinux and AppArmor</li>
+<li>Secure coding practices</li>
+</ul>
+</li>
+</ul>
+<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Resource Management</strong></p>
+<ul>
+<li>CPU affinity</li>
+<li>Memory pressure handling</li>
+<li>I/O scheduling</li>
+<li>Performance profiling tools</li>
+</ul>
+</li>
+<li>
+<p><strong>System Tuning</strong></p>
+<ul>
+<li>Kernel parameters</li>
+<li>Process/thread limits</li>
+<li>Network stack optimization</li>
+<li>File system tuning</li>
+</ul>
+</li>
+</ul>
+<h2 id="modern-os-concepts">Modern OS Concepts<a class="headerlink" href="#modern-os-concepts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Containerization</strong></p>
+<ul>
+<li>Container runtimes</li>
+<li>Resource isolation</li>
+<li>Network namespaces</li>
+<li>Storage drivers</li>
+</ul>
+</li>
+<li>
+<p><strong>Virtualization</strong></p>
+<ul>
+<li>Hypervisors</li>
+<li>Hardware acceleration</li>
+<li>Virtual device drivers</li>
+<li>Cloud computing implications</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -850,6 +1372,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="overview-of-storage-in-an-operating-system/" class="md-footer__link md-footer__link--next" aria-label="Next: Storage in OS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Storage in OS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -904,10 +1464,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/notes/", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "/notes/assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/notes/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

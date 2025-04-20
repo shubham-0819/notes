@@ -1,0 +1,3646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes">
+      
+      
+        <meta name="author" content="Shubham">
+      
+      
+        <link rel="canonical" href="https://shubham-0819.github.io/notes/interview/javascript-notes/">
+      
+      
+        <link rel="prev" href="../system-design/">
+      
+      
+        <link rel="next" href="../../about/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>JavaScript - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notes-on-core-javascript-topics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JavaScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shubham-0819/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shubham-0819/notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../system-design/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  System Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../databases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shubham-0819/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shubham-0819/notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Concepts
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../system-design/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../databases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../ide/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Interview Prep
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Prep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-core-javascript-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Core JavaScript Topics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Core JavaScript Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-scope-and-closures" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Scope and Closures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-execution-context-and-hoisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Execution Context and Hoisting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-event-loop-and-asynchronous-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Event Loop and Asynchronous Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prototype-and-prototypal-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Prototype and Prototypal Inheritance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-strict-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Strict Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-modern-javascript-es6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Modern JavaScript (ES6+)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Modern JavaScript (ES6+)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-arrow-functions-and-lexical-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Arrow Functions and Lexical this
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-destructuring-and-spreadrest-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Destructuring and Spread/Rest Operators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modules-importexport" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Modules (import/export)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-template-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Template Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-promises-and-asyncawait" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Promises and Async/Await
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-iterators-and-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Iterators and Generators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-advanced-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Advanced JavaScript
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Advanced JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-event-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Event Delegation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-debouncing-and-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Debouncing and Throttling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-functional-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Functional Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-memory-management-and-garbage-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory Management and Garbage Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-javascript-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on JavaScript in the Browser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on JavaScript in the Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dom-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. DOM Manipulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-browser-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Browser APIs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-event-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Event Listeners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-javascript-on-the-server-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on JavaScript on the Server (Node.js)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on JavaScript on the Server (Node.js)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Core Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-asynchronous-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Asynchronous Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-event-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Event Emitter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-restful-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. RESTful APIs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-package-management-npmyarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Package Management (npm/yarn)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-testing-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Testing and Debugging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Testing and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Unit Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Debugging Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-code-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Code Coverage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mocking-and-spying" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mocking and Spying
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-performance-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Performance and Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Performance and Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Code Splitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lazy-loading-and-preloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Lazy Loading and Preloading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-minification" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Minification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-benchmarking" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Benchmarking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cross-site-scripting-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Cross-Site Scripting (XSS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cross-origin-resource-sharing-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cross-Origin Resource Sharing (CORS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-oauth-and-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. OAuth and JWT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-secure-data-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Secure Data Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-soft-skills-for-a-senior-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on Soft Skills for a Senior Developer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes on Soft Skills for a Senior Developer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Code Reviews
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-javascript-runtime-inner-workings-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the JavaScript Runtime: Inner Workings Explained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding the JavaScript Runtime: Inner Workings Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduction-to-javascript-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction to JavaScript Runtime
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction to JavaScript Runtime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components-of-a-javascript-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components of a JavaScript Runtime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-execution-context-and-call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Execution Context and Call Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Contexts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution Contexts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-execution-context-gec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Execution Context (GEC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-execution-context-fec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Execution Context (FEC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eval-execution-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eval Execution Context
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Call Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Call Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-depth-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Depth Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-management-garbage-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Management &amp; Garbage Collection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Memory Management &amp; Garbage Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-allocation-the-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Allocation: The Heap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#garbage-collection-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Garbage Collection Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Garbage Collection Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mark-and-sweep-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mark-and-Sweep Algorithm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges and Pitfalls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-event-loop-asynchronous-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Event Loop &amp; Asynchronous Execution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-event-loop-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Event Loop in Detail
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Event Loop in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microtasks-vs-macrotasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microtasks vs. Macrotasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microtasks vs. Macrotasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microtasks:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macrotasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Macrotasks:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Demonstration:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-event-loop-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js Event Loop Phases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-web-apis-background-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Web APIs &amp; Background Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-web-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Web APIs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node.js APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-background-tasks-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Background Tasks Work
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-concurrency-parallelism-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Concurrency &amp; Parallelism in JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallelism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallelism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-a-web-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with a Web Worker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-javascript-engines-v8-spidermonkey-javascriptcore" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. JavaScript Engines (V8, SpiderMonkey, JavaScriptCore)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popular-javascript-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular JavaScript Engines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular JavaScript Engines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v8-chrome-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      V8 (Chrome, Node.js)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spidermonkey-firefox" class="md-nav__link">
+    <span class="md-ellipsis">
+      SpiderMonkey (Firefox)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascriptcore-safari" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScriptCore (Safari)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recap-of-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap of Key Concepts:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Further Reading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Angular
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/shubham-0819/notes/edit/master/docs/interview/javascript-notes.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/shubham-0819/notes/raw/master/docs/interview/javascript-notes.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h3 id="notes-on-core-javascript-topics">Notes on Core JavaScript Topics<a class="headerlink" href="#notes-on-core-javascript-topics" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-scope-and-closures"><strong>1. Scope and Closures</strong><a class="headerlink" href="#1-scope-and-closures" title="Permanent link">&para;</a></h4>
+<p><strong>Scope</strong> defines the accessibility of variables, functions, and objects in your code during runtime. JavaScript has three types of scope:
+- <strong>Global Scope</strong>: Variables declared outside any function or block.
+- <strong>Function Scope</strong>: Variables declared inside a function.
+- <strong>Block Scope</strong>: Variables declared inside a block (<code>{}</code>) using <code>let</code> or <code>const</code>.</p>
+<p><strong>Lexical Scoping</strong>: JavaScript uses lexical scoping, meaning the scope of a variable is determined by its position in the source code.</p>
+<p><strong><code>var</code>, <code>let</code>, and <code>const</code></strong>:
+- <code>var</code>: Function-scoped, hoisted, and can be redeclared.
+- <code>let</code>: Block-scoped, not hoisted, and cannot be redeclared.
+- <code>const</code>: Block-scoped, not hoisted, cannot be redeclared, and cannot be reassigned.</p>
+<p><strong>Closures</strong>: A closure is a function that retains access to its lexical scope even when the function is executed outside that scope. Closures are useful for encapsulation and handling asynchronous code.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Lexical Scoping
+function outer() {
+    let outerVar = 'I am outside!';
+
+    function inner() {
+        console.log(outerVar); // Access outerVar due to lexical scoping
+    }
+    inner();
+}
+outer(); // Output: &quot;I am outside!&quot;
+
+// Closure
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        console.log(count);
+    };
+}
+const counter = createCounter();
+counter(); // Output: 1
+counter(); // Output: 2
+</code></pre>
+<hr />
+<h4 id="2-execution-context-and-hoisting"><strong>2. Execution Context and Hoisting</strong><a class="headerlink" href="#2-execution-context-and-hoisting" title="Permanent link">&para;</a></h4>
+<p><strong>Execution Context</strong>: JavaScript code runs inside an execution context, which has two phases:
+- <strong>Creation Phase</strong>: Memory is allocated for variables and functions (hoisting).
+- <strong>Execution Phase</strong>: Code is executed line by line.</p>
+<p><strong>Hoisting</strong>: JavaScript moves variable and function declarations to the top of their scope during the creation phase.
+- <strong>Function Declarations</strong>: Fully hoisted (can be called before declaration).
+- <strong>Variable Declarations</strong>: Partially hoisted (<code>var</code> is hoisted but initialized as <code>undefined</code>, <code>let</code> and <code>const</code> are hoisted but not initialized).</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">console.log(x); // Output: undefined (var is hoisted)
+var x = 10;
+
+console.log(y); // ReferenceError: Cannot access 'y' before initialization (let/const are hoisted but not initialized)
+let y = 20;
+
+foo(); // Output: &quot;Hello&quot; (function declaration is fully hoisted)
+function foo() {
+    console.log(&quot;Hello&quot;);
+}
+</code></pre>
+<hr />
+<h4 id="3-event-loop-and-asynchronous-programming"><strong>3. Event Loop and Asynchronous Programming</strong><a class="headerlink" href="#3-event-loop-and-asynchronous-programming" title="Permanent link">&para;</a></h4>
+<p><strong>Event Loop</strong>: JavaScript is single-threaded, but it uses the event loop to handle asynchronous operations. The event loop continuously checks the call stack and the task queue (macrotasks and microtasks).</p>
+<p><strong>Macrotasks vs. Microtasks</strong>:
+- <strong>Macrotasks</strong>: <code>setTimeout</code>, <code>setInterval</code>, I/O operations.
+- <strong>Microtasks</strong>: Promises, <code>queueMicrotask</code>, <code>process.nextTick</code> (Node.js).</p>
+<p><strong><code>async/await</code></strong>: Syntactic sugar for working with promises, making asynchronous code look synchronous.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">console.log(&quot;Start&quot;);
+
+setTimeout(() =&gt; console.log(&quot;Timeout&quot;), 0); // Macrotask
+
+Promise.resolve().then(() =&gt; console.log(&quot;Promise&quot;)); // Microtask
+
+console.log(&quot;End&quot;);
+
+// Output:
+// Start
+// End
+// Promise
+// Timeout
+
+// async/await Example
+async function fetchData() {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+}
+fetchData();
+</code></pre>
+<hr />
+<h4 id="4-prototype-and-prototypal-inheritance"><strong>4. Prototype and Prototypal Inheritance</strong><a class="headerlink" href="#4-prototype-and-prototypal-inheritance" title="Permanent link">&para;</a></h4>
+<p><strong>Prototype</strong>: Every JavaScript object has a prototype, which is another object that it inherits properties and methods from.</p>
+<p><strong>Prototypal Inheritance</strong>: Objects can inherit properties and methods from other objects via the prototype chain.</p>
+<p><strong><code>Object.create()</code></strong>: Creates a new object with the specified prototype.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">const animal = {
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+};
+
+const dog = Object.create(animal);
+dog.name = &quot;Rex&quot;;
+dog.speak(); // Output: &quot;Rex makes a noise.&quot;
+
+// Constructor Function and Prototype
+function Person(name) {
+    this.name = name;
+}
+Person.prototype.greet = function() {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+const john = new Person(&quot;John&quot;);
+john.greet(); // Output: &quot;Hello, my name is John&quot;
+</code></pre>
+<hr />
+<h4 id="5-strict-mode"><strong>5. Strict Mode</strong><a class="headerlink" href="#5-strict-mode" title="Permanent link">&para;</a></h4>
+<p><strong>Strict Mode</strong>: Enforces stricter parsing and error handling in your JavaScript code. It prevents common mistakes and "unsafe" actions.</p>
+<p><strong>Benefits</strong>:
+- Throws errors for common coding mistakes.
+- Prevents the use of undeclared variables.
+- Disallows duplicate parameter names.
+- Makes <code>this</code> undefined in global functions.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">&quot;use strict&quot;;
+
+x = 10; // ReferenceError: x is not defined
+
+function duplicateParam(a, a) { // SyntaxError: Duplicate parameter name not allowed
+    console.log(a);
+}
+
+function globalThis() {
+    console.log(this); // Output: undefined (in strict mode)
+}
+globalThis();
+</code></pre>
+<hr />
+<h3 id="notes-on-modern-javascript-es6">Notes on Modern JavaScript (ES6+)<a class="headerlink" href="#notes-on-modern-javascript-es6" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-arrow-functions-and-lexical-this"><strong>1. Arrow Functions and Lexical <code>this</code></strong><a class="headerlink" href="#1-arrow-functions-and-lexical-this" title="Permanent link">&para;</a></h4>
+<p><strong>Arrow Functions</strong>: A concise syntax for writing functions. They are anonymous and do not have their own <code>this</code>, <code>arguments</code>, <code>super</code>, or <code>new.target</code>.</p>
+<p><strong>Lexical <code>this</code></strong>: Arrow functions inherit <code>this</code> from the parent scope, making them ideal for callbacks and methods where you want to preserve the context.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Traditional Function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow Function
+const add = (a, b) =&gt; a + b;
+
+// Lexical `this`
+const obj = {
+    name: &quot;Alice&quot;,
+    greet: function() {
+        setTimeout(() =&gt; {
+            console.log(`Hello, ${this.name}`); // `this` refers to `obj`
+        }, 1000);
+    }
+};
+obj.greet(); // Output: &quot;Hello, Alice&quot;
+</code></pre>
+<hr />
+<h4 id="2-destructuring-and-spreadrest-operators"><strong>2. Destructuring and Spread/Rest Operators</strong><a class="headerlink" href="#2-destructuring-and-spreadrest-operators" title="Permanent link">&para;</a></h4>
+<p><strong>Destructuring</strong>: Extract values from arrays or objects into distinct variables.</p>
+<p><strong>Spread Operator (<code>...</code>)</strong>: Expands an iterable (array, object, string) into individual elements.</p>
+<p><strong>Rest Operator (<code>...</code>)</strong>: Collects multiple elements into an array or object.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Array Destructuring
+const [a, b, ...rest] = [1, 2, 3, 4];
+console.log(a); // Output: 1
+console.log(rest); // Output: [3, 4]
+
+// Object Destructuring
+const person = { name: &quot;John&quot;, age: 30 };
+const { name, age } = person;
+console.log(name); // Output: &quot;John&quot;
+
+// Spread Operator
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // Output: [1, 2, 3, 4, 5]
+
+// Rest Operator
+function sum(...numbers) {
+    return numbers.reduce((acc, num) =&gt; acc + num, 0);
+}
+console.log(sum(1, 2, 3)); // Output: 6
+</code></pre>
+<hr />
+<h4 id="3-modules-importexport"><strong>3. Modules (import/export)</strong><a class="headerlink" href="#3-modules-importexport" title="Permanent link">&para;</a></h4>
+<p><strong>Modules</strong>: ES6 introduced a native module system to organize code into reusable and maintainable pieces.</p>
+<ul>
+<li><strong><code>export</code></strong>: Exports variables, functions, or classes from a module.</li>
+<li><strong><code>import</code></strong>: Imports exported members from another module.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// math.js
+export const add = (a, b) =&gt; a + b;
+export const subtract = (a, b) =&gt; a - b;
+
+// app.js
+import { add, subtract } from './math.js';
+console.log(add(2, 3)); // Output: 5
+console.log(subtract(5, 2)); // Output: 3
+
+// Default Export
+// math.js
+export default function multiply(a, b) {
+    return a * b;
+}
+
+// app.js
+import multiply from './math.js';
+console.log(multiply(2, 3)); // Output: 6
+</code></pre>
+<hr />
+<h4 id="4-template-literals"><strong>4. Template Literals</strong><a class="headerlink" href="#4-template-literals" title="Permanent link">&para;</a></h4>
+<p><strong>Template Literals</strong>: Use backticks (<code>`</code>) to create strings that can span multiple lines and embed expressions using <code>${}</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">const name = &quot;Alice&quot;;
+const age = 25;
+
+// Multi-line String
+const message = `
+  Hello, my name is ${name}.
+  I am ${age} years old.
+`;
+console.log(message);
+
+// Expression Embedding
+const sum = (a, b) =&gt; a + b;
+console.log(`The sum of 2 and 3 is ${sum(2, 3)}.`); // Output: &quot;The sum of 2 and 3 is 5.&quot;
+</code></pre>
+<hr />
+<h4 id="5-promises-and-asyncawait"><strong>5. Promises and Async/Await</strong><a class="headerlink" href="#5-promises-and-asyncawait" title="Permanent link">&para;</a></h4>
+<p><strong>Promises</strong>: Represent the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+<p><strong><code>async/await</code></strong>: Syntactic sugar for working with promises, making asynchronous code look synchronous.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Promises
+const fetchData = () =&gt; {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            resolve(&quot;Data fetched!&quot;);
+        }, 2000);
+    });
+};
+
+fetchData()
+    .then(data =&gt; console.log(data)) // Output: &quot;Data fetched!&quot;
+    .catch(error =&gt; console.error(error));
+
+// Async/Await
+async function fetchDataAsync() {
+    try {
+        const data = await fetchData();
+        console.log(data); // Output: &quot;Data fetched!&quot;
+    } catch (error) {
+        console.error(error);
+    }
+}
+fetchDataAsync();
+</code></pre>
+<hr />
+<h4 id="6-iterators-and-generators"><strong>6. Iterators and Generators</strong><a class="headerlink" href="#6-iterators-and-generators" title="Permanent link">&para;</a></h4>
+<p><strong>Iterators</strong>: Objects that implement the <code>next()</code> method, returning an object with <code>value</code> and <code>done</code> properties.</p>
+<p><strong>Generators</strong>: Functions that can be paused and resumed, using <code>function*</code> and <code>yield</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Iterator
+const arrayIterator = (arr) =&gt; {
+    let index = 0;
+    return {
+        next: () =&gt; {
+            return index &lt; arr.length ?
+                { value: arr[index++], done: false } :
+                { done: true };
+        }
+    };
+};
+
+const iterator = arrayIterator([1, 2, 3]);
+console.log(iterator.next()); // Output: { value: 1, done: false }
+console.log(iterator.next()); // Output: { value: 2, done: false }
+console.log(iterator.next()); // Output: { value: 3, done: false }
+console.log(iterator.next()); // Output: { done: true }
+
+// Generator
+function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = numberGenerator();
+console.log(gen.next().value); // Output: 1
+console.log(gen.next().value); // Output: 2
+console.log(gen.next().value); // Output: 3
+</code></pre>
+<hr />
+<h3 id="notes-on-advanced-javascript">Notes on Advanced JavaScript<a class="headerlink" href="#notes-on-advanced-javascript" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-event-delegation"><strong>1. Event Delegation</strong><a class="headerlink" href="#1-event-delegation" title="Permanent link">&para;</a></h4>
+<p><strong>Event Delegation</strong>: A technique where you delegate event handling to a parent element instead of attaching event listeners to individual child elements. This leverages the event bubbling mechanism.</p>
+<p><strong>Benefits</strong>:
+- Reduces the number of event listeners, improving performance.
+- Works dynamically for elements added after the initial page load.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Without Event Delegation
+document.querySelectorAll('.item').forEach(item =&gt; {
+    item.addEventListener('click', () =&gt; {
+        console.log('Item clicked');
+    });
+});
+
+// With Event Delegation
+document.querySelector('.container').addEventListener('click', (event) =&gt; {
+    if (event.target.classList.contains('item')) {
+        console.log('Item clicked');
+    }
+});
+</code></pre>
+<hr />
+<h4 id="2-debouncing-and-throttling"><strong>2. Debouncing and Throttling</strong><a class="headerlink" href="#2-debouncing-and-throttling" title="Permanent link">&para;</a></h4>
+<p><strong>Debouncing</strong>: Delays the execution of a function until a certain amount of time has passed since the last time it was called. Useful for search inputs or resizing events.</p>
+<p><strong>Throttling</strong>: Limits the execution of a function to once every specified time interval. Useful for scroll or mouse move events.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Debouncing
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() =&gt; func.apply(this, args), delay);
+    };
+}
+
+window.addEventListener('resize', debounce(() =&gt; {
+    console.log('Window resized');
+}, 300));
+
+// Throttling
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() =&gt; inThrottle = false, limit);
+        }
+    };
+}
+
+window.addEventListener('scroll', throttle(() =&gt; {
+    console.log('Window scrolled');
+}, 300));
+</code></pre>
+<hr />
+<h4 id="3-functional-programming"><strong>3. Functional Programming</strong><a class="headerlink" href="#3-functional-programming" title="Permanent link">&para;</a></h4>
+<p><strong>Functional Programming (FP)</strong>: A programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state or mutable data.</p>
+<p><strong>Key Concepts</strong>:
+- <strong>Immutability</strong>: Data cannot be changed after creation.
+- <strong>Pure Functions</strong>: Functions that always return the same output for the same input and have no side effects.
+- <strong>Higher-Order Functions</strong>: Functions that take other functions as arguments or return functions.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Immutability
+const arr = [1, 2, 3];
+const newArr = [...arr, 4]; // Creates a new array instead of modifying the original
+
+// Pure Function
+function add(a, b) {
+    return a + b;
+}
+
+// Higher-Order Function
+function multiplyBy(factor) {
+    return function(number) {
+        return number * factor;
+    };
+}
+const double = multiplyBy(2);
+console.log(double(5)); // Output: 10
+</code></pre>
+<hr />
+<h4 id="4-memory-management-and-garbage-collection"><strong>4. Memory Management and Garbage Collection</strong><a class="headerlink" href="#4-memory-management-and-garbage-collection" title="Permanent link">&para;</a></h4>
+<p><strong>Memory Management</strong>: JavaScript automatically allocates and frees memory, but developers must avoid memory leaks.</p>
+<p><strong>Garbage Collection</strong>: JavaScript engines use garbage collection to reclaim memory occupied by unused objects.</p>
+<p><strong>Common Memory Leaks</strong>:
+- Unintended global variables.
+- Forgotten timers or callbacks.
+- Detached DOM elements.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Memory Leak Example
+function createLeak() {
+    leakedVar = 'I am a global variable'; // Unintended global variable
+}
+
+// Fixing Memory Leaks
+function noLeak() {
+    let safeVar = 'I am a local variable'; // Local variable
+}
+
+// Detached DOM Elements
+let button = document.createElement('button');
+document.body.appendChild(button);
+button = null; // Detached DOM element (memory leak if not handled)
+</code></pre>
+<hr />
+<h4 id="5-error-handling"><strong>5. Error Handling</strong><a class="headerlink" href="#5-error-handling" title="Permanent link">&para;</a></h4>
+<p><strong>Error Handling</strong>: Techniques to catch and handle runtime and asynchronous errors gracefully.</p>
+<p><strong>Strategies</strong>:
+- <strong><code>try...catch</code></strong>: For synchronous code.
+- <strong><code>.catch()</code></strong>: For promises.
+- <strong><code>async/await</code> with <code>try...catch</code></strong>: For asynchronous code.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Synchronous Error Handling
+try {
+    throw new Error('Something went wrong!');
+} catch (error) {
+    console.error(error.message); // Output: &quot;Something went wrong!&quot;
+}
+
+// Asynchronous Error Handling with Promises
+fetch('https://api.example.com/data')
+    .then(response =&gt; response.json())
+    .catch(error =&gt; console.error('Fetch error:', error));
+
+// Asynchronous Error Handling with async/await
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+}
+fetchData();
+</code></pre>
+<hr />
+<h3 id="notes-on-javascript-in-the-browser">Notes on JavaScript in the Browser<a class="headerlink" href="#notes-on-javascript-in-the-browser" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-dom-manipulation"><strong>1. DOM Manipulation</strong><a class="headerlink" href="#1-dom-manipulation" title="Permanent link">&para;</a></h4>
+<p><strong>DOM (Document Object Model)</strong>: A tree-like representation of the HTML document. JavaScript can interact with the DOM to dynamically change the content, structure, and style of a webpage.</p>
+<p><strong>Key Operations</strong>:
+- <strong>Selecting Elements</strong>: Use methods like <code>querySelector</code>, <code>querySelectorAll</code>, <code>getElementById</code>, etc.
+- <strong>Traversing the DOM</strong>: Navigate between parent, child, and sibling nodes.
+- <strong>Modifying Elements</strong>: Change attributes, styles, and content.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Selecting Elements
+const header = document.querySelector('h1');
+const allParagraphs = document.querySelectorAll('p');
+
+// Traversing the DOM
+const parent = header.parentElement;
+const firstChild = parent.firstElementChild;
+
+// Modifying Elements
+header.textContent = 'New Header';
+header.style.color = 'blue';
+
+// Creating and Appending Elements
+const newParagraph = document.createElement('p');
+newParagraph.textContent = 'This is a new paragraph.';
+document.body.appendChild(newParagraph);
+</code></pre>
+<hr />
+<h4 id="2-browser-apis"><strong>2. Browser APIs</strong><a class="headerlink" href="#2-browser-apis" title="Permanent link">&para;</a></h4>
+<p><strong>Browser APIs</strong>: Built-in functionalities provided by the browser to interact with the browser and the user's environment.</p>
+<p><strong>Common APIs</strong>:
+- <strong>Fetch API</strong>: For making network requests.
+- <strong>Web Storage (<code>localStorage</code> and <code>sessionStorage</code>)</strong>: For storing data on the client side.
+- <strong>Geolocation API</strong>: For accessing the user's location.
+- <strong>Canvas API</strong>: For drawing graphics and animations.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Fetch API
+fetch('https://api.example.com/data')
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data))
+    .catch(error =&gt; console.error('Error:', error));
+
+// Web Storage
+localStorage.setItem('name', 'Alice');
+console.log(localStorage.getItem('name')); // Output: &quot;Alice&quot;
+
+// Geolocation API
+navigator.geolocation.getCurrentPosition(position =&gt; {
+    console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+});
+
+// Canvas API
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = 'green';
+ctx.fillRect(10, 10, 100, 100);
+</code></pre>
+<hr />
+<h4 id="3-event-listeners"><strong>3. Event Listeners</strong><a class="headerlink" href="#3-event-listeners" title="Permanent link">&para;</a></h4>
+<p><strong>Event Listeners</strong>: Functions that are called in response to specific events (e.g., clicks, keypresses).</p>
+<p><strong>Event Phases</strong>:
+- <strong>Capturing Phase</strong>: Event travels from the root to the target.
+- <strong>Bubbling Phase</strong>: Event travels from the target back to the root.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Adding Event Listeners
+const button = document.querySelector('button');
+button.addEventListener('click', () =&gt; {
+    console.log('Button clicked!');
+});
+
+// Event Bubbling and Capturing
+document.querySelector('.outer').addEventListener('click', () =&gt; {
+    console.log('Outer div clicked');
+}, true); // Capturing phase
+
+document.querySelector('.inner').addEventListener('click', () =&gt; {
+    console.log('Inner div clicked');
+}); // Bubbling phase
+
+// Event Delegation
+document.querySelector('ul').addEventListener('click', (event) =&gt; {
+    if (event.target.tagName === 'LI') {
+        console.log('List item clicked:', event.target.textContent);
+    }
+});
+</code></pre>
+<hr />
+<h4 id="4-performance-optimization"><strong>4. Performance Optimization</strong><a class="headerlink" href="#4-performance-optimization" title="Permanent link">&para;</a></h4>
+<p><strong>Performance Optimization</strong>: Techniques to improve the speed and efficiency of your web application.</p>
+<p><strong>Key Techniques</strong>:
+- <strong>Lazy Loading</strong>: Load resources (e.g., images, scripts) only when needed.
+- <strong>Code Splitting</strong>: Split your JavaScript code into smaller chunks to load only what's necessary.
+- <strong>Minimizing Reflows/Repaints</strong>: Reduce the number of times the browser recalculates layout and repaints the screen.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Lazy Loading Images
+&lt;img data-src=&quot;image.jpg&quot; alt=&quot;Lazy-loaded image&quot; class=&quot;lazy&quot;&gt;
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', () =&gt; {
+        const lazyImages = document.querySelectorAll('.lazy');
+        lazyImages.forEach(img =&gt; {
+            img.src = img.dataset.src;
+        });
+    });
+&lt;/script&gt;
+
+// Code Splitting with Dynamic Imports
+button.addEventListener('click', async () =&gt; {
+    const module = await import('./module.js');
+    module.someFunction();
+});
+
+// Minimizing Reflows/Repaints
+const element = document.getElementById('myElement');
+element.style.display = 'none'; // Hide element to avoid reflows
+// Perform multiple DOM changes
+element.style.width = '100px';
+element.style.height = '100px';
+element.style.display = 'block'; // Show element after changes
+</code></pre>
+<hr />
+<h3 id="notes-on-javascript-on-the-server-nodejs">Notes on JavaScript on the Server (Node.js)<a class="headerlink" href="#notes-on-javascript-on-the-server-nodejs" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-core-modules"><strong>1. Core Modules</strong><a class="headerlink" href="#1-core-modules" title="Permanent link">&para;</a></h4>
+<p>Node.js provides built-in <strong>core modules</strong> that enable server-side functionality. Some of the most commonly used modules include:</p>
+<ul>
+<li><strong><code>fs</code> (File System)</strong>: Interact with the file system (read/write files).</li>
+<li><strong><code>path</code></strong>: Handle and transform file paths.</li>
+<li><strong><code>http</code></strong>: Create HTTP servers and clients.</li>
+<li><strong><code>stream</code></strong>: Handle streaming data (e.g., reading/writing large files).</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// fs Module
+const fs = require('fs');
+
+// Read a file
+fs.readFile('example.txt', 'utf8', (err, data) =&gt; {
+    if (err) throw err;
+    console.log(data);
+});
+
+// Write to a file
+fs.writeFile('example.txt', 'Hello, Node.js!', (err) =&gt; {
+    if (err) throw err;
+    console.log('File written successfully.');
+});
+
+// path Module
+const path = require('path');
+const filePath = path.join(__dirname, 'example.txt');
+console.log(filePath); // Output: Absolute path to example.txt
+
+// http Module
+const http = require('http');
+const server = http.createServer((req, res) =&gt; {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+});
+server.listen(3000, () =&gt; {
+    console.log('Server running on http://localhost:3000');
+});
+
+// stream Module
+const readStream = fs.createReadStream('example.txt');
+const writeStream = fs.createWriteStream('output.txt');
+readStream.pipe(writeStream); // Pipes data from readStream to writeStream
+</code></pre>
+<hr />
+<h4 id="2-asynchronous-patterns"><strong>2. Asynchronous Patterns</strong><a class="headerlink" href="#2-asynchronous-patterns" title="Permanent link">&para;</a></h4>
+<p>Node.js is designed to be non-blocking and asynchronous. Key patterns for handling asynchronous operations include:</p>
+<ul>
+<li><strong>Callbacks</strong>: Functions passed as arguments to other functions and executed after an operation completes.</li>
+<li><strong>Promises</strong>: Objects representing the eventual completion (or failure) of an asynchronous operation.</li>
+<li><strong><code>async/await</code></strong>: Syntactic sugar for working with promises, making asynchronous code look synchronous.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Callbacks
+fs.readFile('example.txt', 'utf8', (err, data) =&gt; {
+    if (err) throw err;
+    console.log(data);
+});
+
+// Promises
+const readFilePromise = (file) =&gt; {
+    return new Promise((resolve, reject) =&gt; {
+        fs.readFile(file, 'utf8', (err, data) =&gt; {
+            if (err) reject(err);
+            else resolve(data);
+        });
+    });
+};
+readFilePromise('example.txt')
+    .then(data =&gt; console.log(data))
+    .catch(err =&gt; console.error(err));
+
+// async/await
+async function readFileAsync() {
+    try {
+        const data = await readFilePromise('example.txt');
+        console.log(data);
+    } catch (err) {
+        console.error(err);
+    }
+}
+readFileAsync();
+</code></pre>
+<hr />
+<h4 id="3-event-emitter"><strong>3. Event Emitter</strong><a class="headerlink" href="#3-event-emitter" title="Permanent link">&para;</a></h4>
+<p><strong>Event Emitter</strong>: A core Node.js module (<code>events</code>) that allows you to create, fire, and listen for custom events. It’s the foundation of many Node.js features like streams and HTTP servers.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">const EventEmitter = require('events');
+
+// Create a custom event emitter
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+// Listen for an event
+myEmitter.on('greet', (name) =&gt; {
+    console.log(`Hello, ${name}!`);
+});
+
+// Emit the event
+myEmitter.emit('greet', 'Alice'); // Output: &quot;Hello, Alice!&quot;
+</code></pre>
+<hr />
+<h4 id="4-restful-apis"><strong>4. RESTful APIs</strong><a class="headerlink" href="#4-restful-apis" title="Permanent link">&para;</a></h4>
+<p><strong>RESTful APIs</strong>: APIs that follow REST (Representational State Transfer) principles. They use HTTP methods (GET, POST, PUT, DELETE) to perform CRUD (Create, Read, Update, Delete) operations.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) =&gt; {
+    if (req.method === 'GET' &amp;&amp; req.url === '/data') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message: 'Hello, World!' }));
+    } else if (req.method === 'POST' &amp;&amp; req.url === '/data') {
+        let body = '';
+        req.on('data', chunk =&gt; body += chunk);
+        req.on('end', () =&gt; {
+            res.writeHead(201, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ received: JSON.parse(body) }));
+        });
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+    }
+});
+
+server.listen(3000, () =&gt; {
+    console.log('Server running on http://localhost:3000');
+});
+</code></pre>
+<hr />
+<h4 id="5-package-management-npmyarn"><strong>5. Package Management (npm/yarn)</strong><a class="headerlink" href="#5-package-management-npmyarn" title="Permanent link">&para;</a></h4>
+<p><strong>Package Management</strong>: Tools like <code>npm</code> (Node Package Manager) and <code>yarn</code> help manage dependencies and scripts for Node.js projects.</p>
+<p><strong>Key Commands</strong>:
+- <strong><code>npm init</code></strong>: Initialize a new Node.js project.
+- <strong><code>npm install &lt;package&gt;</code></strong>: Install a package.
+- <strong><code>npm run &lt;script&gt;</code></strong>: Run a script defined in <code>package.json</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash"># Initialize a new project
+npm init -y
+
+# Install a package (e.g., Express)
+npm install express
+
+# Define a script in package.json
+{
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node app.js&quot;
+  }
+}
+
+# Run the script
+npm start
+</code></pre>
+<p><strong>Using Yarn</strong>:</p>
+<pre><code class="language-bash"># Initialize a new project
+yarn init -y
+
+# Install a package
+yarn add express
+
+# Run a script
+yarn start
+</code></pre>
+<hr />
+<h3 id="notes-on-testing-and-debugging">Notes on Testing and Debugging<a class="headerlink" href="#notes-on-testing-and-debugging" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-unit-testing"><strong>1. Unit Testing</strong><a class="headerlink" href="#1-unit-testing" title="Permanent link">&para;</a></h4>
+<p><strong>Unit Testing</strong>: Testing individual units or components of your code in isolation to ensure they work as expected. Popular frameworks include <strong>Jest</strong> and <strong>Mocha</strong>.</p>
+<p><strong>Jest</strong>: A powerful testing framework with built-in assertions, mocking, and code coverage.</p>
+<p><strong>Mocha</strong>: A flexible testing framework often paired with assertion libraries like <strong>Chai</strong>.</p>
+<p><strong>Example with Jest</strong>:</p>
+<pre><code class="language-javascript">// math.js
+function add(a, b) {
+    return a + b;
+}
+
+// math.test.js
+const { add } = require('./math');
+
+test('adds 1 + 2 to equal 3', () =&gt; {
+    expect(add(1, 2)).toBe(3);
+});
+
+test('adds -1 + 1 to equal 0', () =&gt; {
+    expect(add(-1, 1)).toBe(0);
+});
+</code></pre>
+<p><strong>Example with Mocha + Chai</strong>:</p>
+<pre><code class="language-javascript">// math.js
+function add(a, b) {
+    return a + b;
+}
+
+// math.test.js
+const { add } = require('./math');
+const chai = require('chai');
+const expect = chai.expect;
+
+describe('add function', () =&gt; {
+    it('should return 3 for 1 + 2', () =&gt; {
+        expect(add(1, 2)).to.equal(3);
+    });
+
+    it('should return 0 for -1 + 1', () =&gt; {
+        expect(add(-1, 1)).to.equal(0);
+    });
+});
+</code></pre>
+<hr />
+<h4 id="2-debugging-tools"><strong>2. Debugging Tools</strong><a class="headerlink" href="#2-debugging-tools" title="Permanent link">&para;</a></h4>
+<p><strong>Debugging Tools</strong>: Tools to identify and fix issues in your code.</p>
+<ul>
+<li><strong>Browser DevTools</strong>: Debug JavaScript running in the browser (e.g., Chrome DevTools).</li>
+<li><strong>Node.js Debugger</strong>: Debug Node.js applications using the built-in debugger or tools like <strong>VS Code</strong>.</li>
+</ul>
+<p><strong>Example with Chrome DevTools</strong>:
+1. Open Chrome DevTools (<code>F12</code> or <code>Ctrl+Shift+I</code>).
+2. Go to the <strong>Sources</strong> tab.
+3. Set breakpoints in your JavaScript code.
+4. Reload the page and inspect variables, call stack, and step through code.</p>
+<p><strong>Example with Node.js Debugger</strong>:</p>
+<pre><code class="language-bash"># Start Node.js in debug mode
+node inspect app.js
+</code></pre>
+<p><strong>Example with VS Code</strong>:
+1. Add a <code>launch.json</code> file in the <code>.vscode</code> folder:</p>
+<pre><code class="language-json">{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;type&quot;: &quot;node&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;name&quot;: &quot;Debug Node.js&quot;,
+            &quot;skipFiles&quot;: [&quot;&lt;node_internals&gt;/**&quot;],
+            &quot;program&quot;: &quot;${workspaceFolder}/app.js&quot;
+        }
+    ]
+}
+</code></pre>
+<ol>
+<li>Set breakpoints in your code.</li>
+<li>Press <code>F5</code> to start debugging.</li>
+</ol>
+<hr />
+<h4 id="3-code-coverage"><strong>3. Code Coverage</strong><a class="headerlink" href="#3-code-coverage" title="Permanent link">&para;</a></h4>
+<p><strong>Code Coverage</strong>: Measures how much of your code is tested. Tools like <strong>Istanbul</strong> (used by Jest) help generate coverage reports.</p>
+<p><strong>Example with Jest</strong>:</p>
+<pre><code class="language-bash"># Run tests with coverage
+npx jest --coverage
+</code></pre>
+<p>This generates a coverage report in the <code>coverage</code> folder, showing:
+- <strong>Statement Coverage</strong>: Percentage of statements executed.
+- <strong>Branch Coverage</strong>: Percentage of branches (e.g., <code>if</code> statements) executed.
+- <strong>Function Coverage</strong>: Percentage of functions called.
+- <strong>Line Coverage</strong>: Percentage of lines executed.</p>
+<p><strong>Example Output</strong>:</p>
+<pre><code>PASS  ./math.test.js
+✓ adds 1 + 2 to equal 3 (2 ms)
+✓ adds -1 + 1 to equal 0
+
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |
+ math.js        |     100 |      100 |     100 |     100 |
+----------------|---------|----------|---------|---------|-------------------
+</code></pre>
+<hr />
+<h4 id="4-mocking-and-spying"><strong>4. Mocking and Spying</strong><a class="headerlink" href="#4-mocking-and-spying" title="Permanent link">&para;</a></h4>
+<p><strong>Mocking</strong>: Replacing real dependencies with fake implementations to isolate the unit under test.</p>
+<p><strong>Spying</strong>: Tracking function calls, arguments, and return values without modifying their behavior.</p>
+<p><strong>Example with Jest</strong>:</p>
+<pre><code class="language-javascript">// userService.js
+class UserService {
+    constructor(userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    getUser(id) {
+        return this.userRepository.getUser(id);
+    }
+}
+
+// userService.test.js
+const UserService = require('./userService');
+const UserRepository = require('./userRepository');
+
+jest.mock('./userRepository'); // Mock the UserRepository
+
+test('getUser should call repository', () =&gt; {
+    const mockUserRepository = new UserRepository();
+    const userService = new UserService(mockUserRepository);
+
+    // Mock the getUser method
+    mockUserRepository.getUser.mockReturnValue({ id: 1, name: 'Alice' });
+
+    const user = userService.getUser(1);
+
+    expect(mockUserRepository.getUser).toHaveBeenCalledWith(1);
+    expect(user).toEqual({ id: 1, name: 'Alice' });
+});
+</code></pre>
+<p><strong>Example with Sinon (for Mocha)</strong>:</p>
+<pre><code class="language-javascript">// userService.js
+class UserService {
+    constructor(userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    getUser(id) {
+        return this.userRepository.getUser(id);
+    }
+}
+
+// userService.test.js
+const sinon = require('sinon');
+const UserService = require('./userService');
+const UserRepository = require('./userRepository');
+
+describe('UserService', () =&gt; {
+    it('getUser should call repository', () =&gt; {
+        const mockUserRepository = new UserRepository();
+        const getUserStub = sinon.stub(mockUserRepository, 'getUser').returns({ id: 1, name: 'Alice' });
+        const userService = new UserService(mockUserRepository);
+
+        const user = userService.getUser(1);
+
+        sinon.assert.calledWith(getUserStub, 1);
+        expect(user).to.deep.equal({ id: 1, name: 'Alice' });
+    });
+});
+</code></pre>
+<hr />
+<h3 id="notes-on-performance-and-optimization">Notes on Performance and Optimization<a class="headerlink" href="#notes-on-performance-and-optimization" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-code-splitting"><strong>1. Code Splitting</strong><a class="headerlink" href="#1-code-splitting" title="Permanent link">&para;</a></h4>
+<p><strong>Code Splitting</strong>: A technique to split your code into smaller bundles that can be loaded on demand. This reduces the initial load time of your application.</p>
+<p><strong>Tools</strong>:
+- <strong>Webpack</strong>: Built-in support for code splitting using <code>import()</code> or <code>require.ensure</code>.
+- <strong>Rollup</strong>: Supports code splitting with plugins like <code>@rollup/plugin-commonjs</code>.</p>
+<p><strong>Example with Webpack</strong>:</p>
+<pre><code class="language-javascript">// webpack.config.js
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: '[name].bundle.js',
+        path: __dirname + '/dist',
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+};
+
+// Lazy load a module
+import(/* webpackChunkName: &quot;lazyModule&quot; */ './lazyModule').then(module =&gt; {
+    module.default();
+});
+</code></pre>
+<p><strong>Example with Rollup</strong>:</p>
+<pre><code class="language-javascript">// rollup.config.js
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+
+export default {
+    input: 'src/index.js',
+    output: {
+        dir: 'dist',
+        format: 'esm',
+        chunkFileNames: '[name].js',
+    },
+    plugins: [resolve(), commonjs()],
+};
+</code></pre>
+<hr />
+<h4 id="2-lazy-loading-and-preloading"><strong>2. Lazy Loading and Preloading</strong><a class="headerlink" href="#2-lazy-loading-and-preloading" title="Permanent link">&para;</a></h4>
+<p><strong>Lazy Loading</strong>: Load resources (e.g., JavaScript, images) only when they are needed, reducing the initial load time.</p>
+<p><strong>Preloading</strong>: Load critical resources in advance to improve performance.</p>
+<p><strong>Example with Lazy Loading</strong>:</p>
+<pre><code class="language-javascript">// Lazy load an image
+const img = document.createElement('img');
+img.src = 'placeholder.jpg';
+img.dataset.src = 'actual-image.jpg';
+document.body.appendChild(img);
+
+const observer = new IntersectionObserver((entries) =&gt; {
+    entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+            const lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            observer.unobserve(lazyImage);
+        }
+    });
+});
+
+observer.observe(img);
+
+// Lazy load a JavaScript module
+const button = document.querySelector('button');
+button.addEventListener('click', () =&gt; {
+    import('./lazyModule').then(module =&gt; {
+        module.default();
+    });
+});
+</code></pre>
+<p><strong>Example with Preloading</strong>:</p>
+<pre><code class="language-html">&lt;!-- Preload critical resources --&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;critical.css&quot; as=&quot;style&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;critical.js&quot; as=&quot;script&quot;&gt;
+</code></pre>
+<hr />
+<h4 id="3-minification"><strong>3. Minification</strong><a class="headerlink" href="#3-minification" title="Permanent link">&para;</a></h4>
+<p><strong>Minification</strong>: The process of removing unnecessary characters (e.g., whitespace, comments) from code to reduce file size.</p>
+<p><strong>Tools</strong>:
+- <strong>Webpack</strong>: Uses <code>TerserPlugin</code> for JavaScript minification.
+- <strong>CSS Minifiers</strong>: Tools like <code>cssnano</code>.
+- <strong>HTML Minifiers</strong>: Tools like <code>html-minifier</code>.</p>
+<p><strong>Example with Webpack</strong>:</p>
+<pre><code class="language-javascript">// webpack.config.js
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
+};
+</code></pre>
+<p><strong>Example with CSS Minification</strong>:</p>
+<pre><code class="language-bash"># Install cssnano
+npm install cssnano --save-dev
+
+# Use cssnano in a build process
+const cssnano = require('cssnano');
+const postcss = require('postcss');
+
+postcss([cssnano])
+    .process(cssContent)
+    .then(result =&gt; {
+        console.log(result.css);
+    });
+</code></pre>
+<hr />
+<h4 id="4-benchmarking"><strong>4. Benchmarking</strong><a class="headerlink" href="#4-benchmarking" title="Permanent link">&para;</a></h4>
+<p><strong>Benchmarking</strong>: Measuring the performance of your code to identify bottlenecks.</p>
+<p><strong>Tools</strong>:
+- <strong><code>console.time</code> and <code>console.timeEnd</code></strong>: Simple built-in timing functions.
+- <strong>Third-party Libraries</strong>: Libraries like <code>Benchmark.js</code> for more advanced benchmarking.</p>
+<p><strong>Example with <code>console.time</code></strong>:</p>
+<pre><code class="language-javascript">console.time('myFunction');
+myFunction(); // Function to benchmark
+console.timeEnd('myFunction'); // Output: &quot;myFunction: 123.456ms&quot;
+</code></pre>
+<p><strong>Example with <code>Benchmark.js</code></strong>:</p>
+<pre><code class="language-bash"># Install Benchmark.js
+npm install benchmark --save-dev
+</code></pre>
+<pre><code class="language-javascript">const Benchmark = require('benchmark');
+const suite = new Benchmark.Suite;
+
+// Add tests
+suite
+    .add('Function A', () =&gt; {
+        functionA();
+    })
+    .add('Function B', () =&gt; {
+        functionB();
+    })
+    .on('cycle', (event) =&gt; {
+        console.log(String(event.target));
+    })
+    .on('complete', function () {
+        console.log('Fastest is ' + this.filter('fastest').map('name'));
+    })
+    .run({ async: true });
+</code></pre>
+<hr />
+<h3 id="notes-on-security">Notes on Security<a class="headerlink" href="#notes-on-security" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-cross-site-scripting-xss"><strong>1. Cross-Site Scripting (XSS)</strong><a class="headerlink" href="#1-cross-site-scripting-xss" title="Permanent link">&para;</a></h4>
+<p><strong>Cross-Site Scripting (XSS)</strong>: A vulnerability where attackers inject malicious scripts into web pages viewed by other users.</p>
+<p><strong>Prevention</strong>:
+- <strong>Sanitize Input</strong>: Always sanitize user input to remove or escape harmful content.
+- <strong>Use Secure Libraries</strong>: Libraries like <strong>DOMPurify</strong> or <strong>sanitize-html</strong> can help sanitize HTML.
+- <strong>Content Security Policy (CSP)</strong>: Use CSP headers to restrict the sources of executable scripts.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Sanitize user input using DOMPurify
+const DOMPurify = require('dompurify');
+const userInput = '&lt;script&gt;alert(&quot;XSS Attack!&quot;)&lt;/script&gt;';
+const sanitizedInput = DOMPurify.sanitize(userInput);
+console.log(sanitizedInput); // Output: &quot;&quot;
+
+// Set Content Security Policy (CSP) in HTTP headers
+app.use((req, res, next) =&gt; {
+    res.setHeader(
+        'Content-Security-Policy',
+        &quot;default-src 'self'; script-src 'self' https://trusted.cdn.com;&quot;
+    );
+    next();
+});
+</code></pre>
+<hr />
+<h4 id="2-cross-origin-resource-sharing-cors"><strong>2. Cross-Origin Resource Sharing (CORS)</strong><a class="headerlink" href="#2-cross-origin-resource-sharing-cors" title="Permanent link">&para;</a></h4>
+<p><strong>Cross-Origin Resource Sharing (CORS)</strong>: A mechanism that allows restricted resources on a web page to be requested from another domain.</p>
+<p><strong>Secure Configuration</strong>:
+- <strong>Allow Specific Origins</strong>: Only allow trusted domains to access your API.
+- <strong>Use Middleware</strong>: Libraries like <strong>cors</strong> in Node.js simplify CORS configuration.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">const express = require('express');
+const cors = require('cors');
+const app = express();
+
+// Allow only specific origins
+const corsOptions = {
+    origin: 'https://trusted-website.com',
+    optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
+app.get('/data', (req, res) =&gt; {
+    res.json({ message: 'This is secure data!' });
+});
+
+app.listen(3000, () =&gt; {
+    console.log('Server running on http://localhost:3000');
+});
+</code></pre>
+<hr />
+<h4 id="3-oauth-and-jwt"><strong>3. OAuth and JWT</strong><a class="headerlink" href="#3-oauth-and-jwt" title="Permanent link">&para;</a></h4>
+<p><strong>OAuth</strong>: An open standard for access delegation, commonly used for authentication and authorization.</p>
+<p><strong>JWT (JSON Web Tokens)</strong>: A compact, URL-safe means of representing claims to be transferred between two parties.</p>
+<p><strong>Example with OAuth and JWT</strong>:</p>
+<pre><code class="language-javascript">const express = require('express');
+const jwt = require('jsonwebtoken');
+const app = express();
+
+// Middleware to verify JWT
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader &amp;&amp; authHeader.split(' ')[1];
+    if (!token) return res.sendStatus(401);
+
+    jwt.verify(token, 'your-secret-key', (err, user) =&gt; {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+}
+
+// Login route to generate JWT
+app.post('/login', (req, res) =&gt; {
+    const user = { id: 1, username: 'alice' };
+    const accessToken = jwt.sign(user, 'your-secret-key', { expiresIn: '1h' });
+    res.json({ accessToken });
+});
+
+// Protected route
+app.get('/protected', authenticateToken, (req, res) =&gt; {
+    res.json({ message: 'This is a protected route', user: req.user });
+});
+
+app.listen(3000, () =&gt; {
+    console.log('Server running on http://localhost:3000');
+});
+</code></pre>
+<hr />
+<h4 id="4-secure-data-handling"><strong>4. Secure Data Handling</strong><a class="headerlink" href="#4-secure-data-handling" title="Permanent link">&para;</a></h4>
+<p><strong>Secure Data Handling</strong>: Protect sensitive data by using HTTPS, environment variables, and encryption.</p>
+<p><strong>Best Practices</strong>:
+- <strong>Use HTTPS</strong>: Encrypt data in transit using SSL/TLS.
+- <strong>Environment Variables</strong>: Store sensitive data (e.g., API keys, secrets) in environment variables.
+- <strong>Encryption</strong>: Encrypt sensitive data at rest using libraries like <strong>crypto</strong>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Use HTTPS in Express
+const https = require('https');
+const fs = require('fs');
+const express = require('express');
+const app = express();
+
+const options = {
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.cert'),
+};
+
+https.createServer(options, app).listen(3000, () =&gt; {
+    console.log('HTTPS server running on https://localhost:3000');
+});
+
+// Use environment variables
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
+
+// Encrypt sensitive data
+const crypto = require('crypto');
+const algorithm = 'aes-256-cbc';
+const key = crypto.randomBytes(32);
+const iv = crypto.randomBytes(16);
+
+function encrypt(text) {
+    let cipher = crypto.createCipheriv(algorithm, Buffer.from(key), iv);
+    let encrypted = cipher.update(text);
+    encrypted = Buffer.concat([encrypted, cipher.final()]);
+    return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
+}
+
+function decrypt(text) {
+    let iv = Buffer.from(text.iv, 'hex');
+    let encryptedText = Buffer.from(text.encryptedData, 'hex');
+    let decipher = crypto.createDecipheriv(algorithm, Buffer.from(key), iv);
+    let decrypted = decipher.update(encryptedText);
+    decrypted = Buffer.concat([decrypted, decipher.final()]);
+    return decrypted.toString();
+}
+
+const encrypted = encrypt('Sensitive Data');
+console.log(encrypted);
+const decrypted = decrypt(encrypted);
+console.log(decrypted); // Output: &quot;Sensitive Data&quot;
+</code></pre>
+<hr />
+<h3 id="notes-on-soft-skills-for-a-senior-developer">Notes on Soft Skills for a Senior Developer<a class="headerlink" href="#notes-on-soft-skills-for-a-senior-developer" title="Permanent link">&para;</a></h3>
+<hr />
+<h4 id="1-code-reviews"><strong>1. Code Reviews</strong><a class="headerlink" href="#1-code-reviews" title="Permanent link">&para;</a></h4>
+<p><strong>Code Reviews</strong>: A process where team members review each other's code to ensure quality, share knowledge, and maintain consistency.</p>
+<p><strong>Best Practices</strong>:
+- <strong>Be Constructive</strong>: Focus on the code, not the person. Provide actionable feedback.
+- <strong>Be Specific</strong>: Point out exact issues and suggest improvements.
+- <strong>Be Respectful</strong>: Use a positive tone and acknowledge good practices.
+- <strong>Prioritize</strong>: Focus on critical issues like bugs, security vulnerabilities, and performance bottlenecks.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">// Code Review Example
+// Before
+function add(a, b) {
+    return a + b;
+}
+
+// After (with feedback)
+/**
+ * Adds two numbers.
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @returns {number} The sum of a and b.
+ */
+function add(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new TypeError('Both arguments must be numbers');
+    }
+    return a + b;
+}
+</code></pre>
+<p><strong>Feedback</strong>:
+- "Great job on the function! However, it would be beneficial to add input validation to ensure the function handles non-number inputs gracefully."
+- "Consider adding JSDoc comments to improve code documentation."</p>
+<hr />
+<h4 id="2-documentation"><strong>2. Documentation</strong><a class="headerlink" href="#2-documentation" title="Permanent link">&para;</a></h4>
+<p><strong>Documentation</strong>: Writing clear and comprehensive documentation to help others understand and use your code.</p>
+<p><strong>Best Practices</strong>:
+- <strong>Be Clear and Concise</strong>: Use simple language and avoid jargon.
+- <strong>Include Examples</strong>: Provide code examples to illustrate usage.
+- <strong>Keep It Updated</strong>: Ensure documentation stays in sync with the code.
+- <strong>Use Tools</strong>: Leverage tools like <strong>JSDoc</strong>, <strong>Markdown</strong>, or <strong>Swagger</strong> for API documentation.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript">/**
+ * Calculates the area of a rectangle.
+ * @param {number} length - The length of the rectangle.
+ * @param {number} width - The width of the rectangle.
+ * @returns {number} The area of the rectangle.
+ * @example
+ * // Returns 20
+ * calculateArea(4, 5);
+ */
+function calculateArea(length, width) {
+    return length * width;
+}
+</code></pre>
+<p><strong>Markdown Example</strong>:</p>
+<pre><code class="language-markdown"># API Documentation
+
+## `GET /users`
+
+Returns a list of users.
+
+### Example Request
+
+```bash
+curl -X GET https://api.example.com/users
+</code></pre>
+<h3 id="example-response">Example Response<a class="headerlink" href="#example-response" title="Permanent link">&para;</a></h3>
+<pre><code class="language-json">[
+    { &quot;id&quot;: 1, &quot;name&quot;: &quot;Alice&quot; },
+    { &quot;id&quot;: 2, &quot;name&quot;: &quot;Bob&quot; }
+]
+</code></pre>
+<pre><code>
+---
+
+#### **3. Mentoring**
+
+**Mentoring**: Helping junior developers grow by sharing knowledge, providing guidance, and fostering a supportive environment.
+
+**Best Practices**:
+- **Be Patient**: Understand that everyone learns at their own pace.
+- **Encourage Questions**: Create a safe space for asking questions.
+- **Provide Resources**: Share books, articles, and tutorials.
+- **Lead by Example**: Demonstrate best practices in your own work.
+
+**Example**:
+- **Pair Programming**: Work together on a task to teach problem-solving and coding techniques.
+- **Code Reviews**: Use code reviews as an opportunity to explain best practices and suggest improvements.
+- **Regular Check-ins**: Schedule regular meetings to discuss progress, challenges, and goals.
+
+---
+
+#### **4. System Design**
+
+**System Design**: Contributing to the design of scalable, maintainable, and efficient systems.
+
+**Key Considerations**:
+- **Scalability**: Ensure the system can handle growth in users, data, and traffic.
+- **Maintainability**: Design for ease of maintenance and future updates.
+- **Performance**: Optimize for speed and efficiency.
+- **Reliability**: Ensure the system is robust and can handle failures gracefully.
+
+**Example**:
+```plaintext
+### System Design for a URL Shortener
+
+#### Requirements
+- Shorten long URLs.
+- Redirect users to the original URL when they visit the shortened URL.
+- Handle high traffic and large volumes of data.
+
+#### Components
+1. **Web Server**: Handles incoming requests and redirects.
+2. **Database**: Stores mappings between short and long URLs.
+3. **Cache**: Improves performance by caching frequently accessed URLs.
+4. **URL Generator**: Generates unique short URLs.
+
+#### Scalability
+- Use a distributed database to handle large volumes of data.
+- Implement caching to reduce database load.
+- Use load balancers to distribute traffic across multiple servers.
+
+#### Example API Endpoints
+- `POST /shorten`: Create a short URL.
+- `GET /{shortUrl}`: Redirect to the original URL.
+</code></pre>
+<hr />
+<h1 id="understanding-the-javascript-runtime-inner-workings-explained">Understanding the JavaScript Runtime: Inner Workings Explained<a class="headerlink" href="#understanding-the-javascript-runtime-inner-workings-explained" title="Permanent link">&para;</a></h1>
+<h2 id="1-introduction-to-javascript-runtime">1. Introduction to JavaScript Runtime<a class="headerlink" href="#1-introduction-to-javascript-runtime" title="Permanent link">&para;</a></h2>
+<p>JavaScript runs in an environment that provides not only the core language features (as defined by ECMAScript) but also additional APIs supplied by the host. These environments include web browsers, Node.js, and others. The runtime is composed of several subsystems that manage everything from code execution to asynchronous operations and memory management.</p>
+<h3 id="key-components-of-a-javascript-runtime">Key Components of a JavaScript Runtime<a class="headerlink" href="#key-components-of-a-javascript-runtime" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Execution Context</strong>: The environment where your code runs, including the call stack, variable scopes, and the value of <code>this</code>.</li>
+<li><strong>Memory Heap</strong>: A large region where memory allocation for objects, functions, and data structures occurs.</li>
+<li><strong>Event Loop</strong>: The mechanism that coordinates the execution of multiple pieces of code, particularly asynchronous tasks.</li>
+<li><strong>Task Queues</strong>: Separate queues for different types of tasks (microtasks and macrotasks) that await execution once the current code has finished running.</li>
+<li><strong>APIs</strong>: Extended functionalities provided by the environment, such as DOM manipulation in browsers or file system access in Node.js.</li>
+</ul>
+<p><strong>Why It Matters:</strong><br />
+Understanding these components is essential for debugging, performance optimization, and writing code that leverages asynchronous operations efficiently. This overview sets the stage for a deep dive into each part.</p>
+<h2 id="2-execution-context-and-call-stack">2. Execution Context and Call Stack<a class="headerlink" href="#2-execution-context-and-call-stack" title="Permanent link">&para;</a></h2>
+<p>The concept of an execution context is fundamental to understanding how JavaScript code runs.</p>
+<h2 id="execution-contexts">Execution Contexts<a class="headerlink" href="#execution-contexts" title="Permanent link">&para;</a></h2>
+<p>Every time JavaScript code is executed, it does so inside an execution context. There are three primary types:</p>
+<h3 id="global-execution-context-gec">Global Execution Context (GEC)<a class="headerlink" href="#global-execution-context-gec" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Initialization</strong>: Created when a script first runs.</li>
+<li><strong>Components</strong>: Establishes the global object (<code>window</code> in browsers, <code>global</code> in Node.js) and defines the outermost scope.</li>
+<li><strong>Lifecycle</strong>: Remains for the lifetime of the application, unless explicitly cleared.</li>
+</ul>
+<h3 id="function-execution-context-fec">Function Execution Context (FEC)<a class="headerlink" href="#function-execution-context-fec" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Creation</strong>: Generated when a function is invoked.</li>
+<li><strong>Components</strong>: Contains its own variable environment, a reference to the outer lexical environment, and a <code>this</code> value.</li>
+<li><strong>Lifecycle</strong>: Lives only for the duration of the function call.</li>
+</ul>
+<h3 id="eval-execution-context">Eval Execution Context<a class="headerlink" href="#eval-execution-context" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Usage</strong>: Created when <code>eval()</code> is executed.</li>
+<li><strong>Note</strong>: It is generally discouraged due to performance and security issues.</li>
+</ul>
+<h2 id="the-call-stack">The Call Stack<a class="headerlink" href="#the-call-stack" title="Permanent link">&para;</a></h2>
+<p>JavaScript uses a <strong>Last-In-First-Out (LIFO)</strong> stack to manage execution contexts. Here’s how it works:
+- <strong>Pushing Contexts</strong>: When a function is called, its execution context is pushed onto the stack.
+- <strong>Executing Contexts</strong>: The engine always works on the topmost context.
+- <strong>Popping Contexts</strong>: Once a function completes, its context is removed from the stack.</p>
+<h3 id="in-depth-example">In-Depth Example<a class="headerlink" href="#in-depth-example" title="Permanent link">&para;</a></h3>
+<p>Consider this code:</p>
+<pre><code class="language-js">function first() {
+  console.log(&quot;Inside first&quot;);
+  second();
+  console.log(&quot;Exiting first&quot;);
+}
+
+function second() {
+  console.log(&quot;Inside second&quot;);
+}
+
+console.log(&quot;Start&quot;);
+first();
+console.log(&quot;End&quot;);
+</code></pre>
+<p><strong>Call Stack Flow:</strong>
+1. <strong>Global Context</strong>: Begins execution and pushes the global context.
+2. <strong><code>console.log("Start")</code></strong>: Executes in the global context.
+3. <strong>Call to <code>first()</code></strong>: A new function execution context is created and pushed.
+4. <strong>Inside <code>first()</code></strong>: Logs, then calls <code>second()</code>, adding another context.
+5. <strong>Inside <code>second()</code></strong>: Executes and pops off after completion.
+6. <strong>Return to <code>first()</code></strong>: Logs the exit message and pops off.
+7. <strong>Back to Global Context</strong>: Logs "End" and completes.</p>
+<p><strong>Key Concepts:</strong>
+- <strong>Hoisting</strong>: Variable and function declarations are “hoisted” to the top of their context, meaning they can be referenced before their actual line of declaration.
+- <strong>Lexical Scoping</strong>: Determines variable accessibility based on the physical placement of the code.</p>
+<p>Understanding the execution context and call stack helps you grasp how your code flows, making it easier to debug issues such as recursion pitfalls or unexpected variable shadowing.</p>
+<hr />
+<h2 id="3-memory-management-garbage-collection">3. Memory Management &amp; Garbage Collection<a class="headerlink" href="#3-memory-management-garbage-collection" title="Permanent link">&para;</a></h2>
+<p>JavaScript automates memory management through a garbage collection system, which is crucial for performance and avoiding memory leaks.</p>
+<h3 id="memory-allocation-the-heap">Memory Allocation: The Heap<a class="headerlink" href="#memory-allocation-the-heap" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Heap Memory</strong>: Where objects, arrays, functions, and other dynamic entities reside. It’s an unstructured region of memory, and allocation happens dynamically.</li>
+<li><strong>Stack vs. Heap</strong>: Primitive values (numbers, booleans, etc.) are stored in the call stack, while objects and functions are stored in the heap.</li>
+</ul>
+<h3 id="garbage-collection-mechanisms">Garbage Collection Mechanisms<a class="headerlink" href="#garbage-collection-mechanisms" title="Permanent link">&para;</a></h3>
+<p>Garbage collection (GC) is the process of reclaiming memory occupied by objects no longer in use. The most common algorithm used is <strong>Mark-and-Sweep</strong>:</p>
+<h4 id="mark-and-sweep-algorithm">Mark-and-Sweep Algorithm:<a class="headerlink" href="#mark-and-sweep-algorithm" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Mark Phase</strong>: The GC starts at the roots (global object, current call stack) and marks all reachable objects.</li>
+<li><strong>Sweep Phase</strong>: Unmarked objects (those not reachable) are considered garbage and are removed.</li>
+</ol>
+<h4 id="challenges-and-pitfalls">Challenges and Pitfalls<a class="headerlink" href="#challenges-and-pitfalls" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Memory Leaks</strong>: Occur when objects that are no longer needed are still referenced.</li>
+<li><strong>Example</strong>: Global variables, forgotten timers or callbacks that reference objects.</li>
+<li><strong>Circular References</strong>: JavaScript’s GC can handle circular references (in most modern engines), but careless use of closures can inadvertently prevent garbage collection.</li>
+</ul>
+<h4 id="practical-example">Practical Example<a class="headerlink" href="#practical-example" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">function createLeakyClosure() {
+  let largeObject = new Array(1000000).fill(&quot;data&quot;);
+  return function () {
+    console.log(largeObject[0]);
+  };
+}
+
+let leakyFunction = createLeakyClosure();
+// largeObject is still retained in memory because leakyFunction references it
+</code></pre>
+<p><strong>Memory Management Tips:</strong>
+- Always nullify references when objects are no longer needed.
+- Use tools like browser developer tools or Node’s profiling utilities to track memory usage.</p>
+<hr />
+<h2 id="4-the-event-loop-asynchronous-execution">4. The Event Loop &amp; Asynchronous Execution<a class="headerlink" href="#4-the-event-loop-asynchronous-execution" title="Permanent link">&para;</a></h2>
+<p>JavaScript’s concurrency model revolves around a single-threaded event loop, which handles asynchronous operations while ensuring that code execution remains non-blocking.</p>
+<h2 id="the-event-loop-in-detail">The Event Loop in Detail<a class="headerlink" href="#the-event-loop-in-detail" title="Permanent link">&para;</a></h2>
+<h3 id="how-it-works">How It Works:<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Call Stack Check</strong>: The event loop continuously checks whether the call stack is empty.</li>
+<li><strong>Task Queues</strong>: If the stack is empty, the event loop picks tasks from the queues.</li>
+<li><strong>Execution</strong>: The selected task’s callback is pushed onto the call stack for execution.</li>
+</ol>
+<h2 id="microtasks-vs-macrotasks">Microtasks vs. Macrotasks<a class="headerlink" href="#microtasks-vs-macrotasks" title="Permanent link">&para;</a></h2>
+<h3 id="microtasks">Microtasks:<a class="headerlink" href="#microtasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definition</strong>: Tasks that need to be executed as soon as possible after the current execution context. Examples include promise callbacks (<code>.then()</code>, <code>.catch()</code>), and <code>MutationObserver</code> callbacks.</li>
+<li><strong>Priority</strong>: Always executed before any macrotask, ensuring they run immediately after the current synchronous code finishes.</li>
+</ul>
+<h3 id="macrotasks">Macrotasks:<a class="headerlink" href="#macrotasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definition</strong>: Includes tasks like <code>setTimeout</code>, <code>setInterval</code>, and I/O operations. They are placed in the macrotask queue.</li>
+<li><strong>Scheduling</strong>: Executed only after the microtask queue is empty.</li>
+</ul>
+<h3 id="example-demonstration">Example Demonstration:<a class="headerlink" href="#example-demonstration" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">console.log(&quot;Start&quot;);
+
+setTimeout(() =&gt; {
+  console.log(&quot;Macrotask&quot;);
+}, 0);
+
+Promise.resolve().then(() =&gt; {
+  console.log(&quot;Microtask&quot;);
+});
+
+console.log(&quot;End&quot;);
+</code></pre>
+<p><strong>Output Order Explanation:</strong>
+- <strong>"Start"</strong> logs immediately.
+- <strong>"End"</strong> logs next as the synchronous code completes.
+- <strong>Microtask</strong> (<code>Promise</code>) runs before the macrotask.
+- <strong>"Macrotask"</strong> logs last after the microtask queue is cleared.</p>
+<h2 id="nodejs-event-loop-phases">Node.js Event Loop Phases<a class="headerlink" href="#nodejs-event-loop-phases" title="Permanent link">&para;</a></h2>
+<p>Node.js has a slightly different internal structure with distinct phases:
+1. <strong>Timers Phase</strong>: Executes callbacks scheduled by <code>setTimeout</code> and <code>setInterval</code>.
+2. <strong>Pending Callbacks Phase</strong>: Executes I/O callbacks deferred to the next cycle.
+3. <strong>Idle, Prepare Phase</strong>: Internal phase.
+4. <strong>Poll Phase</strong>: Retrieves new I/O events; if there are callbacks, they are executed here.
+5. <strong>Check Phase</strong>: Executes callbacks scheduled by <code>setImmediate</code>.
+6. <strong>Close Callbacks Phase</strong>: Executes callbacks related to closing connections.</p>
+<p><strong>Understanding these phases helps</strong> in optimizing performance in server-side applications and understanding how long-running operations might delay critical tasks.</p>
+<hr />
+<h2 id="5-web-apis-background-tasks">5. Web APIs &amp; Background Tasks<a class="headerlink" href="#5-web-apis-background-tasks" title="Permanent link">&para;</a></h2>
+<p>While JavaScript itself is single-threaded, host environments provide Web APIs (in browsers) or C++ APIs (in Node.js) that handle operations outside of the JavaScript thread.</p>
+<h2 id="browser-web-apis">Browser Web APIs<a class="headerlink" href="#browser-web-apis" title="Permanent link">&para;</a></h2>
+<p>Browsers expose a variety of APIs that allow JavaScript to interact with the system and perform complex tasks:
+- <strong>DOM Manipulation</strong>: Methods such as <code>document.querySelector</code> or <code>document.createElement</code> allow interaction with the HTML document.
+- <strong>Timers</strong>: Functions like <code>setTimeout</code> and <code>setInterval</code> schedule tasks asynchronously.
+- <strong>Networking</strong>: The <code>fetch</code> API and <code>XMLHttpRequest</code> enable HTTP requests.
+- <strong>Canvas and WebGL</strong>: For graphics rendering.
+- <strong>Geolocation, Web Audio, and more</strong>: Provide extended capabilities like location tracking and audio processing.</p>
+<h2 id="nodejs-apis">Node.js APIs<a class="headerlink" href="#nodejs-apis" title="Permanent link">&para;</a></h2>
+<p>Node.js, designed for server-side JavaScript, provides:
+- <strong>File System Access</strong>: Synchronous and asynchronous methods to read/write files.
+- <strong>Networking</strong>: Modules such as <code>http</code> and <code>net</code> for creating servers and handling network requests.
+- <strong>Process Management</strong>: APIs to handle system processes and inter-process communication.
+- <strong>C++ Bindings</strong>: Allow performance-critical code to run outside of JavaScript.</p>
+<h3 id="how-background-tasks-work">How Background Tasks Work<a class="headerlink" href="#how-background-tasks-work" title="Permanent link">&para;</a></h3>
+<p>When you call an API like <code>setTimeout</code>, the request is handed off from JavaScript to the browser or Node’s API layer. This offloading means that the timer runs outside of the single JavaScript thread. Once the timer completes, the callback is queued up as a macrotask waiting for the event loop to process it.</p>
+<p><strong>Practical Insight:</strong><br />
+Because these APIs run in parallel to your JavaScript code, they allow the main thread to remain responsive. However, the complexity of their scheduling (e.g., delays in timers when the main thread is busy) is an important consideration when building high-performance applications.</p>
+<hr />
+<h2 id="6-concurrency-parallelism-in-javascript">6. Concurrency &amp; Parallelism in JavaScript<a class="headerlink" href="#6-concurrency-parallelism-in-javascript" title="Permanent link">&para;</a></h2>
+<p>Despite its single-threaded nature, JavaScript provides several ways to perform concurrent and parallel operations.</p>
+<h2 id="concurrency">Concurrency<a class="headerlink" href="#concurrency" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definition</strong>: Concurrency means dealing with multiple tasks at once by managing asynchronous callbacks.</li>
+<li><strong>Mechanism</strong>: Achieved through the event loop and non-blocking I/O. It allows multiple operations (like network requests) to overlap in time even if they are not executed simultaneously.</li>
+</ul>
+<h2 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definition</strong>: Parallelism involves executing multiple tasks at the same time.</li>
+<li><strong>Techniques in JavaScript</strong>:</li>
+<li><strong>Web Workers (Browsers)</strong>: These allow you to run scripts in background threads, isolating heavy computations from the main thread.</li>
+<li><strong>Worker Threads (Node.js)</strong>: Similar to Web Workers, they allow CPU-intensive tasks to be processed in separate threads.</li>
+<li><strong>SharedArrayBuffer &amp; Atomics</strong>: These are advanced APIs that facilitate communication between threads and can be used to perform low-level parallel processing.</li>
+</ul>
+<h3 id="example-with-a-web-worker">Example with a Web Worker<a class="headerlink" href="#example-with-a-web-worker" title="Permanent link">&para;</a></h3>
+<p><strong>worker.js:</strong></p>
+<pre><code class="language-js">self.onmessage = (event) =&gt; {
+  // A CPU-intensive calculation
+  let result = event.data.reduce((sum, num) =&gt; sum + num, 0);
+  self.postMessage(result);
+};
+</code></pre>
+<p><strong>main.js:</strong></p>
+<pre><code class="language-js">const worker = new Worker(&quot;worker.js&quot;);
+worker.postMessage([1, 2, 3, 4, 5]);
+worker.onmessage = (event) =&gt; {
+  console.log(&quot;Sum:&quot;, event.data);
+};
+</code></pre>
+<p><strong>Key Considerations:</strong>
+- <strong>Data Isolation</strong>: Data is copied (or transferred) between the main thread and workers.
+- <strong>Synchronization</strong>: Use shared memory (if needed) carefully to avoid race conditions.
+- <strong>Overhead</strong>: Creating and managing worker threads comes with overhead, so they should be used when the performance benefits outweigh these costs.</p>
+<hr />
+<h2 id="7-javascript-engines-v8-spidermonkey-javascriptcore">7. JavaScript Engines (V8, SpiderMonkey, JavaScriptCore)<a class="headerlink" href="#7-javascript-engines-v8-spidermonkey-javascriptcore" title="Permanent link">&para;</a></h2>
+<p>JavaScript engines are at the heart of how JavaScript is executed. They convert code into machine-executable instructions and apply various optimizations.</p>
+<h2 id="popular-javascript-engines">Popular JavaScript Engines<a class="headerlink" href="#popular-javascript-engines" title="Permanent link">&para;</a></h2>
+<h3 id="v8-chrome-nodejs">V8 (Chrome, Node.js)<a class="headerlink" href="#v8-chrome-nodejs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Compilation Process</strong>: V8 uses Just-In-Time (JIT) compilation, which involves several stages:</li>
+<li><strong>Parsing</strong>: The source code is parsed into an Abstract Syntax Tree (AST).</li>
+<li><strong>Ignition (Interpreter)</strong>: Converts the AST into bytecode, which is executed directly.</li>
+<li><strong>TurboFan (Optimizing Compiler)</strong>: When functions are identified as “hot” (frequently executed), TurboFan optimizes them into machine code for faster execution.</li>
+<li><strong>Hidden Classes &amp; Inline Caching</strong>: Techniques used by V8 to optimize property access on objects, significantly improving performance.</li>
+</ul>
+<h3 id="spidermonkey-firefox">SpiderMonkey (Firefox)<a class="headerlink" href="#spidermonkey-firefox" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Execution Strategy</strong>: Uses a combination of baseline JIT and IonMonkey, an optimizing JIT compiler.</li>
+<li><strong>Optimization Techniques</strong>: Similar to V8, SpiderMonkey employs inline caching and hidden classes to optimize frequently executed code paths.</li>
+</ul>
+<h3 id="javascriptcore-safari">JavaScriptCore (Safari)<a class="headerlink" href="#javascriptcore-safari" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Also Known As</strong>: Nitro.</li>
+<li><strong>Compilation Pipeline</strong>: Involves a similar approach to JIT compilation, focusing on optimizations specific to the Apple ecosystem.</li>
+</ul>
+<p><strong>Why Engine Internals Matter:</strong><br />
+Knowing how engines optimize code helps in writing performant JavaScript. For example, understanding inline caching can influence how you design object properties and method access patterns.</p>
+<hr />
+<h2 id="8-summary">8. Summary<a class="headerlink" href="#8-summary" title="Permanent link">&para;</a></h2>
+<h3 id="recap-of-key-concepts">Recap of Key Concepts:<a class="headerlink" href="#recap-of-key-concepts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Execution Context &amp; Call Stack</strong>: Understand how functions are executed and how contexts are managed.</li>
+<li><strong>Memory Management</strong>: Leverage garbage collection effectively and watch out for memory leaks.</li>
+<li><strong>Event Loop &amp; Asynchronous Programming</strong>: Learn the subtleties of microtasks versus macrotasks.</li>
+<li><strong>APIs &amp; Background Tasks</strong>: Recognize the role of host-provided APIs in extending JavaScript's capabilities.</li>
+<li><strong>Concurrency &amp; Parallelism</strong>: Utilize Web Workers and other parallel mechanisms to offload heavy computations.</li>
+<li><strong>Engine Optimizations</strong>: Write code that aligns with how modern JavaScript engines optimize performance.</li>
+</ul>
+<h3 id="best-practices">Best Practices:<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Avoid Blocking Code</strong>: Use asynchronous patterns (Promises, async/await) to keep the UI or server responsive.</li>
+<li><strong>Optimize Memory Usage</strong>: Regularly monitor memory allocation and deallocate objects that are no longer needed.</li>
+<li><strong>Structure Your Code</strong>: Clearly separate synchronous logic from asynchronous callbacks to maintain clarity.</li>
+<li><strong>Utilize Profiling Tools</strong>: Modern browsers and Node.js offer profiling tools to analyze performance bottlenecks.</li>
+</ul>
+<h2 id="9-further-reading">9. Further Reading<a class="headerlink" href="#9-further-reading" title="Permanent link">&para;</a></h2>
+<p>To deepen your understanding, consider exploring:
+- <strong>Books</strong>:<br />
+  - <em>JavaScript: The Definitive Guide</em> by David Flanagan<br />
+  - <em>You Don’t Know JS</em> (book series) by Kyle Simpson
+- <strong>Online Resources</strong>:<br />
+  - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs on JavaScript</a><br />
+  - <a href="https://v8.dev/">V8 Developer Guide</a>
+- <strong>Talks and Articles</strong>: Look for conference talks and blog posts that discuss advanced topics such as JIT optimizations and event loop nuances.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../system-design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Design">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Design
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About Me">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                About Me
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/shubham-0819" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/Shubham_0819" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
