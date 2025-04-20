@@ -42,7 +42,7 @@ Common interview questions and preparation materials for various technologies.
     - Collections Framework
     - Multithreading
     
-    [:octicons-arrow-right-24: View Questions](java-notes.md)
+    [:octicons-arrow-right-24: View Questions](concepts/programming/java/index.md)
 
 -   :material-database: __PostgreSQL__
     
@@ -52,7 +52,7 @@ Common interview questions and preparation materials for various technologies.
     - Indexing Strategies
     - Transaction Management
     
-    [:octicons-arrow-right-24: View Questions](postgresql-notes.md)
+    [:octicons-arrow-right-24: View Questions](databases/postgreSQL-installation-and-basic-usage.md)
 
 -   :material-database-cog: __Database Concepts__
     
@@ -62,7 +62,7 @@ Common interview questions and preparation materials for various technologies.
     - Normalization
     - SQL vs NoSQL
     
-    [:octicons-arrow-right-24: View Questions](database-notes.md)
+    [:octicons-arrow-right-24: View Questions](database.md)
 
 </div>
 

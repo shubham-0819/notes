@@ -9,8 +9,8 @@ My notes on fundamental computer science concepts, programming languages, and co
     Programming languages and their core concepts.
     
     - [JavaScript](programming/javascript/index.md)
-    - [Python](programming/python/python.md)
-    - [Java](programming/java/java.md)
+    - [Python](programming/python/index.md)
+    - [Java](programming/java/index.md)
     
     [:octicons-arrow-right-24: View Programming Notes](programming/index.md)
 

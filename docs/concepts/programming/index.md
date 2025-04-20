@@ -12,7 +12,7 @@ My notes and learnings about various programming languages, their features, and 
     - Async Programming
     - Design Patterns
     
-    [:octicons-arrow-right-24: View Notes](javascript-notes.md)
+    [:octicons-arrow-right-24: View Notes](javascript/index.md)
 
 -   :material-language-python: __Python__
     
@@ -22,7 +22,7 @@ My notes and learnings about various programming languages, their features, and 
     - Data Science
     - Web Development
     
-    [:octicons-arrow-right-24: View Notes](python.md)
+    [:octicons-arrow-right-24: View Notes](python/index.md)
 
 -   :material-language-java: __Java__
     
@@ -32,7 +32,7 @@ My notes and learnings about various programming languages, their features, and 
     - Concurrency
     - Enterprise Java
     
-    [:octicons-arrow-right-24: View Notes](java.md)
+    [:octicons-arrow-right-24: View Notes](java/index.md)
 
 </div>
 

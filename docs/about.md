@@ -66,7 +66,7 @@
     
     [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/notes)
 
--   :material-robot: __[Project Name 1]__
+<!-- -   :material-robot: __[Project Name 1]__
     
     [Brief project description]
     
@@ -75,7 +75,20 @@
     - [Technology 2]
     - [Technology 3]
     
-    [:octicons-arrow-right-24: View Project](#)
+    [:octicons-arrow-right-24: View Project](#) -->
+
+-   :material-shield-lock: __Secure Storage__
+    
+    TypeScript library providing a secure storage wrapper around browser storage objects with encryption capabilities.
+    
+    <!-- Tech Stack:
+    - TypeScript
+    - Web Crypto API
+    - Jest
+    - Browser Storage APIs -->
+    
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/secure-storage)
+
 
 -   :material-web: __[Project Name 2]__
     

@@ -116,7 +116,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Projects: projects/index.md
+  # - Projects: projects/index.md
   - Concepts:
     - Overview: concepts/index.md
     - Operating Systems:
@@ -126,9 +126,9 @@ nav:
     - Design Patterns: concepts/design-patterns.md
     - Programming:
       - Overview: concepts/programming/index.md
-      - JavaScript: concepts/programming/javascript-notes.md
-      - Python: concepts/programming/python.md
-      - Java: concepts/programming/java.md
+      - JavaScript: concepts/programming/javascript/index.md
+      - Python: concepts/programming/python/index.md
+      - Java: concepts/programming/java/index.md
   # - AI & ML:
   #   - Overview: ai/index.md
   #   - GenAI Models: ai/genai-models-by-openai.md
@@ -172,8 +172,9 @@ nav:
     - Overview: interview/index.md
     - System Design: interview/system-design.md
     - JavaScript: interview/javascript-notes.md
-    - Angular: interview/angular.md
-    - Java: interview/java.md
+    - Angular: interview/angular-notes.md
+    - Java: concepts/programming/java/index.md
+    - Database: interview/database.md
   - About Me: about.md
   
 
