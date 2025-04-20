@@ -90,27 +90,59 @@
     [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/secure-storage)
 
 
--   :material-web: __[Project Name 2]__
+-   :material-web: __Route Plotter__
     
-    [Brief project description]
+    A web application that allows users to create and visualize routes between different locations
     
     Tech Stack:
-    - [Technology 1]
-    - [Technology 2]
-    - [Technology 3]
+    - Angular
+    - SVG
     
-    [:octicons-arrow-right-24: View Project](#)
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/route-plotter)
+    
 
--   :material-code-braces: __[Project Name 3]__
+-   :material-code-braces: __Quiz Master__
     
-    [Brief project description]
+    A web-based quiz application that allows users to create, take, and manage quizzes.
     
     Tech Stack:
-    - [Technology 1]
-    - [Technology 2]
-    - [Technology 3]
+    - React
+    - Supabase
     
-    [:octicons-arrow-right-24: View Project](#)
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/quiz-master)
+
+-   :material-file-document: __Resume Builder__
+    
+    A modern, customizable resume builder with real-time preview and multiple professional templates.
+    
+    Tech Stack:
+    - React
+    - Next.js 
+    - Tailwind CSS
+    
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/resume-builder)
+
+-   :material-file: __File Management API__
+    
+    A RESTful API service that provides endpoints for managing file uploads, retrieval, and deletion.
+    
+    Tech Stack:
+    - Node.js
+    - Express
+    
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/file-management-api)
+
+-   :material-server: __Node Express Template__
+    
+    A simple backend application boilerplate with Node.js, Express, and MongoDB.
+    
+    Tech Stack:
+    - Node.js
+    - Express
+    - MongoDB
+    
+    [:octicons-arrow-right-24: View Project](https://github.com/shubham-0819/node-express-template)
+
 
 </div>
 
