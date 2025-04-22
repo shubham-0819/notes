@@ -129,6 +129,8 @@ nav:
       - JavaScript: concepts/programming/javascript/index.md
       - Python: concepts/programming/python/index.md
       - Java: concepts/programming/java/index.md
+    - Architecture:
+      - Angular Hexagonal Architecture: concepts/angular-hexagonal-architecture.md
   # - AI & ML:
   #   - Overview: ai/index.md
   #   - GenAI Models: ai/genai-models-by-openai.md

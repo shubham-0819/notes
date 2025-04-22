@@ -22,7 +22,7 @@ Welcome to my personal knowledge base! This is where I document everything I lea
     
     [:octicons-arrow-right-24: View Database Notes](databases/index.md)
 
--   :material-tools: __Development Tools__
+<!-- -   :material-tools: __Development Tools__
     
     Collection of tools I use and recommend for development.
     
@@ -32,7 +32,7 @@ Welcome to my personal knowledge base! This is where I document everything I lea
     
     Security concepts, best practices, and implementations I've studied.
     
-    [:octicons-arrow-right-24: View Security Notes](security/index.md)
+    [:octicons-arrow-right-24: View Security Notes](security/index.md) -->
 
 -   :material-application-brackets: __System Design__
     
@@ -46,11 +46,11 @@ Welcome to my personal knowledge base! This is where I document everything I lea
     
     [:octicons-arrow-right-24: View Interview Prep](interview/index.md)
 
--   :material-post: __Blog Posts__
+<!-- -   :material-post: __Blog Posts__
     
     My technical writings and tutorials.
     
-    [:octicons-arrow-right-24: View Blog Posts](blog/index.md)
+    [:octicons-arrow-right-24: View Blog Posts](blog/index.md) -->
 
 </div>
 
