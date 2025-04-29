@@ -1,20 +1,26 @@
 ## ✅ Structure of the Daily To-Do Plan
 
 ### 📅 **Monthly Focus (Phases)**
+
 Each month aligns with a sub-phase of the 3 big ones:
+
 - **Month 1–2 (Phase 1):** Foundations
 - **Month 3–4 (Phase 2):** Intermediate & Applied Knowledge
 - **Month 5–6 (Phase 3):** Mastery, Polishing & Mock Interviews
 
 ### 📆 **Weekly Goals**
+
 Each week will include:
+
 - ✅ Weekly DSA topics with number of problems
 - ✅ Java learning modules (topics + mini-projects)
 - ✅ Core CS reading/lab assignments
 - ✅ Weekly check-in and review (Sundays)
 
 ### 📋 **Daily To-Do List**
+
 Every day will be broken into:
+
 - ⏱ 2 hrs DSA
 - ⏱ 1.5 hrs Java
 - ⏱ 1 hr Core CS
@@ -25,6 +31,7 @@ Every day will be broken into:
 # 📅 **Month 1: Building the Foundations**
 
 ## 🎯 Focus
+
 - DSA: Arrays, Strings, Linked Lists
 - Java Core: Syntax, OOP, Collections, I/O
 - Core CS: Intro to OS + Computer Architecture + SQL
