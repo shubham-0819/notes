@@ -1,0 +1,686 @@
+{
+  "plan_structure": {
+    "monthly_focus": {
+      "phase_1": {
+        "months": "1-2",
+        "name": "Foundations"
+      },
+      "phase_2": {
+        "months": "3-4",
+        "name": "Intermediate & Applied Knowledge"
+      },
+      "phase_3": {
+        "months": "5-6",
+        "name": "Mastery, Polishing & Mock Interviews"
+      }
+    },
+    "weekly_goals": [
+      "Weekly DSA topics with number of problems",
+      "Java learning modules (topics + mini-projects)",
+      "Core CS reading/lab assignments",
+      "Weekly check-in and review (Sundays)"
+    ],
+    "daily_structure": {
+      "dsa": "2 hrs",
+      "java": "1.5 hrs",
+      "core_cs": "1 hr",
+      "review": "15-30 min"
+    }
+  },
+  "months": [
+    {
+      "month": 1,
+      "name": "Building the Foundations",
+      "focus": {
+        "dsa": ["Arrays", "Strings", "Linked Lists"],
+        "java_core": ["Syntax", "OOP", "Collections", "I/O"],
+        "core_cs": ["Intro to OS", "Computer Architecture", "SQL"]
+      },
+      "weeks": [
+        {
+          "week": 1,
+          "focus": {
+            "dsa": "Arrays (basics, rotations, prefix sum)",
+            "java": "Syntax, basic OOP, control structures",
+            "core_cs": "Intro to OS + CPU architecture",
+            "mini_project": "Build your own ArrayList in Java"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 problems on array traversal + prefix sum",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Write \"Hello Java\", test input/output, loops",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read 10 pages of \"CSAPP\" – digital logic",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: Java & CS terms",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Tuesday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 problems (max subarray, rotate array)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Learn methods, classes, and basic OOP",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read 5 pages of OS (process vs program)",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Feynman: explain OOP basics",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Wednesday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 problems (array rearrangement)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Write your own class with multiple methods",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Watch 1 video on CPU pipeline basics",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Note: array operations",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Thursday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 problems (searching, sorting in arrays)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Learn arrays, write utility to reverse array",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read about OS architecture layers",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "100-word summary: OS layers",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Friday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "1 timed contest problem (45 mins)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Build CLI app: mini calculator using classes",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Try a quiz (CPU + OS intro concepts)",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Anki: 10 cards",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Saturday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "3 hrs",
+                  "description": "3 harder problems (binary search based), Review missed problems",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "2 hrs",
+                  "description": "Start custom ArrayList implementation",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read on instruction cycles and registers",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "2 hrs",
+                  "description": "Flashcards & journaling",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Sunday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "1 hr",
+                  "description": "Mock quiz: 2 Java + 2 DSA questions",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Finalize and test ArrayList implementation",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Weekly retrospective & plan Week 2",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Plan next week's tasks",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "name": "Completing Foundations",
+      "focus": {
+        "dsa": ["Recursion & Backtracking", "Hashing"],
+        "java_core": ["Serialization", "NIO", "JDBC & basic ORM"],
+        "core_cs": ["OS Processes/Threads", "Memory Mgmt", "DBMS Intro & Transactions", "Security Intro"]
+      },
+      "weeks": [
+        {
+          "week": 5,
+          "focus": {
+            "dsa": "Recursion & Serialization",
+            "java": "Serialization, NIO basics",
+            "core_cs": "OS Processes vs Threads",
+            "mini_project": "Serialization module in contact app"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 \"Easy\" recursion: factorial, Fibonacci",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Read Java Serialization API; mark a class Serializable",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read OS: processes vs threads (Silberschatz Ch 3)",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: recursion & Serializable",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Tuesday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 recursion \"Medium\": recursive string reverse, digit sum",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Practice serialize/deserialize object to file",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Study context switching & simple scheduler",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Feynman: explain process vs thread",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Wednesday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 tree-recursion skeletons (pre/post-order stubs)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Explore java.nio.file.Path & Files; write file walker",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Thread lifecycle & states",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Note: NIO vs classic IO",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Thursday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 \"Medium\" w/ memoization: climb-stairs, grid paths",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "ByteBuffer & Channels: copy large file via NIO",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Sync primitives: locks & semaphores",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "100-word summary: sync",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Friday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "1 timed recursion \"Medium\" + 1 DP-primer problem",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Integrate serialization into contact app (save/load)",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Encryption basics: symmetric vs asymmetric",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Anki: 10 cards",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Saturday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "3 hrs",
+                  "description": "3 hard recursion+memo problems",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "2 hrs",
+                  "description": "Finalize serialization module in app",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Lab: simulate context switch pseudocode",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "2 hrs",
+                  "description": "Journaling & flashcards",
+                  "status": "pending"
+                }
+              ]
+            },
+            {
+              "day": "Sunday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "1 hr",
+                  "description": "Mock quiz: 1 recursion, 1 serialization, 1 OS, 1 security",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Polish & test serialization in project",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Weekly retrospective & plan Week 6",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Plan next week's tasks",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "name": "Phase 2 – Trees, Graphs, Java Concurrency & Advanced CS",
+      "focus": {
+        "dsa": ["Trees", "Graphs", "Heaps & Advanced Tree/Graph"],
+        "java_advanced": ["Multithreading & Concurrency", "Streams & Parallelism"],
+        "core_cs": ["OS deadlocks", "file systems & virtualization", "DBMS indexing & transactions", "NoSQL & security"]
+      },
+      "weeks": [
+        {
+          "week": 9,
+          "focus": {
+            "dsa": "Trees & Thread Basics",
+            "java": "Thread & Runnable basics",
+            "core_cs": "OS deadlocks & circular wait",
+            "mini_project": "Multi-threaded job queue app"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 \"Easy\" tree traversals (pre-order, in-order)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Intro to Thread & Runnable",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read on deadlocks & circular wait",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: traversal ops",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "name": "Phase 2 Completion",
+      "focus": {
+        "dsa": ["Heaps", "Tries", "Segment Trees/BIT", "MST & DSU"],
+        "java_advanced": ["Concurrency internals", "JVM internals"],
+        "core_cs": ["OS I/O & interrupts", "File-system deep dive", "Query optimization & indexing", "Distributed DBs & replication"]
+      },
+      "weeks": [
+        {
+          "week": 13,
+          "focus": {
+            "dsa": "Heaps & OS I/O Systems",
+            "java": "Atomic classes & low-level concurrency",
+            "core_cs": "OS I/O: interrupts vs polling",
+            "mini_project": "Low-level concurrency in job queue"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 \"Easy\" heap ops (build heap, peek/max-heap)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Read java.util.concurrent.atomic (AtomicInteger, etc.)",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read OS I/O: interrupts vs polling",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: atomic classes",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": 5,
+      "name": "Phase 3 – Mastery & System Design Prep",
+      "focus": {
+        "dsa": ["Hard Dynamic Programming", "Advanced Graph problems"],
+        "java_expert": ["Design Patterns", "Spring/Spring Boot", "Microservices"],
+        "system_design": ["High-level architectures", "CAP theorem", "Caching", "Load balancing"]
+      },
+      "weeks": [
+        {
+          "week": 17,
+          "focus": {
+            "dsa": "DP Fundamentals & Design Patterns I",
+            "java": "Singleton & Factory patterns",
+            "system_design": "CAP theorem & trade-offs",
+            "mini_project": "Pattern-based mini-app"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 \"Easy\" DP problems: Fibonacci (memo vs tabulation)",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Learn Singleton & Factory patterns (theory)",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Read CAP theorem & trade-offs",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: DP terms",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": 6,
+      "name": "Final Polishing & Interview Marathon",
+      "focus": {
+        "dsa": ["Hard DSA problems", "Mock interviews"],
+        "java": ["System design", "Code review"],
+        "behavioral": ["Interview preparation", "Resume polishing"]
+      },
+      "weeks": [
+        {
+          "week": 21,
+          "focus": {
+            "dsa": "Hard DSA & System Design Deep Dive",
+            "java": "Service Mesh & advanced patterns",
+            "system_design": "Caching strategies & CAP theorem",
+            "mini_project": "System design capstone"
+          },
+          "days": [
+            {
+              "day": "Monday",
+              "tasks": [
+                {
+                  "type": "dsa",
+                  "duration": "2 hrs",
+                  "description": "2 Hard DP: bitmask subsets & matrix chain",
+                  "status": "pending"
+                },
+                {
+                  "type": "java",
+                  "duration": "1.5 hrs",
+                  "description": "Study Service Mesh (Istio basics)",
+                  "status": "pending"
+                },
+                {
+                  "type": "core_cs",
+                  "duration": "1 hr",
+                  "description": "Deep dive: caching strategies (Redis vs. Memcached)",
+                  "status": "pending"
+                },
+                {
+                  "type": "review",
+                  "duration": "15 min",
+                  "description": "Flashcards: DP terms",
+                  "status": "pending"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 
