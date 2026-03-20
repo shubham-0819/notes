@@ -45,9 +45,10 @@ A collection of personal projects and experiments I've worked on.
 -   :material-check-circle: __Completed Projects__
 
     Successfully completed projects:
-    
-    - [Project 1]
-    - [Project 2]
-    - [Project 3]
+
+    <!-- TODO: Update with actual completed projects -->
+    - Secure Storage (TypeScript encryption library)
+    - Route Plotter (Angular + SVG)
+    - Quiz Master (React + Supabase)
 
 </div> 
