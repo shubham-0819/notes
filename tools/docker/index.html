@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -822,9 +827,74 @@
   
 
 
-  <h1>Docker</h1>
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with detailed notes, examples, and real-world usage patterns.</p>
+</blockquote>
+<h2 id="what-is-docker">What is Docker?<a class="headerlink" href="#what-is-docker" title="Permanent link">&para;</a></h2>
+<p>Docker is an open-source platform for developing, shipping, and running applications inside lightweight, portable containers.</p>
+<h2 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Image</strong> - A read-only template used to create containers</li>
+<li><strong>Container</strong> - A runnable instance of an image</li>
+<li><strong>Dockerfile</strong> - A script of instructions to build an image</li>
+<li><strong>Registry</strong> - A storage and distribution system for images (e.g., Docker Hub)</li>
+<li><strong>Volume</strong> - Persistent storage mounted into a container</li>
+<li><strong>Network</strong> - Communication layer between containers</li>
+</ul>
+<h2 id="basic-commands">Basic Commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Images
+docker pull &lt;image&gt;          # Pull an image from registry
+docker build -t &lt;name&gt; .     # Build image from Dockerfile
+docker images                # List local images
+docker rmi &lt;image&gt;           # Remove an image
 
+# Containers
+docker run &lt;image&gt;           # Create and start a container
+docker run -d -p 8080:80 &lt;image&gt;  # Run detached, map ports
+docker ps                    # List running containers
+docker ps -a                 # List all containers
+docker stop &lt;container&gt;      # Stop a container
+docker rm &lt;container&gt;        # Remove a container
+docker logs &lt;container&gt;      # View container logs
+docker exec -it &lt;container&gt; bash  # Open shell in container
 
+# Volumes
+docker volume create &lt;name&gt;
+docker volume ls
+
+# Cleanup
+docker system prune          # Remove unused resources
+</code></pre>
+<h2 id="dockerfile-example">Dockerfile Example<a class="headerlink" href="#dockerfile-example" title="Permanent link">&para;</a></h2>
+<pre><code class="language-dockerfile">FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD [&quot;node&quot;, &quot;index.js&quot;]
+</code></pre>
+<h2 id="docker-compose-basic">Docker Compose (Basic)<a class="headerlink" href="#docker-compose-basic" title="Permanent link">&para;</a></h2>
+<pre><code class="language-yaml"># docker-compose.yml
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - &quot;3000:3000&quot;
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: secret
+</code></pre>
+<pre><code class="language-bash">docker-compose up -d    # Start services
+docker-compose down     # Stop and remove services
+</code></pre>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.docker.com/">Docker Official Docs</a></li>
+</ul>
 
 
 

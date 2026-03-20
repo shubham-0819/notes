@@ -22,7 +22,7 @@
     
     
       
-        <title>Basics - Notes</title>
+        <title>System Design Basics - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#system-design-basics" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basics
+              System Design Basics
             
           </span>
         </div>
@@ -822,9 +827,121 @@
   
 
 
-  <h1>Basics</h1>
-
-
+<h1 id="system-design-basics">System Design Basics<a class="headerlink" href="#system-design-basics" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with deeper coverage of each topic, diagrams, trade-off analysis, and real-world examples.</p>
+</blockquote>
+<h2 id="key-goals-of-system-design">Key Goals of System Design<a class="headerlink" href="#key-goals-of-system-design" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Scalability</strong> — Handle growing load (users, data, traffic)</li>
+<li><strong>Availability</strong> — System stays up despite failures</li>
+<li><strong>Reliability</strong> — System behaves correctly over time</li>
+<li><strong>Maintainability</strong> — Easy to change and operate</li>
+<li><strong>Performance</strong> — Low latency, high throughput</li>
+</ul>
+<h2 id="horizontal-vs-vertical-scaling">Horizontal vs Vertical Scaling<a class="headerlink" href="#horizontal-vs-vertical-scaling" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Vertical Scaling</th>
+<th>Horizontal Scaling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What</td>
+<td>Bigger machine (more CPU/RAM)</td>
+<td>More machines</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>Hardware ceiling</td>
+<td>Practically unlimited</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Expensive at scale</td>
+<td>Commodity hardware</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Simple</td>
+<td>Requires load balancing, distributed coordination</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-building-blocks">Common Building Blocks<a class="headerlink" href="#common-building-blocks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load Balancer</td>
+<td>Distribute traffic across servers</td>
+</tr>
+<tr>
+<td>CDN</td>
+<td>Serve static assets close to users</td>
+</tr>
+<tr>
+<td>Cache (Redis/Memcached)</td>
+<td>Reduce DB load, speed up reads</td>
+</tr>
+<tr>
+<td>Message Queue (Kafka, RabbitMQ)</td>
+<td>Async processing, decouple services</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Persistent storage</td>
+</tr>
+<tr>
+<td>Object Storage (S3)</td>
+<td>Store files, images, backups</td>
+</tr>
+<tr>
+<td>API Gateway</td>
+<td>Single entry point, routing, auth</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cap-theorem">CAP Theorem<a class="headerlink" href="#cap-theorem" title="Permanent link">&para;</a></h2>
+<p>A distributed system can only guarantee <strong>two</strong> of the following three:</p>
+<ul>
+<li><strong>Consistency (C)</strong> — Every read returns the latest write</li>
+<li><strong>Availability (A)</strong> — Every request gets a response</li>
+<li><strong>Partition Tolerance (P)</strong> — System works despite network failures</li>
+</ul>
+<p>In practice, P is unavoidable, so you choose between <strong>CP</strong> or <strong>AP</strong>.</p>
+<h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Where to cache:</strong> Client, CDN, Application layer, Database layer</li>
+<li><strong>Strategies:</strong> Cache-aside, Write-through, Write-back, Read-through</li>
+<li><strong>Eviction policies:</strong> LRU, LFU, TTL</li>
+</ul>
+<h2 id="database-scaling">Database Scaling<a class="headerlink" href="#database-scaling" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Indexing</strong> — Speed up reads</li>
+<li><strong>Read replicas</strong> — Offload reads from primary</li>
+<li><strong>Sharding</strong> — Split data across multiple DBs by a shard key</li>
+<li><strong>Denormalization</strong> — Duplicate data for faster reads</li>
+</ul>
+<h2 id="api-design-basics">API Design Basics<a class="headerlink" href="#api-design-basics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>REST</strong> — Stateless, resource-based, uses HTTP verbs</li>
+<li><strong>GraphQL</strong> — Query exactly the data you need</li>
+<li><strong>gRPC</strong> — Binary protocol, efficient for internal services</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview">Grokking the System Design Interview</a></li>
+</ul>
 
 
 

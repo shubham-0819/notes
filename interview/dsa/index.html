@@ -22,7 +22,7 @@
     
     
       
-        <title>Dsa - Notes</title>
+        <title>DSA Interview Notes - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dsa-interview-notes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dsa
+              DSA Interview Notes
             
           </span>
         </div>
@@ -822,9 +827,196 @@
   
 
 
-  <h1>Dsa</h1>
-
-
+<h1 id="dsa-interview-notes">DSA Interview Notes<a class="headerlink" href="#dsa-interview-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with detailed explanations, complexity analysis, templates, and problem-specific notes for each topic.</p>
+</blockquote>
+<h2 id="time-space-complexity">Time &amp; Space Complexity<a class="headerlink" href="#time-space-complexity" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O(1)</td>
+<td>Constant</td>
+<td>HashMap lookup</td>
+</tr>
+<tr>
+<td>O(log n)</td>
+<td>Logarithmic</td>
+<td>Binary search</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>Linear</td>
+<td>Array traversal</td>
+</tr>
+<tr>
+<td>O(n log n)</td>
+<td>Linearithmic</td>
+<td>Merge sort</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>Quadratic</td>
+<td>Bubble sort</td>
+</tr>
+<tr>
+<td>O(2ⁿ)</td>
+<td>Exponential</td>
+<td>Fibonacci (naive)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-structures-quick-reference">Data Structures — Quick Reference<a class="headerlink" href="#data-structures-quick-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Access</th>
+<th>Search</th>
+<th>Insert</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Linked List</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Queue</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Hash Map</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>BST (avg)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-patterns">Common Patterns<a class="headerlink" href="#common-patterns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Two Pointers</strong></td>
+<td>Sorted arrays, palindromes, pair sums</td>
+</tr>
+<tr>
+<td><strong>Sliding Window</strong></td>
+<td>Subarray/substring of fixed or variable size</td>
+</tr>
+<tr>
+<td><strong>Binary Search</strong></td>
+<td>Sorted data, search space reduction</td>
+</tr>
+<tr>
+<td><strong>BFS</strong></td>
+<td>Shortest path in unweighted graph, level-order tree traversal</td>
+</tr>
+<tr>
+<td><strong>DFS</strong></td>
+<td>Path finding, cycle detection, connected components</td>
+</tr>
+<tr>
+<td><strong>Dynamic Programming</strong></td>
+<td>Overlapping subproblems, optimal substructure</td>
+</tr>
+<tr>
+<td><strong>Backtracking</strong></td>
+<td>Permutations, combinations, constraint satisfaction</td>
+</tr>
+<tr>
+<td><strong>Divide &amp; Conquer</strong></td>
+<td>Merge sort, quick sort, binary search</td>
+</tr>
+<tr>
+<td><strong>Greedy</strong></td>
+<td>Interval scheduling, Huffman encoding</td>
+</tr>
+<tr>
+<td><strong>Monotonic Stack</strong></td>
+<td>Next greater/smaller element problems</td>
+</tr>
+</tbody>
+</table>
+<h2 id="problem-solving-template">Problem-Solving Template<a class="headerlink" href="#problem-solving-template" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Understand</strong> — Read the problem carefully, identify inputs/outputs</li>
+<li><strong>Examples</strong> — Walk through provided examples, try edge cases</li>
+<li><strong>Brute Force</strong> — Think of the naive solution first</li>
+<li><strong>Optimize</strong> — Identify bottlenecks, apply patterns</li>
+<li><strong>Code</strong> — Write clean code</li>
+<li><strong>Test</strong> — Run through examples, edge cases (empty, single element, large)</li>
+</ol>
+<h2 id="topics-to-master">Topics to Master<a class="headerlink" href="#topics-to-master" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Arrays &amp; Strings</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Linked Lists</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Stacks &amp; Queues</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Trees &amp; BST</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Graphs (BFS, DFS)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Heaps / Priority Queue</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Hash Maps &amp; Sets</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dynamic Programming</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sorting &amp; Searching</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Recursion &amp; Backtracking</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tries</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bit Manipulation</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://leetcode.com/">LeetCode</a></li>
+<li><em>Cracking the Coding Interview</em> by Gayle Laakmann McDowell</li>
+<li><em>Elements of Programming Interviews</em> by Adnan Aziz</li>
+</ul>
 
 
 

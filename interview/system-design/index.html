@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#system-design-interview-notes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -798,6 +803,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -810,6 +830,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-approach-a-system-design-interview" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Approach a System Design Interview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-system-design-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common System Design Topics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacity-estimation-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacity Estimation (Quick Reference)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems-to-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems to Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1038,9 +1122,88 @@
   
 
 
-  <h1>System Design</h1>
-
-
+<h1 id="system-design-interview-notes">System Design Interview Notes<a class="headerlink" href="#system-design-interview-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with detailed walkthroughs of common system design problems (URL shortener, Twitter, Netflix, etc.) and a structured approach framework.</p>
+</blockquote>
+<h2 id="how-to-approach-a-system-design-interview">How to Approach a System Design Interview<a class="headerlink" href="#how-to-approach-a-system-design-interview" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Clarify Requirements</strong> — Functional and non-functional (scale, latency, availability)</li>
+<li><strong>Estimate Scale</strong> — Users, requests/sec, storage, bandwidth</li>
+<li><strong>High-Level Design</strong> — Sketch the major components</li>
+<li><strong>Deep Dive</strong> — Focus on the critical/interesting parts</li>
+<li><strong>Identify Bottlenecks</strong> — Single points of failure, hot spots</li>
+<li><strong>Trade-offs</strong> — Discuss what you chose and why</li>
+</ol>
+<h2 id="common-system-design-topics">Common System Design Topics<a class="headerlink" href="#common-system-design-topics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key Concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load Balancing</td>
+<td>Round-robin, least connections, L4 vs L7</td>
+</tr>
+<tr>
+<td>Caching</td>
+<td>Cache-aside, Redis, eviction policies</td>
+</tr>
+<tr>
+<td>Databases</td>
+<td>SQL vs NoSQL, sharding, replication</td>
+</tr>
+<tr>
+<td>Message Queues</td>
+<td>Kafka, RabbitMQ, async decoupling</td>
+</tr>
+<tr>
+<td>CDN</td>
+<td>Static asset delivery, edge caching</td>
+</tr>
+<tr>
+<td>Rate Limiting</td>
+<td>Token bucket, sliding window</td>
+</tr>
+<tr>
+<td>API Design</td>
+<td>REST, GraphQL, gRPC</td>
+</tr>
+<tr>
+<td>Consistent Hashing</td>
+<td>Distributed caching, minimizing remapping</td>
+</tr>
+</tbody>
+</table>
+<h2 id="capacity-estimation-quick-reference">Capacity Estimation (Quick Reference)<a class="headerlink" href="#capacity-estimation-quick-reference" title="Permanent link">&para;</a></h2>
+<pre><code>1 million requests/day  ≈ 12 req/sec
+Read:Write ratio        - ask the interviewer
+1 byte = 8 bits
+1 KB = 1,000 bytes
+1 MB = 1,000 KB
+1 GB = 1,000 MB
+1 TB = 1,000 GB
+</code></pre>
+<h2 id="common-problems-to-practice">Common Problems to Practice<a class="headerlink" href="#common-problems-to-practice" title="Permanent link">&para;</a></h2>
+<ul>
+<li>URL Shortener (e.g., bit.ly)</li>
+<li>Social Media Feed (e.g., Twitter timeline)</li>
+<li>Video Streaming (e.g., YouTube/Netflix)</li>
+<li>Chat Application (e.g., WhatsApp)</li>
+<li>Ride-sharing (e.g., Uber)</li>
+<li>Search Autocomplete</li>
+<li>Rate Limiter</li>
+<li>Distributed Cache</li>
+</ul>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>System Design Interview</em> by Alex Xu</li>
+<li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer (GitHub)</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview">Grokking the System Design Interview</a></li>
+</ul>
 
 
 

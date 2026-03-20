@@ -22,7 +22,7 @@
     
     
       
-        <title>Springboot - Notes</title>
+        <title>Spring Boot - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#spring-boot" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Springboot
+              Spring Boot
             
           </span>
         </div>
@@ -822,9 +827,114 @@
   
 
 
-  <h1>Springboot</h1>
+<h1 id="spring-boot">Spring Boot<a class="headerlink" href="#spring-boot" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with security, data access, testing, microservices, and production deployment notes.</p>
+</blockquote>
+<h2 id="what-is-spring-boot">What is Spring Boot?<a class="headerlink" href="#what-is-spring-boot" title="Permanent link">&para;</a></h2>
+<p>Spring Boot is an opinionated framework built on top of Spring that simplifies the setup and development of production-ready Java applications.</p>
+<h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Auto-configuration — no XML boilerplate</li>
+<li>Embedded server (Tomcat/Jetty) — run as a plain JAR</li>
+<li>Spring Initializr for quick project scaffolding</li>
+<li>Actuator for production monitoring</li>
+</ul>
+<h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
+<pre><code>src/
+├── main/
+│   ├── java/com/example/demo/
+│   │   ├── DemoApplication.java      # Entry point
+│   │   ├── controller/               # REST controllers
+│   │   ├── service/                  # Business logic
+│   │   ├── repository/               # Data access
+│   │   └── model/                    # Entities / DTOs
+│   └── resources/
+│       └── application.properties    # Configuration
+└── test/
+</code></pre>
+<h2 id="basic-rest-controller">Basic REST Controller<a class="headerlink" href="#basic-rest-controller" title="Permanent link">&para;</a></h2>
+<pre><code class="language-java">@RestController
+@RequestMapping(&quot;/api/users&quot;)
+public class UserController {
 
+    @Autowired
+    private UserService userService;
 
+    @GetMapping
+    public List&lt;User&gt; getAll() {
+        return userService.findAll();
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;User&gt; getById(@PathVariable Long id) {
+        return userService.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public User create(@RequestBody User user) {
+        return userService.save(user);
+    }
+}
+</code></pre>
+<h2 id="applicationproperties-common-settings">application.properties (Common Settings)<a class="headerlink" href="#applicationproperties-common-settings" title="Permanent link">&para;</a></h2>
+<pre><code class="language-properties">server.port=8080
+spring.datasource.url=jdbc:postgresql://localhost:5432/mydb
+spring.datasource.username=user
+spring.datasource.password=secret
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+</code></pre>
+<h2 id="common-annotations">Common Annotations<a class="headerlink" href="#common-annotations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@SpringBootApplication</code></td>
+<td>Entry point, enables auto-config</td>
+</tr>
+<tr>
+<td><code>@RestController</code></td>
+<td>Marks class as REST controller</td>
+</tr>
+<tr>
+<td><code>@GetMapping</code>, <code>@PostMapping</code> etc.</td>
+<td>HTTP method mappings</td>
+</tr>
+<tr>
+<td><code>@Service</code></td>
+<td>Business logic layer</td>
+</tr>
+<tr>
+<td><code>@Repository</code></td>
+<td>Data access layer</td>
+</tr>
+<tr>
+<td><code>@Autowired</code></td>
+<td>Dependency injection</td>
+</tr>
+<tr>
+<td><code>@Entity</code></td>
+<td>JPA entity</td>
+</tr>
+<tr>
+<td><code>@Value</code></td>
+<td>Inject config values</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://spring.io/projects/spring-boot">Spring Boot Official Docs</a></li>
+<li><a href="https://start.spring.io/">Spring Initializr</a></li>
+</ul>
 
 
 

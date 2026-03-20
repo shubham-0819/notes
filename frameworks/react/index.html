@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#react" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -822,9 +827,110 @@
   
 
 
-  <h1>React</h1>
+<h1 id="react">React<a class="headerlink" href="#react" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with hooks deep-dive, state management, performance patterns, and real-world examples.</p>
+</blockquote>
+<h2 id="what-is-react">What is React?<a class="headerlink" href="#what-is-react" title="Permanent link">&para;</a></h2>
+<p>React is a JavaScript library for building user interfaces, developed by Meta. It uses a component-based architecture and a virtual DOM for efficient UI updates.</p>
+<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
+<pre><code class="language-jsx">// Functional Component
+function Greeting({ name }) {
+  return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
 
+// Usage
+&lt;Greeting name=&quot;World&quot; /&gt;
+</code></pre>
+<h3 id="state-with-usestate">State with useState<a class="headerlink" href="#state-with-usestate" title="Permanent link">&para;</a></h3>
+<pre><code class="language-jsx">import { useState } from 'react';
 
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+      Count: {count}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3 id="side-effects-with-useeffect">Side Effects with useEffect<a class="headerlink" href="#side-effects-with-useeffect" title="Permanent link">&para;</a></h3>
+<pre><code class="language-jsx">import { useEffect, useState } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+
+  useEffect(() =&gt; {
+    fetch('/api/data')
+      .then(res =&gt; res.json())
+      .then(setData);
+  }, []); // empty array = run once on mount
+
+  return &lt;div&gt;{data ? JSON.stringify(data) : 'Loading...'}&lt;/div&gt;;
+}
+</code></pre>
+<h3 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h3>
+<pre><code class="language-jsx">function Card({ title, children }) {
+  return (
+    &lt;div className=&quot;card&quot;&gt;
+      &lt;h2&gt;{title}&lt;/h2&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2 id="common-hooks">Common Hooks<a class="headerlink" href="#common-hooks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>useState</code></td>
+<td>Local component state</td>
+</tr>
+<tr>
+<td><code>useEffect</code></td>
+<td>Side effects (fetch, subscriptions)</td>
+</tr>
+<tr>
+<td><code>useContext</code></td>
+<td>Consume React context</td>
+</tr>
+<tr>
+<td><code>useRef</code></td>
+<td>Mutable ref / DOM access</td>
+</tr>
+<tr>
+<td><code>useMemo</code></td>
+<td>Memoize expensive computations</td>
+</tr>
+<tr>
+<td><code>useCallback</code></td>
+<td>Memoize functions</td>
+</tr>
+<tr>
+<td><code>useReducer</code></td>
+<td>Complex state logic</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-patterns">Key Patterns<a class="headerlink" href="#key-patterns" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Lifting State Up</strong> - Move shared state to common ancestor</li>
+<li><strong>Controlled Components</strong> - Form elements driven by state</li>
+<li><strong>Custom Hooks</strong> - Extract reusable stateful logic into <code>use*</code> functions</li>
+<li><strong>Context API</strong> - Share global state without prop drilling</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://react.dev/">React Official Docs</a></li>
+<li><a href="https://github.com/facebook/react">React GitHub</a></li>
+</ul>
 
 
 

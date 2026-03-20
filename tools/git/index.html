@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#git" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -822,9 +827,65 @@
   
 
 
-  <h1>Git</h1>
+<h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with branching strategies, advanced workflows, and team collaboration tips.</p>
+</blockquote>
+<h2 id="what-is-git">What is Git?<a class="headerlink" href="#what-is-git" title="Permanent link">&para;</a></h2>
+<p>Git is a distributed version control system for tracking changes in source code during software development.</p>
+<h2 id="basic-commands">Basic Commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># Setup
+git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;you@example.com&quot;
 
+# Repository
+git init                    # Initialize a new repo
+git clone &lt;url&gt;             # Clone a remote repo
 
+# Staging &amp; Committing
+git status                  # Check working tree status
+git add &lt;file&gt;              # Stage a file
+git add .                   # Stage all changes
+git commit -m &quot;message&quot;     # Commit staged changes
+git commit --amend          # Amend the last commit
+
+# Branching
+git branch                  # List branches
+git branch &lt;name&gt;           # Create a branch
+git checkout &lt;branch&gt;       # Switch to branch
+git checkout -b &lt;branch&gt;    # Create and switch
+git merge &lt;branch&gt;          # Merge branch into current
+git branch -d &lt;branch&gt;      # Delete a branch
+
+# Remote
+git remote add origin &lt;url&gt; # Add remote
+git push origin &lt;branch&gt;    # Push to remote
+git pull origin &lt;branch&gt;    # Pull from remote
+git fetch                   # Fetch without merging
+
+# History
+git log                     # View commit history
+git log --oneline           # Compact history
+git diff                    # Show unstaged changes
+git diff --staged           # Show staged changes
+</code></pre>
+<h2 id="undoing-changes">Undoing Changes<a class="headerlink" href="#undoing-changes" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">git restore &lt;file&gt;          # Discard working dir changes
+git restore --staged &lt;file&gt; # Unstage a file
+git revert &lt;commit&gt;         # Create a revert commit
+git reset --hard &lt;commit&gt;   # Reset to commit (destructive)
+</code></pre>
+<h2 id="common-workflows">Common Workflows<a class="headerlink" href="#common-workflows" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Feature Branch Workflow</strong> - Create a branch per feature, merge via PR</li>
+<li><strong>Gitflow</strong> - <code>main</code>, <code>develop</code>, <code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code></li>
+<li><strong>Trunk-Based Development</strong> - Short-lived branches, frequent merges to main</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://git-scm.com/doc">Git Official Docs</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+</ul>
 
 
 

@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#tips-for-better-suggestions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -824,13 +829,37 @@
 
   <h1>How to use copilot</h1>
 
+<blockquote>
+<p><strong>TODO:</strong> Expand with more Copilot tips, prompt engineering techniques, and examples of effective vs ineffective prompts.</p>
+</blockquote>
+<h2 id="tips-for-better-suggestions">Tips for Better Suggestions<a class="headerlink" href="#tips-for-better-suggestions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Only Open your relevant files for while running code suggestion.</li>
-<li>Provide a top-level comment at top of each file</li>
-<li>Set Includes and references provide details of whhich dependencies you want to go with, name fof library or version</li>
-<li>Meaningful names matter, prvide a meaningfule name will help you to get better code suggestion.</li>
-<li>Provide specific and well- scoped function comments</li>
-<li>Provide sample code</li>
+<li>Only open your relevant files while running code suggestions</li>
+<li>Provide a top-level comment at the top of each file describing its purpose</li>
+<li>Set includes and references — specify which dependencies, library names, and versions you want</li>
+<li>Meaningful names matter — descriptive variable and function names lead to better suggestions</li>
+<li>Provide specific and well-scoped function comments</li>
+<li>Provide sample code or test cases to guide the suggestion</li>
+</ul>
+<h2 id="effective-prompting">Effective Prompting<a class="headerlink" href="#effective-prompting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Be specific about the language, framework, and version</li>
+<li>Describe the <strong>input</strong> and <strong>output</strong> of the function you want</li>
+<li>Mention constraints (e.g., "without using external libraries")</li>
+<li>Use comments to guide: <code>// Using Express.js, create a middleware that...</code></li>
+</ul>
+<h2 id="what-copilot-is-good-at">What Copilot is Good At<a class="headerlink" href="#what-copilot-is-good-at" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Boilerplate code and repetitive patterns</li>
+<li>Completing functions from descriptive comments</li>
+<li>Writing unit tests from existing code</li>
+<li>Converting pseudocode to real code</li>
+</ul>
+<h2 id="what-to-watch-out-for">What to Watch Out For<a class="headerlink" href="#what-to-watch-out-for" title="Permanent link">&para;</a></h2>
+<ul>
+<li>It may generate plausible but incorrect logic — always review</li>
+<li>Security-sensitive code (auth, crypto) should be carefully audited</li>
+<li>May use deprecated APIs — verify against current docs</li>
 </ul>
 
 

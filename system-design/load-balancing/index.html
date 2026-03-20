@@ -22,7 +22,7 @@
     
     
       
-        <title>Load balancing - Notes</title>
+        <title>Load Balancing - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#load-balancing" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Load balancing
+              Load Balancing
             
           </span>
         </div>
@@ -822,9 +827,91 @@
   
 
 
-  <h1>Load balancing</h1>
-
-
+<h1 id="load-balancing">Load Balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with real-world configurations, cloud-specific load balancers (AWS ALB/NLB), health checks, and case studies.</p>
+</blockquote>
+<h2 id="what-is-load-balancing">What is Load Balancing?<a class="headerlink" href="#what-is-load-balancing" title="Permanent link">&para;</a></h2>
+<p>Load balancing is the process of distributing incoming network traffic across multiple servers to ensure no single server is overwhelmed, improving availability and reliability.</p>
+<h2 id="why-it-matters">Why It Matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Prevents single points of failure</li>
+<li>Increases throughput and concurrency</li>
+<li>Enables horizontal scaling</li>
+<li>Enables zero-downtime deployments (rolling updates)</li>
+</ul>
+<h2 id="load-balancing-algorithms">Load Balancing Algorithms<a class="headerlink" href="#load-balancing-algorithms" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Description</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Round Robin</strong></td>
+<td>Requests distributed sequentially</td>
+<td>Uniform servers</td>
+</tr>
+<tr>
+<td><strong>Least Connections</strong></td>
+<td>Routes to server with fewest active connections</td>
+<td>Long-lived connections</td>
+</tr>
+<tr>
+<td><strong>IP Hash</strong></td>
+<td>Routes based on client IP (sticky sessions)</td>
+<td>Session affinity</td>
+</tr>
+<tr>
+<td><strong>Weighted Round Robin</strong></td>
+<td>Servers with higher weight get more requests</td>
+<td>Heterogeneous servers</td>
+</tr>
+<tr>
+<td><strong>Random</strong></td>
+<td>Randomly picks a server</td>
+<td>Simple, uniform load</td>
+</tr>
+</tbody>
+</table>
+<h2 id="types-of-load-balancers">Types of Load Balancers<a class="headerlink" href="#types-of-load-balancers" title="Permanent link">&para;</a></h2>
+<h3 id="layer-4-transport-layer">Layer 4 (Transport Layer)<a class="headerlink" href="#layer-4-transport-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Operates at TCP/UDP level</li>
+<li>Faster, no content inspection</li>
+<li>Example: AWS NLB</li>
+</ul>
+<h3 id="layer-7-application-layer">Layer 7 (Application Layer)<a class="headerlink" href="#layer-7-application-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Operates at HTTP/HTTPS level</li>
+<li>Can route based on URL, headers, cookies</li>
+<li>Example: AWS ALB, Nginx, HAProxy</li>
+</ul>
+<h2 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h2>
+<p>Load balancers periodically probe backend servers to detect failures:
+- <strong>Active checks</strong> — LB sends requests to a health endpoint (<code>/health</code>)
+- <strong>Passive checks</strong> — LB monitors real traffic for errors</p>
+<p>Unhealthy servers are removed from the pool until they recover.</p>
+<h2 id="session-persistence-sticky-sessions">Session Persistence (Sticky Sessions)<a class="headerlink" href="#session-persistence-sticky-sessions" title="Permanent link">&para;</a></h2>
+<p>Some applications require a user to always hit the same server (e.g., in-memory session state). This is achieved via:
+- Cookie-based affinity
+- IP hash</p>
+<p><strong>Better alternative:</strong> Use shared session storage (Redis) so any server can handle any request.</p>
+<h2 id="common-tools">Common Tools<a class="headerlink" href="#common-tools" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Nginx</strong> — High-performance reverse proxy and load balancer</li>
+<li><strong>HAProxy</strong> — Reliable, high-performance TCP/HTTP load balancer</li>
+<li><strong>AWS ALB/NLB</strong> — Managed load balancers on AWS</li>
+<li><strong>Kubernetes Ingress</strong> — L7 load balancing inside K8s clusters</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://nginx.org/en/docs/http/load_balancing.html">Nginx Load Balancing Docs</a></li>
+<li><a href="https://www.haproxy.org/#docs">HAProxy Docs</a></li>
+</ul>
 
 
 

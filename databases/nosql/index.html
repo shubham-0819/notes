@@ -22,7 +22,7 @@
     
     
       
-        <title>Nosql - Notes</title>
+        <title>NoSQL Databases - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nosql-databases" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nosql
+              NoSQL Databases
             
           </span>
         </div>
@@ -822,9 +827,132 @@
   
 
 
-  <h1>Nosql</h1>
+<h1 id="nosql-databases">NoSQL Databases<a class="headerlink" href="#nosql-databases" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with MongoDB queries, Redis patterns, Cassandra data modeling, and comparison of use cases.</p>
+</blockquote>
+<h2 id="what-is-nosql">What is NoSQL?<a class="headerlink" href="#what-is-nosql" title="Permanent link">&para;</a></h2>
+<p>NoSQL databases store and retrieve data in formats other than relational tables. They are designed for scalability, flexibility, and high performance with large volumes of unstructured or semi-structured data.</p>
+<h2 id="types-of-nosql-databases">Types of NoSQL Databases<a class="headerlink" href="#types-of-nosql-databases" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Examples</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document</strong></td>
+<td>MongoDB, CouchDB</td>
+<td>JSON-like documents, flexible schema</td>
+</tr>
+<tr>
+<td><strong>Key-Value</strong></td>
+<td>Redis, DynamoDB</td>
+<td>Caching, sessions, simple lookups</td>
+</tr>
+<tr>
+<td><strong>Column-Family</strong></td>
+<td>Cassandra, HBase</td>
+<td>Time-series, write-heavy workloads</td>
+</tr>
+<tr>
+<td><strong>Graph</strong></td>
+<td>Neo4j, Amazon Neptune</td>
+<td>Relationships, social networks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sql-vs-nosql">SQL vs NoSQL<a class="headerlink" href="#sql-vs-nosql" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SQL</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schema</td>
+<td>Fixed schema</td>
+<td>Flexible / schema-less</td>
+</tr>
+<tr>
+<td>Scaling</td>
+<td>Vertical</td>
+<td>Horizontal</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>Full ACID</td>
+<td>Eventual consistency (usually)</td>
+</tr>
+<tr>
+<td>Query Language</td>
+<td>SQL</td>
+<td>Database-specific API</td>
+</tr>
+<tr>
+<td>Best For</td>
+<td>Structured data, relationships</td>
+<td>Scale, unstructured data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mongodb-basics">MongoDB Basics<a class="headerlink" href="#mongodb-basics" title="Permanent link">&para;</a></h2>
+<pre><code class="language-js">// Insert
+db.users.insertOne({ name: &quot;Alice&quot;, age: 30 });
 
+// Find
+db.users.find({ age: { $gt: 25 } });
 
+// Update
+db.users.updateOne({ name: &quot;Alice&quot; }, { $set: { age: 31 } });
+
+// Delete
+db.users.deleteOne({ name: &quot;Alice&quot; });
+
+// Aggregation
+db.orders.aggregate([
+  { $match: { status: &quot;completed&quot; } },
+  { $group: { _id: &quot;$userId&quot;, total: { $sum: &quot;$amount&quot; } } }
+]);
+</code></pre>
+<h2 id="redis-basics">Redis Basics<a class="headerlink" href="#redis-basics" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash"># String
+SET user:1:name &quot;Alice&quot;
+GET user:1:name
+
+# TTL (expiry)
+SET session:abc &quot;token&quot; EX 3600
+
+# Hash
+HSET user:1 name Alice age 30
+HGETALL user:1
+
+# List
+LPUSH queue task1
+RPOP queue
+
+# Set
+SADD tags:post:1 &quot;redis&quot; &quot;database&quot;
+SMEMBERS tags:post:1
+</code></pre>
+<h2 id="cap-theorem-in-nosql">CAP Theorem in NoSQL<a class="headerlink" href="#cap-theorem-in-nosql" title="Permanent link">&para;</a></h2>
+<p>Most NoSQL databases favor <strong>Availability + Partition Tolerance (AP)</strong> over strict consistency:</p>
+<ul>
+<li><strong>MongoDB</strong> — CP (configurable)</li>
+<li><strong>Cassandra</strong> — AP (tunable consistency)</li>
+<li><strong>Redis</strong> — CP (single node is consistent)</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.mongodb.com/docs/">MongoDB Docs</a></li>
+<li><a href="https://redis.io/docs/">Redis Docs</a></li>
+</ul>
 
 
 

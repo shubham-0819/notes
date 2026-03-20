@@ -22,7 +22,7 @@
     
     
       
-        <title>Nodejs notes - Notes</title>
+        <title>Node.js Interview Notes - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nodejs-interview-notes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nodejs notes
+              Node.js Interview Notes
             
           </span>
         </div>
@@ -822,9 +827,110 @@
   
 
 
-  <h1>Nodejs notes</h1>
+<h1 id="nodejs-interview-notes">Node.js Interview Notes<a class="headerlink" href="#nodejs-interview-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with deeper coverage of streams, clustering, performance tuning, and common interview questions with answers.</p>
+</blockquote>
+<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="event-loop">Event Loop<a class="headerlink" href="#event-loop" title="Permanent link">&para;</a></h3>
+<p>Node.js is single-threaded and non-blocking. The event loop processes tasks in phases:</p>
+<ol>
+<li><strong>Timers</strong> — <code>setTimeout</code>, <code>setInterval</code></li>
+<li><strong>Pending Callbacks</strong> — I/O callbacks deferred from previous cycle</li>
+<li><strong>Idle, Prepare</strong> — Internal use</li>
+<li><strong>Poll</strong> — Retrieve new I/O events</li>
+<li><strong>Check</strong> — <code>setImmediate</code> callbacks</li>
+<li><strong>Close Callbacks</strong> — <code>socket.on('close', ...)</code></li>
+</ol>
+<p>Microtasks (<code>Promise.then</code>, <code>process.nextTick</code>) run between each phase.</p>
+<h3 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">const fs = require('fs');
 
+// Readable stream
+const readable = fs.createReadStream('input.txt');
+const writable = fs.createWriteStream('output.txt');
 
+// Pipe data from readable to writable
+readable.pipe(writable);
+</code></pre>
+<p><strong>Types:</strong> Readable, Writable, Duplex, Transform</p>
+<h3 id="modules-commonjs-vs-esm">Modules (CommonJS vs ESM)<a class="headerlink" href="#modules-commonjs-vs-esm" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">// CommonJS
+const express = require('express');
+module.exports = { myFunc };
+
+// ESM
+import express from 'express';
+export { myFunc };
+</code></pre>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">// Async/await pattern
+async function getData() {
+  try {
+    const data = await fetchSomething();
+    return data;
+  } catch (err) {
+    console.error('Error:', err.message);
+    throw err;
+  }
+}
+
+// Unhandled rejections
+process.on('unhandledRejection', (reason) =&gt; {
+  console.error('Unhandled:', reason);
+});
+</code></pre>
+<h2 id="common-interview-topics">Common Interview Topics<a class="headerlink" href="#common-interview-topics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Event Loop</strong></td>
+<td>Non-blocking I/O, phases, microtasks vs macrotasks</td>
+</tr>
+<tr>
+<td><strong>Streams</strong></td>
+<td>Memory-efficient data processing, backpressure</td>
+</tr>
+<tr>
+<td><strong>Clustering</strong></td>
+<td><code>cluster</code> module, spawn workers per CPU core</td>
+</tr>
+<tr>
+<td><strong>child_process</strong></td>
+<td><code>exec</code>, <code>spawn</code>, <code>fork</code> for running subprocesses</td>
+</tr>
+<tr>
+<td><strong>Buffer</strong></td>
+<td>Binary data handling</td>
+</tr>
+<tr>
+<td><strong>Global objects</strong></td>
+<td><code>__dirname</code>, <code>__filename</code>, <code>process</code>, <code>global</code></td>
+</tr>
+<tr>
+<td><strong>npm</strong></td>
+<td><code>package.json</code>, <code>node_modules</code>, <code>package-lock.json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance-tips">Performance Tips<a class="headerlink" href="#performance-tips" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use streaming for large files instead of loading them into memory</li>
+<li>Use <code>cluster</code> or worker threads for CPU-bound tasks</li>
+<li>Avoid synchronous operations (<code>fs.readFileSync</code>) in production</li>
+<li>Use connection pooling for databases</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://nodejs.org/docs/">Node.js Official Docs</a></li>
+<li><a href="https://github.com/goldbergyoni/nodebestpractices">Node.js Best Practices</a></li>
+</ul>
 
 
 

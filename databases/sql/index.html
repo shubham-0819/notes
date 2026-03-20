@@ -22,7 +22,7 @@
     
     
       
-        <title>Sql - Notes</title>
+        <title>SQL Notes - Notes</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sql-notes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sql
+              SQL Notes
             
           </span>
         </div>
@@ -822,9 +827,103 @@
   
 
 
-  <h1>Sql</h1>
+<h1 id="sql-notes">SQL Notes<a class="headerlink" href="#sql-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>TODO:</strong> This document is a stub. Expand with advanced queries, window functions, indexes, query optimization, and database-specific notes.</p>
+</blockquote>
+<h2 id="what-is-sql">What is SQL?<a class="headerlink" href="#what-is-sql" title="Permanent link">&para;</a></h2>
+<p>SQL (Structured Query Language) is the standard language for interacting with relational databases.</p>
+<h2 id="core-sql-commands">Core SQL Commands<a class="headerlink" href="#core-sql-commands" title="Permanent link">&para;</a></h2>
+<h3 id="ddl-data-definition-language">DDL — Data Definition Language<a class="headerlink" href="#ddl-data-definition-language" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">-- Create a table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
+-- Modify a table
+ALTER TABLE users ADD COLUMN age INT;
 
+-- Drop a table
+DROP TABLE users;
+</code></pre>
+<h3 id="dml-data-manipulation-language">DML — Data Manipulation Language<a class="headerlink" href="#dml-data-manipulation-language" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">-- Insert
+INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
+
+-- Select
+SELECT * FROM users;
+SELECT name, email FROM users WHERE age &gt; 25 ORDER BY name ASC;
+
+-- Update
+UPDATE users SET age = 30 WHERE name = 'Alice';
+
+-- Delete
+DELETE FROM users WHERE id = 1;
+</code></pre>
+<h3 id="joins">Joins<a class="headerlink" href="#joins" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">-- INNER JOIN — rows that match in both tables
+SELECT u.name, o.total
+FROM users u
+INNER JOIN orders o ON u.id = o.user_id;
+
+-- LEFT JOIN — all rows from left, matching from right
+SELECT u.name, o.total
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id;
+</code></pre>
+<h3 id="aggregations">Aggregations<a class="headerlink" href="#aggregations" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">SELECT department, COUNT(*) AS headcount, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING COUNT(*) &gt; 5
+ORDER BY avg_salary DESC;
+</code></pre>
+<h2 id="acid-properties">ACID Properties<a class="headerlink" href="#acid-properties" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Atomicity</strong></td>
+<td>All operations in a transaction succeed or all fail</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>DB moves from one valid state to another</td>
+</tr>
+<tr>
+<td><strong>Isolation</strong></td>
+<td>Concurrent transactions don't interfere</td>
+</tr>
+<tr>
+<td><strong>Durability</strong></td>
+<td>Committed data persists even after crash</td>
+</tr>
+</tbody>
+</table>
+<h2 id="indexes">Indexes<a class="headerlink" href="#indexes" title="Permanent link">&para;</a></h2>
+<pre><code class="language-sql">-- Create an index to speed up queries on email
+CREATE INDEX idx_users_email ON users(email);
+
+-- Composite index
+CREATE INDEX idx_orders_user_date ON orders(user_id, created_at);
+</code></pre>
+<ul>
+<li>Indexes speed up reads but slow down writes</li>
+<li>Use on columns frequently used in <code>WHERE</code>, <code>JOIN</code>, or <code>ORDER BY</code></li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.postgresql.org/docs/">PostgreSQL Docs</a></li>
+<li><a href="https://sqlzoo.net/">SQLZoo</a></li>
+</ul>
 
 
 
