@@ -162,9 +162,8 @@
 -   :material-certificate: __Certifications__
 
     Professional certifications:
-    
-    - [Certification 1]
-    - [Certification 2]
-    - [Certification 3]
+
+    <!-- TODO: Add certifications as they are earned -->
+    - No certifications listed yet
 
 </div> 
