@@ -1,21 +1,19 @@
-[tool.poetry]
+[project]
 name = "notes"
 version = "0.1.0"
 description = "Notes"
-authors = ['shubham <shubhamsingh0819@gmail.com>']
+authors = [{ name = "shubham", email = "shubhamsingh0819@gmail.com" }]
 license = "MIT"
 readme = "README.md"
-package-mode = false
-
-[tool.poetry.dependencies]
-python = "^3.8"
+requires-python = ">=3.8"
 
 # Core dependencies
-mkdocs = "^1.6.1"
-mkdocs-material = "^9.6.12"
-colorama = "^0.4.6"
-paginate = "^0.5.7"
+dependencies = [
+    "mkdocs>=1.6.1,<2.0",
+    "mkdocs-material>=9.6.12,<10.0",
+    "colorama>=0.4.6,<0.5",
+    "paginate>=0.5.7,<0.6",
+]
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false

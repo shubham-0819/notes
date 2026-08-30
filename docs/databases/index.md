@@ -1,6 +1,5 @@
 # Database Systems
 
-My notes on different database systems, concepts, and best practices.
 
 <div class="grid cards" markdown>
 
@@ -12,7 +11,7 @@ My notes on different database systems, concepts, and best practices.
     - MySQL Basics
     - SQL Best Practices
     
-    [:octicons-arrow-right-24: View Notes](sql/index.md)
+    <!-- [:octicons-arrow-right-24: View Notes](sql/index.md) -->
 
 -   :material-database-outline: __NoSQL Databases__
     
@@ -22,7 +21,7 @@ My notes on different database systems, concepts, and best practices.
     - Redis
     - Cassandra
     
-    [:octicons-arrow-right-24: View Notes](nosql/index.md)
+    <!-- [:octicons-arrow-right-24: View Notes](nosql/index.md) -->
 
 -   :material-database-search: __Database Design__
     
@@ -32,7 +31,7 @@ My notes on different database systems, concepts, and best practices.
     - Normalization
     - Indexing Strategies
     
-    [:octicons-arrow-right-24: View Notes](design/index.md)
+    <!-- [:octicons-arrow-right-24: View Notes](design/index.md) -->
 
 -   :material-database-cog: __Database Administration__
     
