@@ -1,0 +1,1920 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes">
+      
+      
+        <meta name="author" content="Shubham">
+      
+      
+        <link rel="canonical" href="https://shubham-0819.github.io/notes/databases/mongodb-interview-questions/">
+      
+      
+        <link rel="prev" href="../mongodb-aggregation/">
+      
+      
+        <link rel="next" href="../../ide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>MongoDB interview questions - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mongoose-mongodb-tricky-interview-questions-edge-cases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MongoDB interview questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shubham-0819/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shubham-0819/notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../system-design/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  System Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../interview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../practice/linux-windows-shift/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Practice
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shubham-0819/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shubham-0819/notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../system-design/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgreSQL-installation-and-basic-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NoSQL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NoSQL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb-query-tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB query tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb-query-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB query performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB interview questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB interview questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-conceptual-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Conceptual Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-behavior-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Behavior Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-operator-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Operator Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema &amp; Validation Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-tricky-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexing Tricky Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregation-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregation Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactions-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions &amp; Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modeling-trade-off-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Modeling Trade-off Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rapid-fire-what-happens-if-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rapid-Fire "What Happens If…" Round
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-good-follow-up-questions-to-ask-back-in-an-interview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonus: Good Follow-Up Questions to Ask Back in an Interview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../ide/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../interview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Prep
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../practice/linux-windows-shift/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practice
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-conceptual-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Conceptual Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-behavior-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Behavior Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-operator-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Operator Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema &amp; Validation Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-tricky-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexing Tricky Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregation-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregation Edge Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactions-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions &amp; Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modeling-trade-off-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Modeling Trade-off Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rapid-fire-what-happens-if-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rapid-Fire "What Happens If…" Round
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-good-follow-up-questions-to-ask-back-in-an-interview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonus: Good Follow-Up Questions to Ask Back in an Interview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/shubham-0819/notes/edit/master/docs/databases/mongodb-interview-questions.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/shubham-0819/notes/raw/master/docs/databases/mongodb-interview-questions.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="mongoose-mongodb-tricky-interview-questions-edge-cases">Mongoose / MongoDB: Tricky Interview Questions &amp; Edge Cases<a class="headerlink" href="#mongoose-mongodb-tricky-interview-questions-edge-cases" title="Permanent link">&para;</a></h1>
+<p>A collection of conceptual traps, edge-case behaviors, and "gotcha" interview questions — the kind that separate people who've read the docs from people who've actually been burned in production.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#core-conceptual-questions">Core Conceptual Questions</a></li>
+<li><a href="#query-behavior-edge-cases">Query Behavior Edge Cases</a></li>
+<li><a href="#update-operator-gotchas">Update Operator Gotchas</a></li>
+<li><a href="#schema--validation-traps">Schema &amp; Validation Traps</a></li>
+<li><a href="#population-edge-cases">Population Edge Cases</a></li>
+<li><a href="#indexing-tricky-questions">Indexing Tricky Questions</a></li>
+<li><a href="#aggregation-edge-cases">Aggregation Edge Cases</a></li>
+<li><a href="#transactions--concurrency">Transactions &amp; Concurrency</a></li>
+<li><a href="#data-modeling-trade-off-questions">Data Modeling Trade-off Questions</a></li>
+<li><a href="#rapid-fire-what-happens-if">Rapid-Fire "What Happens If…" Round</a></li>
+</ol>
+<hr />
+<h2 id="core-conceptual-questions">Core Conceptual Questions<a class="headerlink" href="#core-conceptual-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What's the difference between <code>find()</code> returning <code>[]</code> and <code>findOne()</code> returning <code>null</code>?</strong>
+<code>find()</code> always resolves to an array — empty if nothing matches, never <code>null</code>/<code>undefined</code>. <code>findOne()</code> resolves to a single document or <code>null</code>. A common bug: checking <code>if (!results)</code> after <code>find()</code> — it's truthy even when empty, so you must check <code>results.length</code>.</p>
+<p><strong>Q: Is a Mongoose query a Promise?</strong>
+No — it's a <strong>thenable "Query" object</strong>. It has <code>.then()</code> so <code>await</code> works, but it isn't a real Promise until you call <code>.exec()</code> or <code>await</code>/<code>.then()</code> it. This matters because you can keep chaining methods (<code>.sort()</code>, <code>.select()</code>) onto it <em>until</em> it's awaited/executed — after that, it's locked in.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">User</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">'admin'</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// not executed yet</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">q</span><span class="p">.</span><span class="nx">sort</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">});</span><span class="w">                    </span><span class="c1">// still chainable</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">q</span><span class="p">;</span><span class="w">                 </span><span class="c1">// NOW it executes</span>
+</span></code></pre></div></p>
+<p><strong>Q: What does <code>.lean()</code> actually change under the hood?</strong>
+Returns plain JS objects instead of Mongoose Documents. You lose: virtuals, instance methods, <code>.save()</code>, getters/setters, change tracking, and automatic <code>_id</code>→string casting behaviors tied to the document proxy. You gain: speed (no hydration overhead), lower memory footprint.</p>
+<p><strong>Q: Why doesn't <code>runValidators</code> run by default on update operations?</strong>
+Because <code>updateOne</code>/<code>updateMany</code>/<code>findOneAndUpdate</code> operate on the raw MongoDB update, not a full document — Mongoose can't run "required field" checks without knowing the full resulting document, and by default assumes you know what you're doing for partial updates. This is why <code>$set</code>-based partial updates can silently violate schema constraints unless you explicitly opt in.</p>
+<hr />
+<h2 id="query-behavior-edge-cases">Query Behavior Edge Cases<a class="headerlink" href="#query-behavior-edge-cases" title="Permanent link">&para;</a></h2>
+<p><strong>Q: <code>User.findById(undefined)</code> — what happens?</strong>
+This is a classic trap. Passing <code>undefined</code> as a filter to <code>findById</code>/<code>findOne</code> doesn't throw — Mongoose translates it in a way that can effectively become <code>{ _id: undefined }</code>... but MongoDB's actual behavior here has changed across driver versions and is a common source of "why did this return a random document" bugs. <strong>Always validate the ID exists and is a valid ObjectId string before querying</strong> — never trust it silently failing safe.</p>
+<p><strong>Q: What's the difference between <code>{ age: null }</code> and <code>{ age: { $exists: false } }</code> in a query?</strong>
+<code>{ age: null }</code> matches documents where <code>age</code> is explicitly <code>null</code> <strong>or</strong> where the field doesn't exist at all (MongoDB treats missing fields as matching <code>null</code> in equality queries). <code>{ age: { $exists: false } }</code> matches <em>only</em> documents where the field is truly absent. This distinction trips people up constantly.</p>
+<p><strong>Q: Does <code>{ tags: 'js' }</code> match a document where <code>tags: ['js', 'node']</code>?</strong>
+Yes. For array fields, an equality match against a scalar checks if that scalar is <em>an element of the array</em> — you don't need <code>$in</code> or <code>$elemMatch</code> for this simple case. <code>$elemMatch</code> is only needed when you must match multiple conditions against the <em>same</em> array element.</p>
+<p><strong>Q: <code>User.find({ 'address.city': 'Delhi' })</code> vs <code>User.find({ address: { city: 'Delhi' } })</code> — same result?</strong>
+No. Dot notation matches the nested field regardless of other fields in the subdocument. The second form requires the <strong>entire</strong> <code>address</code> object to match exactly <code>{ city: 'Delhi' }</code> — if <code>address</code> also has a <code>zip</code> field, it won't match.</p>
+<p><strong>Q: Why might <code>.select('-password')</code> still leak the password field?</strong>
+If the schema defines <code>password: { type: String, select: false }</code>, that's enforced at the schema level and is safer. But if select-exclusion is only done at the query level (<code>.select('-password')</code>), any query that forgets to add it will leak the field — including <code>populate()</code> calls that don't repeat the exclusion, and <code>aggregate()</code> (which bypasses Mongoose query-level select entirely).</p>
+<hr />
+<h2 id="update-operator-gotchas">Update Operator Gotchas<a class="headerlink" href="#update-operator-gotchas" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What happens if you <code>$set</code> and <code>$inc</code> the same field in one update?</strong>
+MongoDB throws an error — <code>"Updating the path 'x' would create a conflict at 'x'"</code>. You can't apply two different top-level update operators to the exact same field in a single update document.</p>
+<p><strong>Q: <code>updateOne</code> with an empty update object <code>{}</code> — what happens?</strong>
+Throws an error: MongoDB requires at least one modifier or a full replacement document. An empty <code>{}</code> is ambiguous (not clear if it's meant as “replace with empty doc” vs “no-op”), so it's rejected.</p>
+<p><strong>Q: Does <code>findOneAndUpdate</code> guarantee atomicity across the find + update?</strong>
+Yes — that's the entire point of the method. It's a single atomic operation on the server; the "find" and "update" are not two separate round trips from the app's perspective. Contrast with doing <code>findOne()</code> then <code>save()</code> in application code, which is <strong>not</strong> atomic and is vulnerable to race conditions between the read and the write.</p>
+<p><strong>Q: You call <code>findOneAndUpdate</code> without <code>{ new: true }</code>. What do you get back?</strong>
+The document <strong>as it was before the update</strong> (the old version). This is a very common bug — developers expect the updated version by default and get stale data instead.</p>
+<p><strong>Q: <code>$push</code> vs <code>$addToSet</code> — when would <code>$addToSet</code> still insert a duplicate?</strong>
+<code>$addToSet</code> does a <strong>shallow equality check</strong>. For arrays of objects, <code>{ id: 1, name: 'a' }</code> and <code>{ id: 1, name: 'a' }</code> (structurally identical) are treated as duplicates, but if key order differs internally or an extra whitespace/type mismatch exists (<code>id: 1</code> vs <code>id: '1'</code>), it will NOT be recognized as a duplicate and will insert anyway.</p>
+<hr />
+<h2 id="schema-validation-traps">Schema &amp; Validation Traps<a class="headerlink" href="#schema-validation-traps" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Does changing a schema field type retroactively affect existing documents in MongoDB?</strong>
+No. MongoDB is schemaless at the storage layer — Mongoose schemas are enforced only at the application layer, on read/write through Mongoose. Existing documents in the collection keep whatever shape they had; only documents you write <em>through</em> the new schema get cast/validated against it. This is why schema migrations often require a explicit migration script.</p>
+<p><strong>Q: What does <code>strict: true</code> (the default) do, and what's the risk of <code>strict: false</code>?</strong>
+<code>strict: true</code> silently <strong>drops</strong> any fields not defined in the schema when saving. <code>strict: false</code> allows arbitrary fields to be persisted. The gotcha: with <code>strict: true</code>, if you typo a field name when constructing a document (<code>usernme</code> instead of <code>username</code>), it fails silently — no error, the field is just dropped.</p>
+<p><strong>Q: Are Mongoose validators run in parallel or series, and does one failing stop the others?</strong>
+By default, Mongoose collects <strong>all</strong> validation errors across all fields before rejecting (not fail-fast on the first one) — useful for returning complete form-validation feedback to a client in one round trip.</p>
+<p><strong>Q: <code>required: true</code> on a field with a <code>default</code> value — can it ever fail validation?</strong>
+No — if a <code>default</code> is defined, the field will always have a value at validation time, so <code>required</code> never triggers. This combination is often a subtle bug: developers think they're both making a field mandatory <em>and</em> giving it a fallback, but the fallback means "mandatory" is unreachable.</p>
+<hr />
+<h2 id="population-edge-cases">Population Edge Cases<a class="headerlink" href="#population-edge-cases" title="Permanent link">&para;</a></h2>
+<p><strong>Q: If a referenced document has been deleted, what does <code>populate()</code> return for that field?</strong>
+<code>null</code> — Mongoose doesn't throw; the <code>author</code> field (or whatever the ref is) simply resolves to <code>null</code> if the referenced <code>_id</code> no longer exists in the target collection. Code that assumes populated refs are always present (<code>post.author.name</code>) will throw a runtime error on orphaned references.</p>
+<p><strong>Q: Can you <code>populate()</code> a field that isn't actually a <code>ref</code> in the schema?</strong>
+No — Mongoose needs the <code>ref</code> (or a <code>refPath</code> for dynamic refs) defined in the schema to know which model to query. Calling <code>.populate('someField')</code> on a field without a <code>ref</code> silently does nothing (no error, field just stays as-is) — a very quiet failure mode.</p>
+<p><strong>Q: What's <code>refPath</code> for, and when would you need it?</strong>
+Used for <strong>dynamic references</strong> — when a field can point to different models depending on another field's value (polymorphic relations):
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">commentSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Schema</span><span class="p">({</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">commentableType</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'Post'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Video'</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">commentableId</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Schema</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">refPath</span><span class="o">:</span><span class="w"> </span><span class="s1">'commentableType'</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
+<p><strong>Q: Does <code>.populate()</code> respect <code>.select('-password')</code> exclusions set at the schema level (<code>select: false</code>)?</strong>
+Yes, by default — schema-level <code>select: false</code> is honored during populate too, unless explicitly overridden with <code>.populate({ path: 'author', select: '+password' })</code>.</p>
+<hr />
+<h2 id="indexing-tricky-questions">Indexing Tricky Questions<a class="headerlink" href="#indexing-tricky-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: You created an index but queries are still doing a collection scan (<code>COLLSCAN</code>). Why?</strong>
+Common causes: the query uses a field combination that doesn't match the index's field order (compound indexes are prefix-based — an index on <code>{a: 1, b: 1}</code> supports queries on <code>a</code> alone or <code>a+b</code>, but NOT <code>b</code> alone). Or a <code>$regex</code> without an anchor (<code>^</code>), a <code>$where</code>, or a query using <code>$ne</code>/<code>$nin</code> (these often can't use an index efficiently). Or the index simply hasn't finished building yet in the background.</p>
+<p><strong>Q: What's the difference between a compound index <code>{a: 1, b: -1}</code> and two separate single-field indexes on <code>a</code> and <code>b</code>?</strong>
+A compound index can satisfy queries filtering/sorting on <code>a</code>, or on <code>a</code> + <code>b</code> together, in a single index scan. Two separate indexes generally can't be combined as efficiently for a query filtering on both fields simultaneously (MongoDB <em>can</em> do index intersection but it's usually much less efficient than one well-designed compound index).</p>
+<p><strong>Q: Does a unique index allow multiple documents with the field missing entirely?</strong>
+Yes, by default — multiple documents can each <em>omit</em> the unique field, since <code>null</code>/missing is treated as one value only if the field is present as <code>null</code>. Actually — multiple documents with the field <strong>completely absent</strong> are all allowed since MongoDB doesn't consider "missing" the same as duplicate <code>null</code> values in the same way across versions; but multiple documents with the field <strong>explicitly set to <code>null</code></strong> WILL collide on a standard unique index (only one <code>null</code> allowed) unless you use a <strong>partial index</strong> with <code>{ partialFilterExpression: { field: { $exists: true } } }</code> to only enforce uniqueness when the field is present.</p>
+<p><strong>Q: Why might adding an index make writes slower — and is that always a bad trade?</strong>
+Every index must be updated on every insert/update/delete affecting the indexed field(s). More indexes = more write overhead. It's a legitimate trade-off: read-heavy collections benefit from more indexes, write-heavy collections (logs, events) should be indexed minimally and deliberately.</p>
+<hr />
+<h2 id="aggregation-edge-cases">Aggregation Edge Cases<a class="headerlink" href="#aggregation-edge-cases" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Does <code>$match</code> behave differently placed at the start of a pipeline vs after a <code>$project</code>?</strong>
+Functionally it can be the same, but performance differs hugely. <code>$match</code> at the very start can use indexes (like a regular <code>find()</code>). Once you've passed through <code>$project</code>/<code>$group</code>/<code>$unwind</code>, subsequent <code>$match</code> stages operate on transformed, in-memory documents and can't use collection indexes anymore. <strong>Always push <code>$match</code> as early as possible.</strong></p>
+<p><strong>Q: What does <code>$unwind</code> do to a document where the array field is empty <code>[]</code> or missing?</strong>
+By default, <code>$unwind</code> <strong>drops</strong> documents where the array is empty or the field doesn't exist — they vanish from the pipeline output entirely. To keep them (with the field set to <code>null</code>), you must explicitly use:
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w"> </span><span class="nx">$unwind</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s1">'$tags'</span><span class="p">,</span><span class="w"> </span><span class="nx">preserveNullAndEmptyArrays</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+This is a very common silent-data-loss bug.</p>
+<p><strong>Q: Can aggregation stages reference the results of earlier stages within the same <code>$group</code>?</strong>
+No — inside a single <code>$group</code> stage, all accumulator expressions (<code>$sum</code>, <code>$avg</code>, etc.) see the same input documents; you can't reference one accumulator's result from another accumulator in the same stage. You'd need a follow-up <code>$project</code> or <code>$addFields</code> stage after the <code>$group</code> to combine/derive from the grouped results.</p>
+<p><strong>Q: Is <code>$lookup</code> equivalent to a SQL JOIN in terms of performance guarantees?</strong>
+Not quite — <code>$lookup</code> without an index on the foreign field results in a collection scan for every document being joined (huge cost at scale). Always ensure the <code>foreignField</code> in a <code>$lookup</code> is indexed, similar to how you'd index a foreign key column in SQL.</p>
+<p><strong>Q: What's the default <code>maxTimeMS</code> behavior for aggregations, and why does that matter operationally?</strong>
+There's no default timeout unless you set one — a poorly written aggregation (e.g., missing early <code>$match</code>, unindexed <code>$lookup</code>) can run indefinitely and hold server resources. Senior engineers explicitly set <code>.option({ maxTimeMS: N })</code> on any aggregation exposed to user-triggered filters.</p>
+<hr />
+<h2 id="transactions-concurrency">Transactions &amp; Concurrency<a class="headerlink" href="#transactions-concurrency" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Do MongoDB transactions work on a standalone server, or only replica sets/sharded clusters?</strong>
+Multi-document transactions require a <strong>replica set</strong> (even a single-node replica set) or a sharded cluster — they do not work on a plain standalone <code>mongod</code> instance. This trips people up in local dev when they forgot to initialize their local Mongo as a replica set.</p>
+<p><strong>Q: If a transaction fails partway through, does MongoDB auto-retry it?</strong>
+No, not by default at the application level — you're responsible for catching transient errors (labeled <code>TransientTransactionError</code> or <code>UnknownTransactionCommitResult</code>) and retrying the whole transaction block yourself. The driver doesn't silently retry your business logic for you.</p>
+<p><strong>Q: What's a "dirty read" risk when NOT using transactions across multiple related writes?</strong>
+If you update two related documents without a transaction (e.g., debit one account, credit another) and the process crashes between the two writes, you get a permanently inconsistent state — no automatic rollback. Transactions exist specifically to make such multi-document operations atomic.</p>
+<p><strong>Q: Are single-document updates ever non-atomic?</strong>
+No — single-document writes (including nested field updates, array operator updates) are <strong>always atomic</strong> in MongoDB, even without an explicit transaction. Transactions are only needed when atomicity must span <strong>multiple documents/collections</strong>.</p>
+<hr />
+<h2 id="data-modeling-trade-off-questions">Data Modeling Trade-off Questions<a class="headerlink" href="#data-modeling-trade-off-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: "Would you embed comments inside a blog post document, or use a separate collection?" — what's the "right" answer?</strong>
+There isn't one universally right answer — that's the point of the question. Interviewers want you to reason about: expected comment volume (bounded vs unbounded — risk of hitting the 16MB document limit), whether comments are queried independently of posts (separate collection is better for that), write frequency (embedding causes contention if many comments arrive concurrently on one doc), and whether you need to paginate comments separately.</p>
+<p><strong>Q: When would you deliberately denormalize/duplicate data across collections, and what's the cost?</strong>
+Denormalize (e.g., storing <code>authorName</code> directly on a <code>Post</code> alongside <code>authorId</code>) when read performance matters more than write complexity, and the duplicated field rarely changes. The cost: every time the source of truth changes (user renames themselves), you must update all denormalized copies — usually via a background job or event-driven update, which adds complexity and potential staleness windows.</p>
+<p><strong>Q: How would you model a many-to-many relationship in MongoDB, given there's no native JOIN table concept?</strong>
+Two common approaches: (1) store an array of ObjectIds on one or both sides (e.g., <code>user.groupIds: [ObjectId]</code> and/or <code>group.memberIds: [ObjectId]</code>) and use <code>$in</code>/<code>populate</code> to resolve, or (2) create an explicit "join" collection (<code>memberships</code>) with <code>userId</code> + <code>groupId</code> + extra metadata (like <code>role</code> or <code>joinedAt</code>) when the relationship itself carries data — mirroring a traditional join table.</p>
+<hr />
+<h2 id="rapid-fire-what-happens-if-round">Rapid-Fire "What Happens If…" Round<a class="headerlink" href="#rapid-fire-what-happens-if-round" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>What Actually Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You <code>await</code> a query twice</td>
+<td>Second await re-executes it (fresh DB round trip) — it is not cached</td>
+</tr>
+<tr>
+<td>You pass an array to <code>findById</code></td>
+<td>Throws a <code>CastError</code> — expects a single ObjectId-like value</td>
+</tr>
+<tr>
+<td>You forget <code>new Schema()</code> and just pass a plain object to <code>model()</code></td>
+<td>Mongoose auto-wraps it in a Schema in most setups, but you lose access to schema-specific chaining methods before model creation</td>
+</tr>
+<tr>
+<td>Two processes <code>updateOne</code> the same doc simultaneously with <code>$inc</code></td>
+<td>Both increments apply — MongoDB serializes writes per document, no lost update</td>
+</tr>
+<tr>
+<td>Two processes <code>findOne()</code> + <code>save()</code> the same doc simultaneously</td>
+<td>Classic lost-update race condition — last <code>save()</code> wins, first change can be silently overwritten unless you use versioning (<code>optimisticConcurrency</code>) or atomic operators</td>
+</tr>
+<tr>
+<td>You enable <code>optimisticConcurrency: true</code> on a schema</td>
+<td>Mongoose adds a <code>__v</code> version check on every <code>save()</code> — concurrent saves against a stale version throw a <code>VersionError</code> instead of silently overwriting</td>
+</tr>
+<tr>
+<td>You query with a field that has a typo (not in schema) under <code>strict: true</code></td>
+<td>The filter field is still sent as-is to MongoDB (strict mode affects writes/saves, not query filters) — so it silently matches nothing, no error</td>
+</tr>
+<tr>
+<td>You call <code>.save()</code> on a document fetched with <code>.lean()</code></td>
+<td>Throws — plain objects from <code>.lean()</code> don't have <code>.save()</code>; it doesn't exist on them</td>
+</tr>
+<tr>
+<td>Your app crashes mid <code>insertMany()</code> with <code>ordered: true</code> (default)</td>
+<td>Insertion stops at the first failing document — earlier ones in the batch are already persisted, later ones are not attempted</td>
+</tr>
+<tr>
+<td>You store a <code>Number</code> where the schema says <code>String</code></td>
+<td>Mongoose casts it automatically before saving (as long as it's cast-able) — no error, but can hide real bugs feeding wrong data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="bonus-good-follow-up-questions-to-ask-back-in-an-interview">Bonus: Good Follow-Up Questions to Ask <em>Back</em> in an Interview<a class="headerlink" href="#bonus-good-follow-up-questions-to-ask-back-in-an-interview" title="Permanent link">&para;</a></h2>
+<ul>
+<li>"Is this a single-node deployment or a replica set / sharded cluster?" — changes answers around transactions and read-preference.</li>
+<li>"What's the expected document growth rate for this collection?" — changes embed-vs-reference answers.</li>
+<li>"Are we optimizing for read-heavy or write-heavy access patterns here?" — changes indexing strategy answers.</li>
+</ul>
+<p>Asking these signals you think about trade-offs contextually rather than reciting memorized rules — which is usually exactly what a senior-level interview is probing for.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mongodb-aggregation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MongoDB Aggregation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                MongoDB Aggregation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../ide/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/shubham-0819" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/Shubham_0819" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
