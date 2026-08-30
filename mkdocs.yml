@@ -34,7 +34,6 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
-    - toc.integrate
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -106,6 +105,7 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       auto_append:
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -116,7 +116,6 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  # - Projects: projects/index.md
   - Concepts:
     - Overview: concepts/index.md
     - Operating Systems:
@@ -152,8 +151,12 @@ nav:
     - Overview: databases/index.md
     - PostgreSQL: databases/postgreSQL-installation-and-basic-usage.md
     - NoSQL:
-      - MongoDB: databases/mongodb.md
-      - Redis: databases/redis.md
+      - MongoDB Cheatsheet: databases/mongodb-cheatsheet.md
+      - MongoDB Queries: databases/mongodb-commands.md
+      - MongoDB query tips: databases/mongodb-query-tips.md
+      - MongoDB query performance: databases/mongodb-query-performance.md
+      - MongoDB Aggregation: databases/mongodb-aggregation.md
+      - MongoDB interview questions: databases/mongodb-interview-questions.md
   - Development:
     - IDE & Tools:
       - Overview: ide/index.md
@@ -181,6 +184,21 @@ nav:
     - How to Learn: interview/how-to-learn.md
     - TODO: interview/todo.md
   - About Me: about.md
+  - Practice:
+    - DevOps & Tools:
+      - Linux/Windows Shift: practice/linux-windows-shift.md
+      - Git Worktree: practice/git-worktree.md
+      - ADB Commands: practice/adb-commands.md
+    - Programming:
+      - C Handout: practice/c/c-basic.md
+      - Python for Data Engineering: practice/python/python-modules.md
+    - Notes & References:
+      - Working with panes: practice/dev-setup/working-with-panes.md
+      - Working with fzf: practice/dev-setup/working-with-fzf.md
+      - References: practice/references.md
+      - Tech Stack: practice/tech-stack.md
+      - Bin List: practice/bin-list.md
+      - Miscellaneous: practice/miscelleneous.md
   
 
   # - Blog:

@@ -2,22 +2,17 @@
 
 ## Installation
 
-1. Update Package List:
+```sh
+## Update Package List:
+sudo apt update
 
-   ```sh
-   sudo apt update
-   ```
+## Install PostgreSQL
+sudo apt install postgresql postgresql-contrib
 
-2. Install PostgreSQL:
+## Start PostgreSQL Service:
+sudo systemctl start postgresql
+```
 
-   ```sh
-   sudo apt install postgresql postgresql-contrib
-   ```
-
-3. Start PostgreSQL Service:
-   ```sh
-   sudo systemctl start postgresql
-   ```
 
 ## Basic Usage
 
@@ -95,27 +90,27 @@
 
 - Description: pgAdmin is a popular, open-source graphical management tool for PostgreSQL.
 - Features:
-  - Visual query builder.
-  - Data visualization and analysis.
-  - Backup and restore capabilities.
-  - Server and database monitoring.
+    - Visual query builder.
+    - Data visualization and analysis.
+    - Backup and restore capabilities.
+    - Server and database monitoring.
 - Usage: Ideal for database administration and management.
 
 ### psql
 
 - Description: psql is the PostgreSQL interactive terminal.
 - Features:
-  - Execute SQL commands and scripts.
-  - Database navigation and administration.
-  - Scripting capabilities.
+    - Execute SQL commands and scripts.
+    - Database navigation and administration.
+    - Scripting capabilities.
 - Usage: Powerful command-line tool for developers and DBAs.
 
 ### pg_dump
 
 - Description: Utility for backing up a PostgreSQL database.
 - Features:
-  - Dumps database content into a script or archive file.
-  - Supports various formats (plain, custom, directory, tar).
+    - Dumps database content into a script or archive file.
+    - Supports various formats (plain, custom, directory, tar).
 - Usage:
   ```sh
   pg_dump mydb > mydb_backup.sql
@@ -125,8 +120,8 @@
 
 - Description: Utility to restore a PostgreSQL database from an archive created by pg_dump.
 - Features:
-  - Supports restoring from custom, directory, and tar formats.
-  - Selective restoration of database objects.
+    - Supports restoring from custom, directory, and tar formats.
+    - Selective restoration of database objects.
 - Usage:
   ```sh
   pg_restore -d mydb mydb_backup.tar
@@ -136,73 +131,73 @@
 
 - Description: Lightweight connection pooler for PostgreSQL.
 - Features:
-  - Reduces database connection overhead.
-  - Improves performance by reusing connections.
+    - Reduces database connection overhead.
+    - Improves performance by reusing connections.
 - Usage: Suitable for high-concurrency environments.
 
 ### PostGIS
 
 - Description: Spatial database extender for PostgreSQL.
 - Features:
-  - Adds support for geographic objects.
-  - Spatial queries and analysis.
+    - Adds support for geographic objects.
+    - Spatial queries and analysis.
 - Usage: Essential for GIS (Geographic Information Systems) applications.
 
 ### pgAdmin4
 
 - Description: Web-based version of pgAdmin.
 - Features:
-  - Modern UI with extensive management capabilities.
-  - Multi-user support.
+    - Modern UI with extensive management capabilities.
+    - Multi-user support.
 - Usage: Web-based administration and monitoring tool.
 
 ### DBeaver
 
 - Description: Universal database tool that supports various databases, including PostgreSQL.
 - Features:
-  - Advanced SQL editor.
-  - ERD generation.
-  - Data import/export.
+    - Advanced SQL editor.
+    - ERD generation.
+    - Data import/export.
 - Usage: Cross-platform database management.
 
 ### pg_activity
 
 - Description: Command-line tool for PostgreSQL server activity monitoring.
 - Features:
-  - Live view of running queries.
-  - Performance statistics.
+    - Live view of running queries.
+    - Performance statistics.
 - Usage: Monitoring and troubleshooting database performance.
 
 ### TimescaleDB
 
 - Description: Time-series database built on PostgreSQL.
 - Features:
-  - Native PostgreSQL compatibility.
-  - Optimized for time-series data.
+    - Native PostgreSQL compatibility.
+    - Optimized for time-series data.
 - Usage: Suitable for applications dealing with time-series data like monitoring, IoT, and analytics.
 
 ### pg_repack
 
 - Description: Tool to remove bloat from tables and indexes.
 - Features:
-  - Online, non-blocking table repacking.
-  - Index rebuilding.
+    - Online, non-blocking table repacking.
+    - Index rebuilding.
 - Usage: Maintenance tool to optimize database performance.
 
 ### pgBadger
 
 - Description: Fast PostgreSQL log analyzer.
 - Features:
-  - Generates detailed reports from log files.
-  - Performance statistics and insights.
+    - Generates detailed reports from log files.
+    - Performance statistics and insights.
 - Usage: Performance tuning and auditing.
 
 ### SchemaSpy
 
 - Description: Java-based tool for analyzing database metadata.
 - Features:
-  - Generates visual diagrams of database schema.
-  - Detailed documentation of database structures.
+    - Generates visual diagrams of database schema.
+    - Detailed documentation of database structures.
 - Usage: Database documentation and schema analysis.
 
 ### Additional Resources
