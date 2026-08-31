@@ -1,4 +1,4 @@
-## ⏱ Weekly Time Allocation
+## Weekly Time Allocation
 - **Weekdays (Mon–Fri; 4–5 hrs/day ≈ 22.5 hrs/week)**
   - 2 hrs DSA (coding problems)
   - 1.5 hrs Java theory & coding
@@ -72,4 +72,8 @@
 3. **Flashcards/Anki:** For CS concepts and Java APIs.  
 4. **Health & Breaks:** 5 min break every 25 min; weekly “light” day to recharge.  
 5. **Progress Check:** Every 2 weeks, do a timed 2-hr DSA test and review weak areas.
+
+## Companies
+
+- [Target Companies](./companies.md)
 
