@@ -2,250 +2,254 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://shubham-0819.github.io/notes/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/about/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ai/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ai/best-practices-for-using-genai/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ai/genai-models-by-openai/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ai/vector-embedding/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/blog/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/angular-hexagonal-architecture/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/data-structure/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/design-patterns/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/operating-systems/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/operating-systems/overview-of-storage-in-an-operating-system/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/programming/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/programming/java/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/programming/javascript/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/concepts/programming/python/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://shubham-0819.github.io/notes/concepts/programming/python/fundamental/</loc>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-aggregation/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-cheatsheet/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-commands/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-interview-questions/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-query-performance/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/mongodb-query-tips/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/nosql/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/postgreSQL-installation-and-basic-usage/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/databases/sql/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/frameworks/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/frameworks/angular/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/frameworks/apache/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/frameworks/react/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/frameworks/springboot/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ide/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ide/essential-shell-tools/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/ide/vscode-extensions/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/angular-notes/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/companies/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/database/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/dsa/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/how-to-learn/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/javascript-notes/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/nodejs-notes/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/roadmap/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/system-design/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/todo/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/interview/dsa/array-traversal/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/adb-commands/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/git-worktree/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/linux-windows-shift/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/c/c-basic/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/dev-setup/working-with-fzf/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/dev-setup/working-with-panes/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/practice/python/python-modules/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/projects/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/system-design/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/system-design/basics/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/system-design/load-balancing/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/tools/docker/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/tools/git/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/tools/how-to-use-copilot/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
     <url>
          <loc>https://shubham-0819.github.io/notes/tools/workflow-automation-n8n/</loc>
-         <lastmod>2026-08-31</lastmod>
+         <lastmod>2026-09-12</lastmod>
     </url>
 </urlset>
