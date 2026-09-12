@@ -1,6 +1,6 @@
 # Python Programming
 
-A comprehensive overview of Python's advanced concepts and features.
+## [python basic](./fundamental.md)
 
 ## Core Python Concepts
 
