@@ -173,6 +173,7 @@ nav:
       - Web Servers:
         - Apache: frameworks/apache.md
         - Nginx: frameworks/servers/nginx.md
+      - Kubectl commands: tools/kubectl.md
   - Interview Prep:
     - Overview: interview/index.md
     - System Design: interview/system-design.md
